@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Phone, Calendar, CheckCircle2, Calculator } from 'lucide-react';
+import { ArrowRight, Phone, Calendar, CheckCircle2, Calculator, Menu, X } from 'lucide-react';
 import '../styles/Landing.css';
 
 const Landing = () => {
   const [isVisible, setIsVisible] = useState({});
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [callsPerDay, setCallsPerDay] = useState(20);
   const [missedPercentage, setMissedPercentage] = useState(30);
   const [customerValue, setCustomerValue] = useState(50);
@@ -60,6 +61,10 @@ const Landing = () => {
     }
   };
 
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+  };
+
   return (
     <div className="landing-container">
       {/* Navigation */}
@@ -72,12 +77,34 @@ const Landing = () => {
               className="logo-image"
             />
           </div>
-          <div className="nav-links">
+          
+          {/* Desktop Navigation */}
+          <div className="nav-links desktop-nav">
             <a href="#demo" className="nav-link">Demo</a>
-            <a href="#calculator" className="nav-link">Kalkulator</a>
-            <a href="#contact" className="nav-link-cta">Začni test</a>
+            <a href="#section-calculator" className="nav-link">Kalkulator</a>
+            <a href="#section-contact" className="nav-link">Kontakt</a>
+            <a href="#section-contact" className="nav-link-cta">Začni test</a>
           </div>
+
+          {/* Mobile Hamburger */}
+          <button 
+            className="mobile-menu-toggle"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className="mobile-menu">
+            <a href="#demo" className="mobile-nav-link" onClick={closeMobileMenu}>Demo</a>
+            <a href="#section-calculator" className="mobile-nav-link" onClick={closeMobileMenu}>Kalkulator</a>
+            <a href="#section-contact" className="mobile-nav-link" onClick={closeMobileMenu}>Kontakt</a>
+            <a href="#section-contact" className="mobile-nav-link-cta" onClick={closeMobileMenu}>Začni test</a>
+          </div>
+        )}
       </nav>
 
       {/* Hero Section */}
@@ -94,7 +121,7 @@ const Landing = () => {
               Poglej demo
               <ArrowRight className="btn-icon" />
             </a>
-            <a href="#contact" className="btn-secondary">
+            <a href="#section-contact" className="btn-secondary">
               Preizkusi
             </a>
           </div>
@@ -229,7 +256,7 @@ const Landing = () => {
           </div>
 
           <div className="calculator-cta">
-            <a href="#contact" className="btn-primary-large">
+            <a href="#section-contact" className="btn-primary-large">
               Ustavi izgubo
             </a>
           </div>
@@ -250,8 +277,8 @@ const Landing = () => {
       </section>
 
       {/* Final CTA Section */}
-      <section className="final-cta-section" id="contact">
-        <div className={`final-cta-content ${isVisible['section-cta'] ? 'visible' : ''}`}>
+      <section className="final-cta-section" id="section-contact">
+        <div className={`final-cta-content ${isVisible['section-contact'] ? 'visible' : ''}`}>
           <h2 className="final-cta-title">
             Nikoli več ne zamudite klica.
           </h2>
