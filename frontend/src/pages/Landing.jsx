@@ -1,0 +1,272 @@
+import React, { useState, useEffect } from 'react';
+import { ArrowRight, Phone, Calendar, CheckCircle2, Calculator } from 'lucide-react';
+import '../styles/Landing.css';
+
+const Landing = () => {
+  const [isVisible, setIsVisible] = useState({});
+  const [callsPerDay, setCallsPerDay] = useState(20);
+  const [missedPercentage, setMissedPercentage] = useState(30);
+  const [customerValue, setCustomerValue] = useState(50);
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setIsVisible(prev => ({ ...prev, [entry.target.id]: true }));
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('[id^="section-"]').forEach(section => {
+      observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const calculateLoss = () => {
+    const dailyLoss = callsPerDay * (missedPercentage / 100) * customerValue;
+    const monthlyLoss = dailyLoss * 30;
+    return monthlyLoss.toFixed(0);
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    // Formspree placeholder - replace with actual endpoint
+    console.log('Form submitted');
+  };
+
+  return (
+    <div className="landing-container">
+      {/* Navigation */}
+      <nav className="navigation">
+        <div className="nav-content">
+          <div className="nav-logo">Asistent RM</div>
+          <div className="nav-links">
+            <a href="#demo" className="nav-link">Demo</a>
+            <a href="#calculator" className="nav-link">Kalkulator</a>
+            <a href="#contact" className="nav-link-cta">Začni test</a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="hero-section" id="section-hero">
+        <div className="hero-content fade-in-up">
+          <h1 className="hero-title">
+            AI tajnica, ki sprejema<br />klice namesto vas.
+          </h1>
+          <p className="hero-subtitle">
+            Rezervira termine. Odgovarja strankam. Vedno dosegljiva.
+          </p>
+          <div className="hero-cta">
+            <a href="#demo" className="btn-primary">
+              Poglej demo
+              <ArrowRight className="btn-icon" />
+            </a>
+            <a href="#contact" className="btn-secondary">
+              Preizkusi
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Problem Section */}
+      <section className="problem-section" id="section-problem">
+        <div className={`problem-content ${isVisible['section-problem'] ? 'visible' : ''}`}>
+          <div className="problem-line delay-1">Telefon zvoni.</div>
+          <div className="problem-line delay-2">Ne dvignete.</div>
+          <div className="problem-line delay-3">Stranka gre drugam.</div>
+        </div>
+      </section>
+
+      {/* Solution Section */}
+      <section className="solution-section" id="section-solution">
+        <div className={`solution-content ${isVisible['section-solution'] ? 'visible' : ''}`}>
+          <h2 className="section-title">Rešitev</h2>
+          <div className="solution-steps">
+            <div className="solution-step step-1">
+              <div className="step-number">1</div>
+              <div className="step-text">AI dvigne klic.</div>
+            </div>
+            <div className="solution-step step-2">
+              <div className="step-number">2</div>
+              <div className="step-text">Govori s stranko.</div>
+            </div>
+            <div className="solution-step step-3">
+              <div className="step-number">3</div>
+              <div className="step-text">Rezervira termin.</div>
+            </div>
+            <div className="solution-step step-4">
+              <div className="step-number">4</div>
+              <div className="step-text">Vpiše v koledar.</div>
+            </div>
+          </div>
+          <p className="solution-tagline">To je to.</p>
+        </div>
+      </section>
+
+      {/* Value Section */}
+      <section className="value-section" id="section-value">
+        <div className={`value-content ${isVisible['section-value'] ? 'visible' : ''}`}>
+          <div className="value-grid">
+            <div className="value-card">
+              <div className="value-number">+30%</div>
+              <div className="value-label">več rezervacij</div>
+            </div>
+            <div className="value-card">
+              <div className="value-number">0</div>
+              <div className="value-label">zamujenih klicev</div>
+            </div>
+            <div className="value-card">
+              <div className="value-number">100%</div>
+              <div className="value-label">dosegljivost</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive Calculator Section - KEY FEATURE */}
+      <section className="calculator-section" id="section-calculator">
+        <div className={`calculator-content ${isVisible['section-calculator'] ? 'visible' : ''}`}>
+          <h2 className="calculator-title">
+            Koliko denarja izgubljate zaradi<br />neodgovorjenih klicev?
+          </h2>
+          
+          <div className="calculator-box">
+            <div className="calculator-inputs">
+              <div className="input-group">
+                <label className="input-label">Število klicev na dan</label>
+                <div className="slider-container">
+                  <input
+                    type="range"
+                    min="1"
+                    max="100"
+                    value={callsPerDay}
+                    onChange={(e) => setCallsPerDay(Number(e.target.value))}
+                    className="slider"
+                  />
+                  <span className="slider-value">{callsPerDay}</span>
+                </div>
+              </div>
+
+              <div className="input-group">
+                <label className="input-label">% klicev, ki jih zamudite</label>
+                <div className="slider-container">
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={missedPercentage}
+                    onChange={(e) => setMissedPercentage(Number(e.target.value))}
+                    className="slider"
+                  />
+                  <span className="slider-value">{missedPercentage}%</span>
+                </div>
+              </div>
+
+              <div className="input-group">
+                <label className="input-label">Povprečna vrednost stranke (€)</label>
+                <div className="slider-container">
+                  <input
+                    type="range"
+                    min="10"
+                    max="500"
+                    step="10"
+                    value={customerValue}
+                    onChange={(e) => setCustomerValue(Number(e.target.value))}
+                    className="slider"
+                  />
+                  <span className="slider-value">{customerValue}€</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="calculator-result">
+              <div className="result-label">Mesečna izguba</div>
+              <div className="result-amount">{calculateLoss()}€</div>
+              <div className="result-subtext">vsak mesec</div>
+            </div>
+          </div>
+
+          <div className="calculator-cta">
+            <a href="#contact" className="btn-primary-large">
+              Ustavi izgubo
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Demo Section */}
+      <section className="demo-section" id="demo">
+        <div className={`demo-content ${isVisible['section-demo'] ? 'visible' : ''}`}>
+          <h2 className="section-title">Preizkusite v živo</h2>
+          <div className="demo-box">
+            <Phone className="demo-icon" />
+            <p className="demo-text">Pokliči in preizkusi AI tajnico</p>
+            <a href="tel:+386XXXXXXXX" className="demo-phone">+386 XX XXX XXX</a>
+            <p className="demo-subtext">Ali pa pošljite povpraševanje spodaj</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Section */}
+      <section className="final-cta-section" id="contact">
+        <div className={`final-cta-content ${isVisible['section-cta'] ? 'visible' : ''}`}>
+          <h2 className="final-cta-title">
+            Nikoli več ne zamudite klica.
+          </h2>
+          <form onSubmit={handleFormSubmit} className="contact-form">
+            <input 
+              type="text" 
+              placeholder="Ime in priimek" 
+              className="form-input"
+              required
+            />
+            <input 
+              type="email" 
+              placeholder="Email" 
+              className="form-input"
+              required
+            />
+            <input 
+              type="tel" 
+              placeholder="Telefonska številka" 
+              className="form-input"
+              required
+            />
+            <input 
+              type="text" 
+              placeholder="Podjetje" 
+              className="form-input"
+            />
+            <button type="submit" className="btn-primary-large">
+              Začni test
+            </button>
+          </form>
+          <p className="form-note">Brezplačen preizkus 14 dni. Brez kreditne kartice.</p>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-logo">Asistent RM</div>
+          <div className="footer-links">
+            <a href="#" className="footer-link">Pogoji uporabe</a>
+            <a href="#" className="footer-link">Zasebnost</a>
+            <a href="#" className="footer-link">Kontakt</a>
+          </div>
+          <div className="footer-copy">© 2025 Asistent RM. Vse pravice pridržane.</div>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Landing;
