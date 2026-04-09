@@ -35,10 +35,29 @@ const Landing = () => {
     return monthlyLoss.toFixed(0);
   };
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    // Formspree placeholder - replace with actual endpoint
-    console.log('Form submitted');
+    const form = e.target;
+    const formData = new FormData(form);
+    
+    try {
+      const response = await fetch('https://formspree.io/f/mkovjydg', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        alert('Hvala! Vaše sporočilo je bilo poslano. Kmalu vas bomo kontaktirali.');
+        form.reset();
+      } else {
+        alert('Prišlo je do napake. Prosimo, poskusite znova.');
+      }
+    } catch (error) {
+      alert('Prišlo je do napake. Prosimo, poskusite znova.');
+    }
   };
 
   return (
@@ -46,7 +65,13 @@ const Landing = () => {
       {/* Navigation */}
       <nav className="navigation">
         <div className="nav-content">
-          <div className="nav-logo">Asistent RM</div>
+          <div className="nav-logo">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_ai-secretary-22/artifacts/taeyavvy_Rm-logo.png" 
+              alt="Asistent RM Logo" 
+              className="logo-image"
+            />
+          </div>
           <div className="nav-links">
             <a href="#demo" className="nav-link">Demo</a>
             <a href="#calculator" className="nav-link">Kalkulator</a>
@@ -89,6 +114,15 @@ const Landing = () => {
       <section className="solution-section" id="section-solution">
         <div className={`solution-content ${isVisible['section-solution'] ? 'visible' : ''}`}>
           <h2 className="section-title">Rešitev</h2>
+          
+          <div className="solution-graphic">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_ai-secretary-22/artifacts/rqfusj80_RM-grafika.png" 
+              alt="Asistent RM delovanje" 
+              className="graphic-image"
+            />
+          </div>
+
           <div className="solution-steps">
             <div className="solution-step step-1">
               <div className="step-number">1</div>
@@ -224,24 +258,28 @@ const Landing = () => {
           <form onSubmit={handleFormSubmit} className="contact-form">
             <input 
               type="text" 
+              name="name"
               placeholder="Ime in priimek" 
               className="form-input"
               required
             />
             <input 
               type="email" 
+              name="email"
               placeholder="Email" 
               className="form-input"
               required
             />
             <input 
               type="tel" 
+              name="phone"
               placeholder="Telefonska številka" 
               className="form-input"
               required
             />
             <input 
               type="text" 
+              name="company"
               placeholder="Podjetje" 
               className="form-input"
             />
@@ -256,7 +294,13 @@ const Landing = () => {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <div className="footer-logo">Asistent RM</div>
+          <div className="footer-logo">
+            <img 
+              src="https://customer-assets.emergentagent.com/job_ai-secretary-22/artifacts/taeyavvy_Rm-logo.png" 
+              alt="Asistent RM Logo" 
+              className="footer-logo-image"
+            />
+          </div>
           <div className="footer-links">
             <a href="#" className="footer-link">Pogoji uporabe</a>
             <a href="#" className="footer-link">Zasebnost</a>

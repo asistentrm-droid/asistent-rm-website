@@ -23,9 +23,12 @@ Narediti Apple-style landing page za AI virtualno telefonsko tajnico z interakti
 5. ✅ Mobile responsive design
 6. ✅ Glassmorphism navigacija
 
-## What's Been Implemented (2025-04-09)
+## What's Been Implemented
 
-### ✅ Phase 1: Frontend Landing Page
+### ✅ Phase 1: Frontend Landing Page (Verzija 1.0)
+**Datum**: 9. april 2025
+
+### ✅ Phase 2: Assets & Form Integration (Verzija 1.1)
 **Datum**: 9. april 2025
 
 **Implementirane sekcije**:
@@ -87,23 +90,42 @@ Narediti Apple-style landing page za AI virtualno telefonsko tajnico z interakti
 - Mobile-first responsive design
 - Glassmorphism na navigaciji (backdrop-blur)
 
+**Phase 2 Updates**:
+1. ✅ **Real Logo Integration**
+   - RM možgani logo v navigaciji (40px height)
+   - Footer logo (50px, inverted color)
+   - Public URL: https://customer-assets.emergentagent.com/job_ai-secretary-22/artifacts/taeyavvy_Rm-logo.png
+
+2. ✅ **Flow Diagram Integration**
+   - RM-grafika.png dodana v Solution sekcijo
+   - Prikazuje: telefon → RM → oseba + koledar
+   - Smooth scale-in animacija
+   - Public URL: https://customer-assets.emergentagent.com/job_ai-secretary-22/artifacts/rqfusj80_RM-grafika.png
+
+3. ✅ **Formspree Integration**
+   - Endpoint: https://formspree.io/f/mkovjydg
+   - 4 polja: name, email, phone, company
+   - Success/error handling
+   - Form reset po uspešnem pošiljanju
+
 ## Prioritized Backlog
 
-### P0 - Critical (Not Implemented)
-Vse implementirano za MVP landing page ✅
+### P0 - Critical
+✅ Vse kritične funkcionalnosti implementirane!
 
-### P1 - Important (Optional Enhancements)
-1. **Formspree Integration**
-   - Zamenjati placeholder z dejanskim Formspree endpoint
-   - Dodati validacijo in success/error stanja
+### P1 - Important (Completed ✅)
+1. ✅ **Formspree Integration** - Konfiguriran in deluje
+2. ✅ **Real Assets** - Logo in grafika integrirani
+3. 📋 **Demo Phone Number** - Potrebna prava številka
 
-2. **Real Assets**
-   - Dodati logo-rm.png
-   - Dodati grafika1.png v ustrezne sekcije
-
-3. **Demo Video/Audio**
+### P1 - Important (Outstanding)
+1. **Demo Video/Audio**
    - Placeholder za 30s demo video
    - Ali povezava do dejanske demo številke
+   
+2. **Enhanced Success Messages**
+   - Custom success page po oddaji obrazca
+   - Email potrditev stranki
 
 4. **Enhanced Animations**
    - Parallax efekti na scroll
@@ -131,9 +153,11 @@ Vse implementirano za MVP landing page ✅
 ## Next Tasks
 1. ✅ Pregled z screenshoti
 2. ✅ Testiranje responsive design
-3. 📋 Dodati prave grafične elemente (ko jih ima uporabnik)
-4. 📋 Konfigurirati Formspree
+3. ✅ Dodati prave grafične elemente
+4. ✅ Konfigurirati Formspree
 5. 📋 Dodati pravo telefonsko številko za demo
+6. 📋 Testirati form submission end-to-end
+7. 📋 SEO optimizacija (meta tags, Open Graph)
 
 ## Notes
 - Stran je 100% frontend-only (GitHub Pages ready)
