@@ -14,7 +14,7 @@ const FAQ = () => {
     },
     {
       question: "Koliko stane storitev?",
-      answer: "Ponujamo fleksibilne pakete glede na število klicev. Prvi 14 dni so popolnoma brezplačni brez vezave na kreditno kartico. Nato se cena prilagodi vašim potrebam - kontaktirajte nas za ponudbo."
+      answer: "Ponujamo fleksibilne pakete glede na število klicev. Prvi 7 dni so popolnoma brezplačni brez obveznosti. Nato se cena prilagodi vašim potrebam - kontaktirajte nas za ponudbo."
     },
     {
       question: "Ali AI razume slovenščino?",
@@ -38,7 +38,7 @@ const FAQ = () => {
     },
     {
       question: "Je storitev varna? Kaj z GDPR?",
-      answer: "Absolutno. Vsi podatki so shranjeni v Sloveniji, v skladu z GDPR in slovensko zakonodajo. Vaši podatki so šifrirani in varni."
+      answer: "Absolutno. Vsi podatki so shranjeni varno in v skladu z GDPR zakonodajo. Vaši podatki so šifrirani in zaščiteni."
     }
   ];
 

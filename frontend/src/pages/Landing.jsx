@@ -371,7 +371,7 @@ const Landing = () => {
               Začni test
             </button>
           </form>
-          <p className="form-note">Brezplačen preizkus 14 dni. Brez kreditne kartice.</p>
+          <p className="form-note">Brezplačen preizkus 7 dni. Brez obveznosti.</p>
         </div>
       </section>
 

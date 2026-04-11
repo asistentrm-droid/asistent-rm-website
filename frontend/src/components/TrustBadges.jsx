@@ -9,15 +9,15 @@ const TrustBadges = () => {
           <Shield className="trust-icon" />
           <div className="trust-text">
             <div className="trust-title">GDPR skladno</div>
-            <div className="trust-desc">Podatki varni v Sloveniji</div>
+            <div className="trust-desc">Varnost podatkov</div>
           </div>
         </div>
 
         <div className="trust-badge">
           <Clock className="trust-icon" />
           <div className="trust-text">
-            <div className="trust-title">14 dni brezplačno</div>
-            <div className="trust-desc">Brez kreditne kartice</div>
+            <div className="trust-title">7 dni brezplačno</div>
+            <div className="trust-desc">Preizkusite brez obveznosti</div>
           </div>
         </div>
 
