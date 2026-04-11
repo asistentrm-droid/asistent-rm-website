@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Phone, Calendar, CheckCircle2, Calculator, Menu, X } from 'lucide-react';
 import '../styles/Landing.css';
+import FAQ from '../components/FAQ';
+import TrustBadges from '../components/TrustBadges';
+import UseCases from '../components/UseCases';
 
 const Landing = () => {
   const [isVisible, setIsVisible] = useState({});
@@ -8,6 +11,8 @@ const Landing = () => {
   const [callsPerDay, setCallsPerDay] = useState(20);
   const [missedPercentage, setMissedPercentage] = useState(30);
   const [customerValue, setCustomerValue] = useState(50);
+  const [animatedLoss, setAnimatedLoss] = useState(0);
+  const [animatedTime, setAnimatedTime] = useState(0);
 
   useEffect(() => {
     const observerOptions = {
@@ -35,6 +40,41 @@ const Landing = () => {
     const monthlyLoss = dailyLoss * 30;
     return monthlyLoss.toFixed(0);
   };
+
+  const calculateTimeSaved = () => {
+    // Povprečen klic traja 3 minute
+    const dailyMissedCalls = callsPerDay * (missedPercentage / 100);
+    const monthlyMinutes = dailyMissedCalls * 30 * 3;
+    const hours = (monthlyMinutes / 60).toFixed(0);
+    return hours;
+  };
+
+  // Animated counter effect
+  useEffect(() => {
+    const targetLoss = parseFloat(calculateLoss());
+    const targetTime = parseFloat(calculateTimeSaved());
+    const duration = 1000; // 1 second
+    const steps = 60;
+    const increment = targetLoss / steps;
+    const timeIncrement = targetTime / steps;
+    let current = 0;
+    let currentTime = 0;
+
+    const timer = setInterval(() => {
+      current += increment;
+      currentTime += timeIncrement;
+      if (current >= targetLoss) {
+        setAnimatedLoss(targetLoss);
+        setAnimatedTime(targetTime);
+        clearInterval(timer);
+      } else {
+        setAnimatedLoss(Math.floor(current));
+        setAnimatedTime(Math.floor(currentTime));
+      }
+    }, duration / steps);
+
+    return () => clearInterval(timer);
+  }, [callsPerDay, missedPercentage, customerValue]);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -260,9 +300,19 @@ const Landing = () => {
             </div>
 
             <div className="calculator-result">
-              <div className="result-label">Mesečna izguba</div>
-              <div className="result-amount">{calculateLoss()}€</div>
-              <div className="result-subtext">vsak mesec</div>
+              <div className="result-row">
+                <div className="result-item">
+                  <div className="result-label">Mesečna izguba</div>
+                  <div className="result-amount">{animatedLoss}€</div>
+                  <div className="result-subtext">izgubljeni prihodki</div>
+                </div>
+                <div className="result-divider"></div>
+                <div className="result-item">
+                  <div className="result-label">Prihranjen čas</div>
+                  <div className="result-amount-time">{animatedTime}h</div>
+                  <div className="result-subtext">vsak mesec</div>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -273,6 +323,15 @@ const Landing = () => {
           </div>
         </div>
       </section>
+
+      {/* Trust Badges */}
+      <TrustBadges />
+
+      {/* Use Cases Section */}
+      <UseCases />
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* Final CTA Section */}
       <section className="final-cta-section" id="section-contact">

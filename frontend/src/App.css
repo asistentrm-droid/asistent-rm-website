@@ -5,6 +5,11 @@
   overflow-x: hidden;
 }
 
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Hide Emergent badge */
 div[class*="PoweredBy"],
 a[href*="emergent"] {
