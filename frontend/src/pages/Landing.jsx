@@ -51,9 +51,14 @@ const Landing = () => {
 
   // Animated counter effect
   useEffect(() => {
-    const targetLoss = parseFloat(calculateLoss());
-    const targetTime = parseFloat(calculateTimeSaved());
-    const duration = 1000; // 1 second
+    const dailyLoss = callsPerDay * (missedPercentage / 100) * customerValue;
+    const targetLoss = dailyLoss * 30;
+    
+    const dailyMissedCalls = callsPerDay * (missedPercentage / 100);
+    const monthlyMinutes = dailyMissedCalls * 30 * 3;
+    const targetTime = monthlyMinutes / 60;
+    
+    const duration = 1000;
     const steps = 60;
     const increment = targetLoss / steps;
     const timeIncrement = targetTime / steps;
@@ -64,8 +69,8 @@ const Landing = () => {
       current += increment;
       currentTime += timeIncrement;
       if (current >= targetLoss) {
-        setAnimatedLoss(targetLoss);
-        setAnimatedTime(targetTime);
+        setAnimatedLoss(Math.floor(targetLoss));
+        setAnimatedTime(Math.floor(targetTime));
         clearInterval(timer);
       } else {
         setAnimatedLoss(Math.floor(current));
