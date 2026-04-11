@@ -135,7 +135,7 @@ const Landing = () => {
           <div className="demo-box">
             <Phone className="demo-icon" />
             <p className="demo-text">Pokliči in preizkusi AI tajnico</p>
-            <a href="tel:+386XXXXXXXX" className="demo-phone">+386 XX XXX XXX</a>
+            <a href="tel:+38618285739" className="demo-phone">+386 18 285 739</a>
             <p className="demo-subtext">Izkusite kako AI obravnava klice vaših strank</p>
           </div>
         </div>
