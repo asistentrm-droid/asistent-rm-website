@@ -4,3 +4,9 @@
   min-height: 100vh;
   overflow-x: hidden;
 }
+
+/* Hide Emergent badge */
+div[class*="PoweredBy"],
+a[href*="emergent"] {
+  display: none !important;
+}

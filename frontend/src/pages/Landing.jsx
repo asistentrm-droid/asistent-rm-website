@@ -23,7 +23,7 @@ const Landing = () => {
       });
     }, observerOptions);
 
-    document.querySelectorAll('[id^="section-"]').forEach(section => {
+    document.querySelectorAll('[id^="section-"], #demo').forEach(section => {
       observer.observe(section);
     });
 
@@ -51,8 +51,8 @@ const Landing = () => {
       });
       
       if (response.ok) {
-        alert('Hvala! Vaše sporočilo je bilo poslano. Kmalu vas bomo kontaktirali.');
-        form.reset();
+        // Redirect to thank you page
+        window.location.href = '/hvala';
       } else {
         alert('Prišlo je do napake. Prosimo, poskusite znova.');
       }
@@ -83,7 +83,7 @@ const Landing = () => {
             <a href="#demo" className="nav-link">Demo</a>
             <a href="#section-calculator" className="nav-link">Kalkulator</a>
             <a href="#section-contact" className="nav-link">Kontakt</a>
-            <a href="#section-contact" className="nav-link-cta">Začni test</a>
+            <a href="#demo" className="nav-link-cta">Preizkusi Demo</a>
           </div>
 
           {/* Mobile Hamburger */}
@@ -102,7 +102,7 @@ const Landing = () => {
             <a href="#demo" className="mobile-nav-link" onClick={closeMobileMenu}>Demo</a>
             <a href="#section-calculator" className="mobile-nav-link" onClick={closeMobileMenu}>Kalkulator</a>
             <a href="#section-contact" className="mobile-nav-link" onClick={closeMobileMenu}>Kontakt</a>
-            <a href="#section-contact" className="mobile-nav-link-cta" onClick={closeMobileMenu}>Začni test</a>
+            <a href="#demo" className="mobile-nav-link-cta" onClick={closeMobileMenu}>Preizkusi Demo</a>
           </div>
         )}
       </nav>
@@ -122,8 +122,21 @@ const Landing = () => {
               <ArrowRight className="btn-icon" />
             </a>
             <a href="#section-contact" className="btn-secondary">
-              Preizkusi
+              Kontakt
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Demo Section - MOVED UP (Priority!) */}
+      <section className="demo-section" id="demo">
+        <div className={`demo-content ${isVisible['demo'] ? 'visible' : ''}`}>
+          <h2 className="section-title">Preizkusite v živo</h2>
+          <div className="demo-box">
+            <Phone className="demo-icon" />
+            <p className="demo-text">Pokliči in preizkusi AI tajnico</p>
+            <a href="tel:+386XXXXXXXX" className="demo-phone">+386 XX XXX XXX</a>
+            <p className="demo-subtext">Izkusite kako AI obravnava klice vaših strank</p>
           </div>
         </div>
       </section>
@@ -256,22 +269,9 @@ const Landing = () => {
           </div>
 
           <div className="calculator-cta">
-            <a href="#section-contact" className="btn-primary-large">
-              Ustavi izgubo
+            <a href="#demo" className="btn-primary-large">
+              Preizkusi Demo
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Demo Section */}
-      <section className="demo-section" id="demo">
-        <div className={`demo-content ${isVisible['section-demo'] ? 'visible' : ''}`}>
-          <h2 className="section-title">Preizkusite v živo</h2>
-          <div className="demo-box">
-            <Phone className="demo-icon" />
-            <p className="demo-text">Pokliči in preizkusi AI tajnico</p>
-            <a href="tel:+386XXXXXXXX" className="demo-phone">+386 XX XXX XXX</a>
-            <p className="demo-subtext">Ali pa pošljite povpraševanje spodaj</p>
           </div>
         </div>
       </section>

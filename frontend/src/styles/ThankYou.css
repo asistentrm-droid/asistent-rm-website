@@ -1,0 +1,210 @@
+/* Thank You Page Styles */
+
+.thank-you-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+}
+
+.thank-you-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.success-icon {
+  color: var(--color-black);
+  margin-bottom: var(--spacing-lg);
+  animation: scaleIn 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.thank-you-title {
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  color: var(--color-black);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.2;
+  animation: fadeInUp 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) 0.2s backwards;
+}
+
+.thank-you-message {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-gray-600);
+  margin-bottom: var(--spacing-xl);
+  max-width: 600px;
+  line-height: 1.6;
+  animation: fadeInUp 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) 0.4s backwards;
+}
+
+.thank-you-next {
+  margin-bottom: var(--spacing-xl);
+  animation: fadeInUp 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) 0.6s backwards;
+}
+
+.next-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-black);
+  margin-bottom: var(--spacing-lg);
+}
+
+.next-actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+.action-card {
+  background: var(--color-gray-50);
+  border: 2px solid var(--color-gray-200);
+  border-radius: 20px;
+  padding: var(--spacing-lg);
+  text-decoration: none;
+  color: var(--color-black);
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.action-card:hover {
+  background: var(--color-white);
+  border-color: var(--color-black);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.action-card svg {
+  color: var(--color-black);
+}
+
+.action-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.action-card p {
+  font-size: 14px;
+  color: var(--color-gray-600);
+  margin: 0;
+}
+
+.back-home {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  color: var(--color-gray-700);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: 8px;
+  transition: var(--transition-smooth);
+  animation: fadeInUp 0.8s cubic-bezier(0.645, 0.045, 0.355, 1) 0.8s backwards;
+}
+
+.back-home:hover {
+  background: var(--color-gray-50);
+  color: var(--color-black);
+}
+
+.thank-you-footer {
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: var(--spacing-lg);
+  text-align: center;
+}
+
+.thank-you-footer .footer-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.thank-you-footer .footer-logo-image {
+  height: 40px;
+  width: auto;
+  filter: invert(1);
+}
+
+.thank-you-footer p {
+  font-size: 14px;
+  color: var(--color-gray-500);
+  margin: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .thank-you-title {
+    font-size: 36px;
+  }
+
+  .thank-you-message {
+    font-size: 18px;
+  }
+
+  .next-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .action-card {
+    padding: var(--spacing-md);
+  }
+
+  .success-icon svg {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .thank-you-title {
+    font-size: 28px;
+  }
+
+  .thank-you-message {
+    font-size: 16px;
+  }
+
+  .next-title {
+    font-size: 20px;
+  }
+
+  .thank-you-content {
+    padding: var(--spacing-xl) var(--spacing-md);
+  }
+}
