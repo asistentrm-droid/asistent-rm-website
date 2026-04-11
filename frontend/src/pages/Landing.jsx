@@ -80,7 +80,6 @@ const Landing = () => {
           
           {/* Desktop Navigation */}
           <div className="nav-links desktop-nav">
-            <a href="#demo" className="nav-link">Demo</a>
             <a href="#section-calculator" className="nav-link">Kalkulator</a>
             <a href="#section-contact" className="nav-link">Kontakt</a>
             <a href="#demo" className="nav-link-cta">Preizkusi Demo</a>
@@ -99,7 +98,6 @@ const Landing = () => {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="mobile-menu">
-            <a href="#demo" className="mobile-nav-link" onClick={closeMobileMenu}>Demo</a>
             <a href="#section-calculator" className="mobile-nav-link" onClick={closeMobileMenu}>Kalkulator</a>
             <a href="#section-contact" className="mobile-nav-link" onClick={closeMobileMenu}>Kontakt</a>
             <a href="#demo" className="mobile-nav-link-cta" onClick={closeMobileMenu}>Preizkusi Demo</a>
