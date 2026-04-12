@@ -7,24 +7,24 @@ const UseCases = () => {
   const cases = [
     {
       icon: Scissors,
-      title: "Frizerski saloni",
-      shortDesc: "Rezervacije med strižnjem",
-      fullDesc: "AI sprejema rezervacije medtem ko vi stri��ete. Potrjuje termine, obvešča o spremembah in upravlja vaš koledar.",
-      example: "»Želim termin za striženje jutri ob 10h« → AI preveri razpoložljivost in rezervira."
+      title: "Frizerski in kozmetični saloni",
+      shortDesc: "Rezervacije in pregledi",
+      fullDesc: "AI sprejema rezervacije medtem ko delate s stranko. Potrjuje termine za frizerske storitve, kozmetične posege, manikuro, pedikuro in druge tretmaje. Obvešča o spremembah in upravlja vaš koledar.",
+      example: "\"Želim termin za striženje in barvanje jutri ob 10h\" → AI preveri razpoložljivost in rezervira."
     },
     {
       icon: Wrench,
       title: "Avtomehaniki",
-      description: "Servisi in popravila",
-      fullDesc: "Beleženje okvar, dogovarjanje terminov za servis in obveščanje o statusu popravila. AI razume tehnične težave.",
-      example: "»Avto ne vžge in curlja olje« → AI zabeleži problem, dogovori ogled in pošlje potrditev."
+      shortDesc: "Servisi in popravila",
+      fullDesc: "Beleženje okvar, dogovarjanje terminov za servis in obveščanje o statusu popravila. AI razume tehnične težave in ponudi proste termine.",
+      example: "\"Avto ne vžge in curlja olje\" → AI zabeleži problem, dogovori ogled in pošlje potrditev."
     },
     {
       icon: Heart,
-      title: "Zdravniki",
+      title: "Zdravniki in zobozdravniki",
       shortDesc: "Potrjevanje pregledov",
-      fullDesc: "Avtomatsko potrjevanje pregledov, odpovedovanje in prelaganje terminov. AI obvešča paciente o pomembnih informacijah.",
-      example: "»Moram premakniti termin za pregled« → AI ponudi proste termine in rezervira novega."
+      fullDesc: "Avtomatsko potrjevanje pregledov, odpovedovanje in prelaganje terminov. AI obvešča paciente o pomembnih informacijah, zdravniških navodilih in preventivnih pregledih.",
+      example: "\"Moram premakniti termin za pregled\" → AI ponudi proste termine in rezervira novega."
     },
     {
       icon: Home,
@@ -77,6 +77,12 @@ const UseCases = () => {
           })}
         </div>
       </div>
+    </section>
+  );
+};
+
+export default UseCases;
+   </div>
     </section>
   );
 };
