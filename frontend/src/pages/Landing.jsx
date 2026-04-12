@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Phone, Calendar, CheckCircle2, Calculator, Menu, X } from 'lucide-react';
 import '../styles/Landing.css';
-import FAQ from '../components/FAQ';
-import TrustBadges from '../components/TrustBadges';
 import UseCases from '../components/UseCases';
 
 const Landing = () => {
@@ -329,14 +327,8 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Trust Badges */}
-      <TrustBadges />
-
       {/* Use Cases Section */}
       <UseCases />
-
-      {/* FAQ Section */}
-      <FAQ />
 
       {/* Final CTA Section */}
       <section className="final-cta-section" id="section-contact">
