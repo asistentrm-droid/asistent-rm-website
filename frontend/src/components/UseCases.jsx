@@ -82,9 +82,3 @@ const UseCases = () => {
 };
 
 export default UseCases;
-   </div>
-    </section>
-  );
-};
-
-export default UseCases;
