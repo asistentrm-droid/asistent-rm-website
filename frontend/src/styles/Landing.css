@@ -314,10 +314,21 @@ body {
   min-height: 90vh;
   display: flex;
 
+.problem-solution-section {
+  padding: var(--spacing-xxl) var(--spacing-lg);
+  background: var(--color-white);
+}
+
 .problem-solution-container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
+.problem-solution-header {
   text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-xl) auto;
 }
 
 .problem-solution-title {
@@ -325,7 +336,7 @@ body {
   font-weight: 700;
   letter-spacing: -1.5px;
   color: var(--color-black);
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
   line-height: 1.2;
 }
 
@@ -333,7 +344,7 @@ body {
   font-size: 20px;
   font-weight: 400;
   color: var(--color-gray-600);
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: 0;
 }
 
 .problem-solution-grid {
