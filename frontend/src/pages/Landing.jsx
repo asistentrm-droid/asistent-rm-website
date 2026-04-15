@@ -235,11 +235,9 @@ const Landing = () => {
 
       {/* Problem → Solution Section - EXACT COPY of Use Cases */}
       <section className="problem-solution-section" id="section-solution">
-        <div className="problem-solution-container">
-          <div className="problem-solution-header">
-            <h2 className="problem-solution-title">Vaši izzivi. Naše rešitve.</h2>
-            <p className="problem-solution-subtitle">Klikni na problem in poglej rešitev</p>
-          </div>
+        <div className="problem-solution-container" style={{maxWidth: '900px', margin: '0 auto', textAlign: 'center'}}>
+          <h2 className="problem-solution-title">Vaši izzivi. Naše rešitve.</h2>
+          <p className="problem-solution-subtitle">Klikni na problem in poglej rešitev</p>
           
           <div className="problem-solution-grid">
             {[
