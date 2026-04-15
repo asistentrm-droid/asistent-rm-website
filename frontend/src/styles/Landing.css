@@ -314,12 +314,6 @@ body {
   min-height: 90vh;
   display: flex;
 
-/* Problem → Solution Section - EXACT SAME STYLE as Use Cases */
-.problem-solution-section {
-  background: var(--color-white);
-  padding: var(--spacing-xxl) var(--spacing-lg);
-}
-
 .problem-solution-container {
   max-width: 900px;
   margin: 0 auto;

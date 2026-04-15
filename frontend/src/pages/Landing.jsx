@@ -233,45 +233,49 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Problem → Solution Section - Interactive */}
+      {/* Problem → Solution Section - EXACT COPY of Use Cases */}
       <section className="problem-solution-section" id="section-solution">
         <div className="problem-solution-container">
           <h2 className="problem-solution-title">Vaši izzivi. Naše rešitve.</h2>
-          <p className="problem-solution-subtitle">Klikni na problem in poglej kako ga rešimo</p>
+          <p className="problem-solution-subtitle">Klikni na problem in poglej rešitev</p>
           
           <div className="problem-solution-grid">
             {[
               {
                 problemIcon: XCircle,
                 problemTitle: "Zamujeni klici",
-                problemDesc: "Vsak nezajet klic je izgubljena priložnost",
+                problemShort: "Izgubljene priložnosti",
                 solutionIcon: CheckCircle2,
                 solutionTitle: "AI odgovori 24/7",
-                solutionDesc: "Vsak klic sprejet. Vsaka stranka obravnavana. AI tajnica ne spi nikoli. Brez zamujenih priložnosti, brez izgubljenih strank."
+                solutionFull: "Vsak klic sprejet. Vsaka stranka obravnavana. AI tajnica ne spi nikoli. Brez zamujenih priložnosti, brez izgubljenih strank.",
+                example: "Stranka pokliče ob 22h → AI sprejme klic, rezervira termin in pošlje potrditev."
               },
               {
                 problemIcon: Clock,
                 problemTitle: "Izgubljen čas",
-                problemDesc: "Ure na telefonu namesto osredotočenosti na delo",
+                problemShort: "Ure na telefonu",
                 solutionIcon: Zap,
                 solutionTitle: "Popolna avtomatizacija",
-                solutionDesc: "AI upravlja vse klice medtem ko vi delate tisto kar znate najboljše. Ni več prekinitev, ni več izgubljenega časa."
+                solutionFull: "AI upravlja vse klice medtem ko vi delate tisto kar znate najboljše. Ni več prekinitev, ni več izgubljenega časa.",
+                example: "Med delom pride 5 klicev → AI vse obravnava, vi ostanete osredotočeni."
               },
               {
                 problemIcon: RefreshCw,
                 problemTitle: "Kaos v koledarju",
-                problemDesc: "Pozabljeni termini in podvojene rezervacije",
+                problemShort: "Podvojene rezervacije",
                 solutionIcon: BarChart,
                 solutionTitle: "Samodejno urejanje",
-                solutionDesc: "AI vpiše vse termine v vaš koledar, obvešča stranke in poskrbi da ni prekrivanj. Organizacija brez napora."
+                solutionFull: "AI vpiše vse termine v vaš koledar, obvešča stranke in poskrbi da ni prekrivanj. Organizacija brez napora.",
+                example: "Stranka želi premakniti termin → AI najde nov termin in posodobi koledar."
               },
               {
                 problemIcon: Frown,
                 problemTitle: "Razočarane stranke",
-                problemDesc: "Dolge čakalne dobe in nedosegljivost",
+                problemShort: "Dolge čakalne dobe",
                 solutionIcon: Smile,
                 solutionTitle: "Takojšen odziv",
-                solutionDesc: "AI odgovori v 3 sekundah. Stranke dobijo informacije takoj, ne čakajo, so zadovoljne. Vi pridobite zaupanje."
+                solutionFull: "AI odgovori v 3 sekundah. Stranke dobijo informacije takoj, ne čakajo, so zadovoljne. Vi pridobite zaupanje.",
+                example: "Stranka ima vprašanje → AI takoj odgovori z točnimi informacijami."
               }
             ].map((item, index) => {
               const ProblemIcon = item.problemIcon;
@@ -281,35 +285,33 @@ const Landing = () => {
               return (
                 <div 
                   key={index}
-                  className={`ps-card ${isActive ? 'active' : ''}`}
+                  className={`use-case-card-v2 ${isActive ? 'active' : ''}`}
                   onClick={() => setIsVisible(prev => ({ ...prev, [`ps-${index}`]: !prev[`ps-${index}`] }))}
                 >
-                  <div className="ps-card-header">
-                    <div className="ps-card-number">{String(index + 1).padStart(2, '0')}</div>
-                    <div className="ps-card-problem">
-                      <div className="ps-card-icon problem-icon-v2">
-                        <ProblemIcon size={24} />
-                      </div>
-                      <div>
-                        <h3 className="ps-card-title">{item.problemTitle}</h3>
-                        <p className="ps-card-desc">{item.problemDesc}</p>
-                      </div>
+                  <div className="use-case-header">
+                    <div className="use-case-icon-wrapper-v2">
+                      <ProblemIcon className="use-case-icon-v2" />
                     </div>
-                    <div className={`ps-chevron ${isActive ? 'rotated' : ''}`}>
-                      <ArrowRight size={20} />
+                    <div className="use-case-title-wrapper">
+                      <h3 className="use-case-title-v2">{item.problemTitle}</h3>
+                      <p className="use-case-short-desc">{item.problemShort}</p>
                     </div>
+                    <ArrowRight className={`chevron-icon ${isActive ? 'rotated' : ''}`} />
                   </div>
                   
                   {isActive && (
-                    <div className="ps-card-solution">
-                      <div className="solution-divider"></div>
-                      <div className="solution-content">
-                        <div className="ps-card-icon solution-icon-v2">
-                          <SolutionIcon size={24} />
+                    <div className="use-case-expanded">
+                      <div style={{ display: 'flex', gap: 'var(--spacing-md)', alignItems: 'flex-start' }}>
+                        <div className="use-case-icon-wrapper-v2">
+                          <SolutionIcon className="use-case-icon-v2" />
                         </div>
-                        <div>
-                          <h4 className="solution-card-title">{item.solutionTitle}</h4>
-                          <p className="solution-card-desc">{item.solutionDesc}</p>
+                        <div style={{ flex: 1 }}>
+                          <h4 style={{ fontSize: '18px', fontWeight: 600, color: 'var(--color-black)', marginBottom: '8px' }}>{item.solutionTitle}</h4>
+                          <p className="use-case-full-desc">{item.solutionFull}</p>
+                          <div className="use-case-example-v2">
+                            <span className="example-label-v2">Primer:</span>
+                            <p className="example-text-v2">{item.example}</p>
+                          </div>
                         </div>
                       </div>
                     </div>
