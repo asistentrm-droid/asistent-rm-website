@@ -233,41 +233,6 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Solution Section */}
-      <section className="solution-section" id="section-solution">
-        <div className={`solution-content ${isVisible['section-solution'] ? 'visible' : ''}`}>
-          <h2 className="section-title">Rešitev</h2>
-          
-          <div className="solution-graphic">
-            <img 
-              src="https://customer-assets.emergentagent.com/job_ai-secretary-22/artifacts/rqfusj80_RM-grafika.png" 
-              alt="Asistent RM delovanje" 
-              className="graphic-image"
-            />
-          </div>
-
-          <div className="solution-steps">
-            <div className="solution-step step-1">
-              <div className="step-number">1</div>
-              <div className="step-text">AI dvigne klic.</div>
-            </div>
-            <div className="solution-step step-2">
-              <div className="step-number">2</div>
-              <div className="step-text">Govori s stranko.</div>
-            </div>
-            <div className="solution-step step-3">
-              <div className="step-number">3</div>
-              <div className="step-text">Rezervira termin.</div>
-            </div>
-            <div className="solution-step step-4">
-              <div className="step-number">4</div>
-              <div className="step-text">Vpiše v koledar.</div>
-            </div>
-          </div>
-          <p className="solution-tagline">To je to.</p>
-        </div>
-      </section>
-
       {/* Value Section */}
       <section className="value-section" id="section-value">
         <div className={`value-content ${isVisible['section-value'] ? 'visible' : ''}`}>
