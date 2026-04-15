@@ -233,6 +233,76 @@ const Landing = () => {
         </div>
       </section>
 
+      {/* Problem → Solution Section */}
+      <section className="problem-solution-section" id="section-solution">
+        <div className="problem-solution-container">
+          <h2 className="problem-solution-title">Od problema do rešitve</h2>
+          <p className="problem-solution-subtitle">Preprosto. Učinkovito. Avtomatizirano.</p>
+
+          <div className="problem-solution-grid">
+            {/* Item 1 */}
+            <div className="ps-item">
+              <div className="problem-side">
+                <div className="problem-icon">❌</div>
+                <h3 className="problem-title">Zamujeni klici</h3>
+                <p className="problem-desc">Vsak nezajet klic je izgubljena priložnost. Stranke gredo h konkurenci.</p>
+              </div>
+              <div className="arrow-divider">→</div>
+              <div className="solution-side">
+                <div className="solution-icon">✅</div>
+                <h3 className="solution-title">AI odgovori 24/7</h3>
+                <p className="solution-desc">Vsak klic sprejet. Vsaka stranka obravnavana. Brez izjem.</p>
+              </div>
+            </div>
+
+            {/* Item 2 */}
+            <div className="ps-item">
+              <div className="problem-side">
+                <div className="problem-icon">⏰</div>
+                <h3 className="problem-title">Izgubljen čas</h3>
+                <p className="problem-desc">Ure na telefonu namesto osredotočenosti na delo in stranke pred vami.</p>
+              </div>
+              <div className="arrow-divider">→</div>
+              <div className="solution-side">
+                <div className="solution-icon">🚀</div>
+                <h3 className="solution-title">Popolna avtomatizacija</h3>
+                <p className="solution-desc">AI upravlja klice. Vi se osredotočite na delo ki ga počnete najboljše.</p>
+              </div>
+            </div>
+
+            {/* Item 3 */}
+            <div className="ps-item">
+              <div className="problem-side">
+                <div className="problem-icon">📅</div>
+                <h3 className="problem-title">Kaos v koledarju</h3>
+                <p className="problem-desc">Pozabljeni termini, podvojene rezervacije, zmeda pri organizaciji.</p>
+              </div>
+              <div className="arrow-divider">→</div>
+              <div className="solution-side">
+                <div className="solution-icon">📊</div>
+                <h3 className="solution-title">Samodejno urejanje</h3>
+                <p className="solution-desc">AI vpiše, organizira in obvešča. Vse na enem mestu, brez napak.</p>
+              </div>
+            </div>
+
+            {/* Item 4 */}
+            <div className="ps-item">
+              <div className="problem-side">
+                <div className="problem-icon">😤</div>
+                <h3 className="problem-title">Razočarane stranke</h3>
+                <p className="problem-desc">Dolge čakalne dobe, nedosegljivost, počasen odziv na vprašanja.</p>
+              </div>
+              <div className="arrow-divider">→</div>
+              <div className="solution-side">
+                <div className="solution-icon">😊</div>
+                <h3 className="solution-title">Takojšen odziv</h3>
+                <p className="solution-desc">AI odgovori v 3 sekundah. Stranke zadovoljne, vi brez stresa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Value Section */}
       <section className="value-section" id="section-value">
         <div className={`value-content ${isVisible['section-value'] ? 'visible' : ''}`}>

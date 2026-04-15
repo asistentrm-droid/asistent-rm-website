@@ -313,6 +313,96 @@ body {
 .solution-section {
   min-height: 90vh;
   display: flex;
+
+/* Problem → Solution Section */
+.problem-solution-section {
+  background: var(--color-white);
+  padding: var(--spacing-xxl) var(--spacing-lg);
+}
+
+.problem-solution-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.problem-solution-title {
+  font-size: 52px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  color: var(--color-black);
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+}
+
+.problem-solution-subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-gray-600);
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.problem-solution-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.ps-item {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--spacing-lg);
+  align-items: center;
+  padding: var(--spacing-xl);
+  background: var(--color-gray-50);
+  border-radius: 24px;
+  transition: var(--transition-smooth);
+}
+
+.ps-item:hover {
+  background: var(--color-white);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+.problem-side,
+.solution-side {
+  text-align: left;
+}
+
+.problem-icon,
+.solution-icon {
+  font-size: 40px;
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.problem-title,
+.solution-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-black);
+  margin-bottom: var(--spacing-sm);
+}
+
+.problem-desc,
+.solution-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-gray-700);
+  margin: 0;
+}
+
+.arrow-divider {
+  font-size: 32px;
+  color: var(--color-black);
+  font-weight: 700;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+
   align-items: center;
   justify-content: center;
   padding: var(--spacing-xxl) var(--spacing-lg);
@@ -1372,6 +1462,37 @@ body {
 
   .section-title {
     font-size: 36px;
+  }
+
+  /* Problem → Solution Mobile */
+  .problem-solution-title {
+    font-size: 36px;
+  }
+
+  .ps-item {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    padding: var(--spacing-lg);
+  }
+
+  .arrow-divider {
+    transform: rotate(90deg);
+    margin: var(--spacing-sm) 0;
+  }
+
+  .problem-icon,
+  .solution-icon {
+    font-size: 32px;
+  }
+
+  .problem-title,
+  .solution-title {
+    font-size: 18px;
+  }
+
+  .problem-desc,
+  .solution-desc {
+    font-size: 14px;
   }
 
   .step-text {
