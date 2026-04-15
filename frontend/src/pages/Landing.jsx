@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Phone, Calendar, CheckCircle2, Calculator, Menu, X } from 'lucide-react';
+import { ArrowRight, Phone, Calendar, CheckCircle2, Calculator, Menu, X, XCircle, Clock, RefreshCw, Frown, Smile, Zap, BarChart } from 'lucide-react';
 import '../styles/Landing.css';
 import UseCases from '../components/UseCases';
 
@@ -236,67 +236,118 @@ const Landing = () => {
       {/* Problem → Solution Section */}
       <section className="problem-solution-section" id="section-solution">
         <div className="problem-solution-container">
-          <h2 className="problem-solution-title">Od problema do rešitve</h2>
-          <p className="problem-solution-subtitle">Preprosto. Učinkovito. Avtomatizirano.</p>
-
+          <h2 className="problem-solution-title">Razumemo vaše izzive</h2>
+          
           <div className="problem-solution-grid">
             {/* Item 1 */}
             <div className="ps-item">
-              <div className="problem-side">
-                <div className="problem-icon">❌</div>
-                <h3 className="problem-title">Zamujeni klici</h3>
-                <p className="problem-desc">Vsak nezajet klic je izgubljena priložnost. Stranke gredo h konkurenci.</p>
-              </div>
-              <div className="arrow-divider">→</div>
-              <div className="solution-side">
-                <div className="solution-icon">✅</div>
-                <h3 className="solution-title">AI odgovori 24/7</h3>
-                <p className="solution-desc">Vsak klic sprejet. Vsaka stranka obravnavana. Brez izjem.</p>
+              <div className="ps-number">01</div>
+              <div className="ps-content">
+                <div className="ps-problem">
+                  <div className="ps-icon-wrapper problem-icon-bg">
+                    <XCircle className="ps-icon" />
+                  </div>
+                  <div>
+                    <h3 className="ps-title">Zamujeni klici</h3>
+                    <p className="ps-desc">Vsak nezajet klic je izgubljena priložnost. Stranke gredo h konkurenci.</p>
+                  </div>
+                </div>
+                <div className="ps-arrow">
+                  <ArrowRight size={24} />
+                </div>
+                <div className="ps-solution">
+                  <div className="ps-icon-wrapper solution-icon-bg">
+                    <CheckCircle2 className="ps-icon" />
+                  </div>
+                  <div>
+                    <h3 className="ps-title">AI odgovori 24/7</h3>
+                    <p className="ps-desc">Vsak klic sprejet. Vsaka stranka obravnavana. Brez izjem.</p>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Item 2 */}
             <div className="ps-item">
-              <div className="problem-side">
-                <div className="problem-icon">⏰</div>
-                <h3 className="problem-title">Izgubljen čas</h3>
-                <p className="problem-desc">Ure na telefonu namesto osredotočenosti na delo in stranke pred vami.</p>
-              </div>
-              <div className="arrow-divider">→</div>
-              <div className="solution-side">
-                <div className="solution-icon">🚀</div>
-                <h3 className="solution-title">Popolna avtomatizacija</h3>
-                <p className="solution-desc">AI upravlja klice. Vi se osredotočite na delo ki ga počnete najboljše.</p>
+              <div className="ps-number">02</div>
+              <div className="ps-content">
+                <div className="ps-problem">
+                  <div className="ps-icon-wrapper problem-icon-bg">
+                    <Clock className="ps-icon" />
+                  </div>
+                  <div>
+                    <h3 className="ps-title">Izgubljen čas</h3>
+                    <p className="ps-desc">Ure na telefonu namesto osredotočenosti na delo in stranke.</p>
+                  </div>
+                </div>
+                <div className="ps-arrow">
+                  <ArrowRight size={24} />
+                </div>
+                <div className="ps-solution">
+                  <div className="ps-icon-wrapper solution-icon-bg">
+                    <Zap className="ps-icon" />
+                  </div>
+                  <div>
+                    <h3 className="ps-title">Popolna avtomatizacija</h3>
+                    <p className="ps-desc">AI upravlja klice. Vi se osredotočite na delo.</p>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Item 3 */}
             <div className="ps-item">
-              <div className="problem-side">
-                <div className="problem-icon">📅</div>
-                <h3 className="problem-title">Kaos v koledarju</h3>
-                <p className="problem-desc">Pozabljeni termini, podvojene rezervacije, zmeda pri organizaciji.</p>
-              </div>
-              <div className="arrow-divider">→</div>
-              <div className="solution-side">
-                <div className="solution-icon">📊</div>
-                <h3 className="solution-title">Samodejno urejanje</h3>
-                <p className="solution-desc">AI vpiše, organizira in obvešča. Vse na enem mestu, brez napak.</p>
+              <div className="ps-number">03</div>
+              <div className="ps-content">
+                <div className="ps-problem">
+                  <div className="ps-icon-wrapper problem-icon-bg">
+                    <RefreshCw className="ps-icon" />
+                  </div>
+                  <div>
+                    <h3 className="ps-title">Kaos v koledarju</h3>
+                    <p className="ps-desc">Pozabljeni termini, podvojene rezervacije, zmeda.</p>
+                  </div>
+                </div>
+                <div className="ps-arrow">
+                  <ArrowRight size={24} />
+                </div>
+                <div className="ps-solution">
+                  <div className="ps-icon-wrapper solution-icon-bg">
+                    <BarChart className="ps-icon" />
+                  </div>
+                  <div>
+                    <h3 className="ps-title">Samodejno urejanje</h3>
+                    <p className="ps-desc">AI organizira vse. Brez napak. Brez stresa.</p>
+                  </div>
+                </div>
               </div>
             </div>
 
             {/* Item 4 */}
             <div className="ps-item">
-              <div className="problem-side">
-                <div className="problem-icon">😤</div>
-                <h3 className="problem-title">Razočarane stranke</h3>
-                <p className="problem-desc">Dolge čakalne dobe, nedosegljivost, počasen odziv na vprašanja.</p>
-              </div>
-              <div className="arrow-divider">→</div>
-              <div className="solution-side">
-                <div className="solution-icon">😊</div>
-                <h3 className="solution-title">Takojšen odziv</h3>
-                <p className="solution-desc">AI odgovori v 3 sekundah. Stranke zadovoljne, vi brez stresa.</p>
+              <div className="ps-number">04</div>
+              <div className="ps-content">
+                <div className="ps-problem">
+                  <div className="ps-icon-wrapper problem-icon-bg">
+                    <Frown className="ps-icon" />
+                  </div>
+                  <div>
+                    <h3 className="ps-title">Razočarane stranke</h3>
+                    <p className="ps-desc">Dolge čakalne dobe, nedosegljivost, počasen odziv.</p>
+                  </div>
+                </div>
+                <div className="ps-arrow">
+                  <ArrowRight size={24} />
+                </div>
+                <div className="ps-solution">
+                  <div className="ps-icon-wrapper solution-icon-bg">
+                    <Smile className="ps-icon" />
+                  </div>
+                  <div>
+                    <h3 className="ps-title">Takojšen odziv</h3>
+                    <p className="ps-desc">AI odgovori v 3 sekundah. Stranke zadovoljne.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
