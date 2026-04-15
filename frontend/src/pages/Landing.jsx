@@ -176,6 +176,16 @@ const Landing = () => {
           <h2 className="demo-title-main">Govori z AI tajnico. Zdaj.</h2>
           <p className="demo-subtitle">Pokliči in prepričaj se kako AI obravnava tvoje stranke</p>
           
+          {/* Beta Disclaimer */}
+          <div className="beta-disclaimer">
+            <div className="beta-icon">✨</div>
+            <div className="beta-text">
+              <strong>Early Access verzija</strong>
+              <p>AI tajnica je v fazi razvoja. Demo klic omogoča testiranje osnovnih funkcij. 
+              Aktivno delamo na izboljšavah in dodatnih funkcionalnostih za polno izkušnjo.</p>
+            </div>
+          </div>
+
           <div className="demo-box-v2">
             <div className="demo-phone-wrapper">
               <div className="pulse-ring"></div>
