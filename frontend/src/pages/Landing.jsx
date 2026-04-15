@@ -172,13 +172,45 @@ const Landing = () => {
       {/* Demo Section - MOVED UP (Priority!) */}
       <section className="demo-section" id="demo">
         <div className={`demo-content ${isVisible['demo'] ? 'visible' : ''}`}>
-          <h2 className="section-title">Preizkusite v živo</h2>
-          <div className="demo-box">
-            <Phone className="demo-icon" />
-            <p className="demo-text">Pokliči in preizkusi AI tajnico</p>
-            <a href="tel:+38618285739" className="demo-phone">+386 18 285 739</a>
-            <p className="demo-subtext">Izkusite kako AI obravnava klice vaših strank</p>
+          <div className="demo-badge">🎙️ POSKUSI V ŽIVO</div>
+          <h2 className="demo-title-main">Govori z AI tajnico. Zdaj.</h2>
+          <p className="demo-subtitle">Pokliči in prepričaj se kako AI obravnava tvoje stranke</p>
+          
+          <div className="demo-box-v2">
+            <div className="demo-phone-wrapper">
+              <div className="pulse-ring"></div>
+              <div className="pulse-ring delay-1"></div>
+              <Phone className="demo-icon-v2" />
+            </div>
+            
+            <div className="demo-number-section">
+              <p className="demo-label">Pokliči in testiraj AI</p>
+              <a href="tel:+38618285739" className="demo-phone-v2">
+                +386 18 285 739
+              </a>
+              <p className="demo-free-badge">100% BREZPLAČEN TEST</p>
+            </div>
+
+            <div className="demo-steps">
+              <div className="demo-step">
+                <span className="step-num">1</span>
+                <span className="step-text">Pokliči številko</span>
+              </div>
+              <div className="demo-step">
+                <span className="step-num">2</span>
+                <span className="step-text">Govori z AI kot s stranko</span>
+              </div>
+              <div className="demo-step">
+                <span className="step-num">3</span>
+                <span className="step-text">Prepričaj se v učinkovitost</span>
+              </div>
+            </div>
           </div>
+
+          <p className="demo-note">
+            <span className="note-icon">💡</span>
+            Res AI odgovori. Res razume slovenščino. Poskusi zdaj.
+          </p>
         </div>
       </section>
 
