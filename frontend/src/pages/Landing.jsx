@@ -113,13 +113,13 @@ const Landing = () => {
       {/* Navigation */}
       <nav className="navigation">
         <div className="nav-content">
-          <div className="nav-logo">
+          <a href="#hero" className="nav-logo" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
             <img 
               src="https://customer-assets.emergentagent.com/job_ai-secretary-22/artifacts/taeyavvy_Rm-logo.png" 
               alt="Asistent RM Logo" 
               className="logo-image"
             />
-          </div>
+          </a>
           
           {/* Desktop Navigation */}
           <div className="nav-links desktop-nav">
@@ -234,9 +234,9 @@ const Landing = () => {
       </section>
 
       {/* Problem → Solution Section - EXACT COPY of Use Cases */}
-      <section className="problem-solution-section" id="section-solution">
+      <section className="problem-solution-section" id="section-solution" style={{paddingBottom: 'var(--spacing-xxl)'}}>
         <div className="problem-solution-container" style={{maxWidth: '900px', margin: '0 auto', textAlign: 'center'}}>
-          <h2 className="problem-solution-title">Vaši izzivi. Naše rešitve.</h2>
+          <h2 className="problem-solution-title" style={{fontSize: '56px', fontWeight: '700'}}>Vaši izzivi. Naše rešitve.</h2>
           <p className="problem-solution-subtitle">Klikni na problem in poglej rešitev</p>
           
           <div className="problem-solution-grid">
