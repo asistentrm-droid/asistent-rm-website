@@ -15,5 +15,22 @@
     <body>
         <noscript>You need to enable JavaScript to run this app.</noscript>
         <div id="root"></div>
+        
+        <!-- Crisp Chat Bot -->
+        <script type="text/javascript">
+            window.$crisp=[];
+            window.CRISP_WEBSITE_ID="fddffe76-a8c3-4e85-98bb-4e86b54d4207";
+            
+            // Nastavitev vašega RM loga kot ikone - PRED nalaganjem
+            $crisp.push(["config", "avatar:url", "https://customer-assets.emergentagent.com/job_ai-secretary-22/artifacts/taeyavvy_Rm-logo.png"]);
+            
+            (function(){
+                d=document;
+                s=d.createElement("script");
+                s.src="https://client.crisp.chat/l.js";
+                s.async=1;
+                d.getElementsByTagName("head")[0].appendChild(s);
+            })();
+        </script>
     </body>
 </html>
