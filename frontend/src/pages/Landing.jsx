@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Phone, Calendar, CheckCircle2, Calculator, Menu, X, XCircle, Clock, RefreshCw, Frown, Smile, Zap, BarChart } from 'lucide-react';
+import { ArrowRight, Phone, Calendar, CheckCircle2, Calculator, Menu, X, XCircle, Clock, RefreshCw, Frown, Smile, Zap, BarChart, Youtube, Facebook, Instagram, Mail, PhoneIcon } from 'lucide-react';
 import '../styles/Landing.css';
 import UseCases from '../components/UseCases';
 
@@ -472,19 +472,61 @@ const Landing = () => {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <div className="footer-logo">
-            <img 
-              src="https://customer-assets.emergentagent.com/job_ai-secretary-22/artifacts/taeyavvy_Rm-logo.png" 
-              alt="Asistent RM Logo" 
-              className="footer-logo-image"
-            />
+          <div className="footer-top">
+            <div className="footer-section">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_ai-secretary-22/artifacts/taeyavvy_Rm-logo.png" 
+                alt="Asistent RM" 
+                className="footer-logo-image"
+              />
+              <p className="footer-tagline">AI tajnica, ki sprejema klice namesto vas.</p>
+            </div>
+            
+            <div className="footer-section">
+              <h4 className="footer-heading">Pravno</h4>
+              <div className="footer-links-column">
+                <a href="/pogoji" className="footer-link">Pogoji uporabe</a>
+                <a href="/zasebnost" className="footer-link">Zasebnost</a>
+              </div>
+            </div>
+            
+            <div className="footer-section">
+              <h4 className="footer-heading">Kontakt</h4>
+              <div className="footer-contact">
+                <a href="mailto:info@asistentrm.org" className="footer-contact-item">
+                  <Mail size={16} />
+                  <span>info@asistentrm.org</span>
+                </a>
+                <a href="tel:+38668660690" className="footer-contact-item">
+                  <PhoneIcon size={16} />
+                  <span>068 660 690</span>
+                </a>
+                <a href="tel:+38641438869" className="footer-contact-item">
+                  <PhoneIcon size={16} />
+                  <span>041 438 869</span>
+                </a>
+              </div>
+            </div>
+            
+            <div className="footer-section">
+              <h4 className="footer-heading">Sledite nam</h4>
+              <div className="footer-social">
+                <a href="https://www.youtube.com/@RMASISTENT" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="YouTube">
+                  <Youtube size={20} />
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61584933238897&locale=sl_SI" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Facebook">
+                  <Facebook size={20} />
+                </a>
+                <a href="https://www.instagram.com/rmasistent/" target="_blank" rel="noopener noreferrer" className="footer-social-link" aria-label="Instagram">
+                  <Instagram size={20} />
+                </a>
+              </div>
+            </div>
           </div>
-          <div className="footer-links">
-            <a href="#" className="footer-link">Pogoji uporabe</a>
-            <a href="#" className="footer-link">Zasebnost</a>
-            <a href="#" className="footer-link">Kontakt</a>
+          
+          <div className="footer-bottom">
+            <div className="footer-copy">© 2025 Asistent RM. Vse pravice pridržane.</div>
           </div>
-          <div className="footer-copy">© 2025 Asistent RM. Vse pravice pridržane.</div>
         </div>
       </footer>
     </div>
