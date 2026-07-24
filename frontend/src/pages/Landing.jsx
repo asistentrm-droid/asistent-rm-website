@@ -125,6 +125,7 @@ const Landing = () => {
           <div className="nav-links desktop-nav">
             <a href="#section-calculator" className="nav-link">Kalkulator</a>
             <a href="#section-contact" className="nav-link">Kontakt</a>
+            <a href="#demo" className="nav-link-cta">Preizkusi Demo</a>
           </div>
 
           {/* Mobile Hamburger */}
@@ -142,6 +143,7 @@ const Landing = () => {
           <div className="mobile-menu">
             <a href="#section-calculator" className="mobile-nav-link" onClick={closeMobileMenu}>Kalkulator</a>
             <a href="#section-contact" className="mobile-nav-link" onClick={closeMobileMenu}>Kontakt</a>
+            <a href="#demo" className="mobile-nav-link-cta" onClick={closeMobileMenu}>Preizkusi Demo</a>
           </div>
         )}
       </nav>
@@ -164,13 +166,14 @@ const Landing = () => {
         </div>
       </section>
 
-      {/* Demo Section - TEMPORARILY HIDDEN (Premium required) 
+      {/* Demo Section - MOVED UP (Priority!) */}
       <section className="demo-section" id="demo">
         <div className={`demo-content ${isVisible['demo'] ? 'visible' : ''}`}>
           <div className="demo-badge">🎙️ POSKUSI V ŽIVO</div>
           <h2 className="demo-title-main">Govori z AI tajnico. Zdaj.</h2>
           <p className="demo-subtitle">Pokliči in prepričaj se kako AI obravnava tvoje stranke</p>
           
+          {/* Beta Disclaimer */}
           <div className="beta-disclaimer">
             <div className="beta-icon">✨</div>
             <div className="beta-text">
@@ -217,7 +220,6 @@ const Landing = () => {
           </p>
         </div>
       </section>
-      */}
 
       {/* Problem Section */}
       <section className="problem-section" id="section-problem">
@@ -412,8 +414,8 @@ const Landing = () => {
           </div>
 
           <div className="calculator-cta">
-            <a href="#section-contact" className="btn-primary-large">
-              Kontaktirajte nas
+            <a href="#demo" className="btn-primary-large">
+              Preizkusi Demo
             </a>
           </div>
         </div>
