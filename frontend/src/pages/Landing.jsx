@@ -482,6 +482,7 @@ const Landing = () => {
             <div className="footer-section">
               <h4 className="footer-heading">Pravno</h4>
               <div className="footer-links-column">
+                <a href="/splosni-pogoji" className="footer-link">Splošni pogoji</a>
                 <a href="/pogoji" className="footer-link">Pogoji uporabe</a>
                 <a href="/zasebnost" className="footer-link">Zasebnost</a>
               </div>

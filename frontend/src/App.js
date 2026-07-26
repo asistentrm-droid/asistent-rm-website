@@ -4,6 +4,7 @@ import Landing from "./pages/Landing";
 import ThankYou from "./pages/ThankYou";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
+import GeneralTerms from "./pages/GeneralTerms";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/hvala" element={<ThankYou />} />
           <Route path="/pogoji" element={<Terms />} />
           <Route path="/zasebnost" element={<Privacy />} />
+          <Route path="/splosni-pogoji" element={<GeneralTerms />} />
         </Routes>
       </BrowserRouter>
     </div>
