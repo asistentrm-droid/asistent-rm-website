@@ -1,37 +1,114 @@
 import React, { useState } from 'react';
-import { Scissors, Wrench, Heart, Home, ChevronDown } from 'lucide-react';
+import { Scissors, Wrench, Heart, Home, Building2, Truck, UtensilsCrossed, Scale, Dumbbell, PawPrint, Calculator, Phone, Briefcase, ShoppingBag, Plane, ChevronDown } from 'lucide-react';
 
 const UseCases = () => {
   const [activeCard, setActiveCard] = useState(null);
 
   const cases = [
     {
-      icon: Scissors,
-      title: "Frizerski in kozmetični saloni",
-      shortDesc: "Rezervacije in pregledi",
-      fullDesc: "AI sprejema rezervacije medtem ko delate s stranko. Potrjuje termine za frizerske storitve, kozmetične posege, manikuro, pedikuro in druge tretmaje. Obvešča o spremembah in upravlja vaš koledar.",
-      example: "\"Želim termin za striženje in barvanje jutri ob 10h\" → AI preveri razpoložljivost in rezervira."
+      icon: Heart,
+      title: "Zdravstveni domovi & Klinike",
+      shortDesc: "Rezervacija pregledov",
+      fullDesc: "Avtomatsko potrjevanje pregledov, odpovedovanje in prelaganje terminov. AI obvešča paciente o pomembnih informacijah, zdravniških navodilih in preventivnih pregledih.",
+      example: "\"Potrebujem termin za pregled\" → AI ponudi proste termine in rezervira."
+    },
+    {
+      icon: Building2,
+      title: "Banke & Finančne institucije",
+      shortDesc: "Dogovarjanje sestankov",
+      fullDesc: "Rezervacija sestankov za odpiranje računov, kredite, naložbe. AI pomaga strankam najti pravi termin za svetovanje in administrativne postopke.",
+      example: "\"Zanima me posojilo za stanovanje\" → AI dogovori sestanek s svetovalcem."
+    },
+    {
+      icon: Truck,
+      title: "Logistika & Dostava",
+      shortDesc: "Koordinacija dostav",
+      fullDesc: "Dogovarjanje terminov prevzema in dostave, potrjevanje naslovov, obveščanje o zamudah. AI upravlja razpored in komunicira s strankami 24/7.",
+      example: "\"Kdaj bo prispel paket?\" → AI preveri status in sporoči natančen čas dostave."
+    },
+    {
+      icon: UtensilsCrossed,
+      title: "Restavracije & Gostinstvo",
+      shortDesc: "Rezervacije miz",
+      fullDesc: "Sprejem rezervacij za mize, večje skupine, dogodke. AI beleži posebne zahteve (alergije, otroci) in obvešča o spremembah.",
+      example: "\"Rezervacija za 6 oseb v petek zvečer\" → AI preveri razpoložljivost in potrdi."
     },
     {
       icon: Wrench,
-      title: "Avtomehaniki",
+      title: "Avtomobilske delavnice",
       shortDesc: "Servisi in popravila",
       fullDesc: "Beleženje okvar, dogovarjanje terminov za servis in obveščanje o statusu popravila. AI razume tehnične težave in ponudi proste termine.",
-      example: "\"Avto ne vžge in curlja olje\" → AI zabeleži problem, dogovori ogled in pošlje potrditev."
-    },
-    {
-      icon: Heart,
-      title: "Zdravniki in zobozdravniki",
-      shortDesc: "Potrjevanje pregledov",
-      fullDesc: "Avtomatsko potrjevanje pregledov, odpovedovanje in prelaganje terminov. AI obvešča paciente o pomembnih informacijah, zdravniških navodilih in preventivnih pregledih.",
-      example: "\"Moram premakniti termin za pregled\" → AI ponudi proste termine in rezervira novega."
+      example: "\"Motor dela čudno\" → AI zabeleži problem, dogovori ogled in pošlje potrditev."
     },
     {
       icon: Home,
-      title: "Nepremičninski agenti",
+      title: "Nepremičninske agencije",
       shortDesc: "Dogovarjanje ogledov",
-      fullDesc: "Kvalifikacija potencialnih kupcev, dogovarjanje ogledov nepremičnin in zbiranje osnovnih informacij o željah.",
-      example: "»Zanima me ogled hiše na Bledu« → AI dogovori termin ogleda in zabeleži želje."
+      fullDesc: "Kvalifikacija potencialnih kupcev, dogovarjanje ogledov nepremičnin in zbiranje osnovnih informacij o željah kupcev.",
+      example: "\"Želim ogledati stanovanje\" → AI dogovori termin ogleda in zabeleži želje."
+    },
+    {
+      icon: Scissors,
+      title: "Frizerski & Kozmetični saloni",
+      shortDesc: "Rezervacije tretmajev",
+      fullDesc: "AI sprejema rezervacije medtem ko delate s stranko. Potrjuje termine za striženje, barvanje, manikuro, pedikuro in druge tretmaje.",
+      example: "\"Termin za striženje jutri ob 10h\" → AI preveri razpoložljivost in rezervira."
+    },
+    {
+      icon: Scale,
+      title: "Pravne pisarne & Odvetniki",
+      shortDesc: "Prva posvetovanja",
+      fullDesc: "Sprejem klicev novih strank, dogovarjanje prvega posvetovanja, zbiranje osnovnih podatkov o zadevi. AI diskretno obravnava občutljive informacije.",
+      example: "\"Potrebujem pravno pomoč\" → AI dogovori sestanek in zabeleži področje prava."
+    },
+    {
+      icon: Briefcase,
+      title: "Gradbena podjetja",
+      shortDesc: "Ponudbe in ogledi",
+      fullDesc: "Dogovarjanje ogledov objektov, zbiranje zahtev za ponudbe, koordinacija z izvajalci. AI pomaga pri logistiki večjih projektov.",
+      example: "\"Potrebujem ponudbo za prenovo\" → AI dogovori ogled in zabeleži zahteve."
+    },
+    {
+      icon: Phone,
+      title: "IT Support & Tech podjetja",
+      shortDesc: "Tehnična podpora",
+      fullDesc: "Prvi nivo podpore, zbiranje informacij o težavah, dogovarjanje servisov. AI lahko odgovori na osnovna vprašanja in eskalira kompleksne zadeve.",
+      example: "\"Računalnik se ne vključi\" → AI zbere podatke in ustvari support ticket."
+    },
+    {
+      icon: Dumbbell,
+      title: "Fitnes centri & Telovadnice",
+      shortDesc: "Vadbe in treningi",
+      fullDesc: "Rezervacije skupinskih vadb, osebnih treningov, prostih terminov. AI obvešča o odpovedi ur in spremembah urnika.",
+      example: "\"Želim rezervirati jogo ob 18h\" → AI preveri kapaciteto in potrdi rezervacijo."
+    },
+    {
+      icon: PawPrint,
+      title: "Veterinarske ambulante",
+      shortDesc: "Pregledi hišnih ljubljenčkov",
+      fullDesc: "Dogovarjanje pregledov, cepljenj, nujnih primerov. AI zabeleži vrsto živali, simptome in prednostno obravnava nujne primere.",
+      example: "\"Moj pes šepa\" → AI oceni nujnost in dogovori najbližji možen termin."
+    },
+    {
+      icon: Calculator,
+      title: "Računovodski servisi",
+      shortDesc: "Svetovanja in oddaje",
+      fullDesc: "Dogovarjanje sestankov za davčne storitve, knjigovodstvo, letne zaključke. AI pomaga koordinirati roke za oddaje in svetovanja.",
+      example: "\"Pomoč pri davčni napovedi\" → AI dogovori sestanek pred rokom za oddajo."
+    },
+    {
+      icon: ShoppingBag,
+      title: "Trgovine & E-commerce",
+      shortDesc: "Poizvedbe in vračila",
+      fullDesc: "Odgovarjanje na poizvedbe o izdelkih, razpoložljivosti, dogovarjanje terminov prevzema, procesiranje vračil. AI upravlja naročila 24/7.",
+      example: "\"Ali imate na zalogi velikost M?\" → AI preveri in rezervira izdelek za prevzem."
+    },
+    {
+      icon: Plane,
+      title: "Turistične agencije",
+      shortDesc: "Rezervacije potovanj",
+      fullDesc: "Prva pomoč pri iskanju potovanj, dogovarjanje sestankov za podrobnosti, zbiranje želja o destinacijah. AI pomaga pri osnovnih informacijah.",
+      example: "\"Želim dopust na Havajih\" → AI dogovori sestanek in zabeleži preference."
     }
   ];
 

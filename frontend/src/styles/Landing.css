@@ -1102,7 +1102,7 @@ body {
 }
 
 .use-cases-container-v2 {
-  max-width: 900px;
+  max-width: 1400px;
   margin: 0 auto;
   text-align: center;
 }
@@ -1124,8 +1124,8 @@ body {
 }
 
 .use-cases-grid-v2 {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--spacing-md);
   margin-top: var(--spacing-xl);
 }
@@ -1522,6 +1522,12 @@ body {
   }
 }
 
+
+  /* Use Cases Grid Tablet */
+  .use-cases-grid-v2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 @media (max-width: 768px) {
   .nav-content {
     padding: 16px 24px;
@@ -1781,6 +1787,12 @@ body {
     --spacing-xxl: 80px;
   }
 }
+
+  /* Use Cases Grid Mobile */
+  .use-cases-grid-v2 {
+    grid-template-columns: 1fr;
+  }
+
 
   /* Footer Mobile */
   .footer-top {
