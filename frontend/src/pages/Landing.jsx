@@ -191,32 +191,32 @@ const Landing = () => {
             </div>
             
             <div className="demo-number-section">
-              <p className="demo-label">Pokliči in testiraj AI</p>
-              <a href="tel:+38618285739" className="demo-phone-v2">
-                +386 18 285 739
-              </a>
-              <p className="demo-free-badge">100% BREZPLAČEN TEST</p>
+              <p className="demo-label">Demo trenutno ni na voljo</p>
+              <div className="demo-unavailable-message">
+                <p>Aktivno delamo na vzpostavitvi demo klica.</p>
+                <p>Za več informacij nas kontaktirajte.</p>
+              </div>
             </div>
 
             <div className="demo-steps">
               <div className="demo-step">
                 <span className="step-num">1</span>
-                <span className="step-text">Pokliči številko</span>
+                <span className="step-text">Demo v pripravi</span>
               </div>
               <div className="demo-step">
                 <span className="step-num">2</span>
-                <span className="step-text">Govori z AI kot s stranko</span>
+                <span className="step-text">Kontaktirajte nas</span>
               </div>
               <div className="demo-step">
                 <span className="step-num">3</span>
-                <span className="step-text">Prepričaj se v učinkovitost</span>
+                <span className="step-text">Pridobite dostop</span>
               </div>
             </div>
           </div>
 
           <p className="demo-note">
             <span className="note-icon">💡</span>
-            Res AI odgovori. Res razume slovenščino. Poskusi zdaj.
+            Želite preizkusiti AI tajnico? Pišite nam na <a href="mailto:info@asistentrm.org" style={{color: 'inherit', textDecoration: 'underline'}}>info@asistentrm.org</a>
           </p>
         </div>
       </section>

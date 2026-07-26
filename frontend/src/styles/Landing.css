@@ -998,6 +998,20 @@ body {
   letter-spacing: 1px;
 }
 
+
+.demo-unavailable-message {
+  padding: var(--spacing-md) 0;
+  text-align: center;
+}
+
+.demo-unavailable-message p {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: var(--spacing-xs) 0;
+  line-height: 1.6;
+}
+
+
 .demo-steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
