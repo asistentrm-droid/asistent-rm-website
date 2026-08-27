@@ -162,12 +162,23 @@ const Landing = () => {
         
         {/* Floating Particles */}
         <div className="particles-container">
-          {[...Array(20)].map((_, i) => (
-            <div key={i} className="particle" style={{
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 20}s`,
-              animationDuration: `${15 + Math.random() * 10}s`
-            }}></div>
+          {[...Array(15)].map((_, i) => (
+            <div 
+              key={i} 
+              className="particle particle-logo" 
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 20}s`,
+                animationDuration: `${20 + Math.random() * 15}s`,
+                width: `${30 + Math.random() * 20}px`
+              }}
+            >
+              <img 
+                src="https://customer-assets.emergentagent.com/job_ai-secretary-22/artifacts/taeyavvy_Rm-logo.png"
+                alt=""
+                className="particle-logo-img"
+              />
+            </div>
           ))}
         </div>
         

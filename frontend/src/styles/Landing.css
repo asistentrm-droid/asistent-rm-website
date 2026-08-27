@@ -232,27 +232,48 @@ body {
 
 .particle {
   position: absolute;
-  width: 4px;
-  height: 4px;
-  background: rgba(0, 0, 0, 0.15);
-  border-radius: 50%;
   animation: particleFloat linear infinite;
+}
+
+/* Logo particles */
+.particle-logo {
+  opacity: 0;
+}
+
+.particle-logo-img {
+  width: 100%;
+  height: auto;
+  opacity: 0.08;
+  filter: grayscale(100%);
+  animation: logoRotate linear infinite;
 }
 
 @keyframes particleFloat {
   0% {
-    transform: translateY(100vh) translateX(0);
+    transform: translateY(100vh) translateX(0) rotate(0deg);
     opacity: 0;
   }
-  10% {
+  5% {
     opacity: 1;
   }
-  90% {
+  95% {
     opacity: 1;
   }
   100% {
-    transform: translateY(-100vh) translateX(100px);
+    transform: translateY(-100vh) translateX(50px) rotate(360deg);
     opacity: 0;
+  }
+}
+
+@keyframes logoRotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
   }
 }
 
