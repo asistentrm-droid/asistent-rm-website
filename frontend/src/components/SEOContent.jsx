@@ -28,7 +28,7 @@ const SEOContent = () => {
       {/* Kako deluje sekcija */}
       <section className="seo-section">
         <div className="seo-container">
-          <h2 className="seo-title">Kako deluje AI telefonska tajnica?</h2>
+          <h2 className="seo-title">Kako deluje AI tajnica?</h2>
           <div className="seo-content-grid">
             <div className="seo-text">
               <p>Ko stranka pokliče, AI asistent dvigne v nekaj sekundah in začne pogovor v tekoči slovenščini.</p>
@@ -59,7 +59,7 @@ const SEOContent = () => {
       {/* Integracija sekcija */}
       <section className="seo-section seo-section-gray">
         <div className="seo-container">
-          <h2 className="seo-title">Integracija z vašim CRM, Google Calendar in e-pošto</h2>
+          <h2 className="seo-title">Integracije CRM in Koledar</h2>
           <div className="seo-content-grid">
             <div className="seo-text">
               <p>AI tajnica se brezhibno povezuje z orodji, ki jih že uporabljate:</p>
@@ -122,7 +122,7 @@ const SEOContent = () => {
       {/* FAQ sekcija */}
       <section className="seo-section seo-section-gray">
         <div className="seo-container">
-          <h2 className="seo-title">Pogosta vprašanja o AI tajnici</h2>
+          <h2 className="seo-title">Pogosta vprašanja</h2>
           <div className="faq-list">
             {faqs.map((faq, index) => (
               <div 
