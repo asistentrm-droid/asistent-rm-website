@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowRight, Phone, Calendar, CheckCircle2, Calculator, Menu, X, XCircle, Clock, RefreshCw, Frown, Smile, Zap, BarChart, Youtube, Facebook, Instagram, Mail, PhoneIcon } from 'lucide-react';
 import '../styles/Landing.css';
+import '../styles/SEOContent.css';
 import UseCases from '../components/UseCases';
+import SEOContent from '../components/SEOContent';
 
 const Landing = () => {
   const [isVisible, setIsVisible] = useState({});
@@ -152,15 +154,18 @@ const Landing = () => {
       <section className="hero-section" id="section-hero">
         <div className="hero-content fade-in-up">
           <h1 className="hero-title">
-            AI tajnica, ki sprejema<br />klice namesto vas.
+            AI Tajnica za Slovenska Podjetja – Telefonski Asistent, ki Nikoli ne Zaspi
           </h1>
           <p className="hero-subtitle">
-            Rezervira termine. Odgovarja strankam. Vedno dosegljiva.
+            Asistent RM je prva AI telefonska tajnica za slovenski trg, ki sprejema klice vaših strank 24 ur na dan, 7 dni v tednu. Govori tekoče slovenščino, rezervira termine v vašem koledarju, odgovarja na pogosta vprašanja in obvešča vas o vsakem klicu. Brez zamujenih priložnosti, brez dodatnih stroškov za osebje.
           </p>
           <div className="hero-cta">
-            <a href="#section-contact" className="btn-primary">
-              Kontakt
+            <a href="#demo" className="btn-primary">
+              Poglej demo
               <ArrowRight className="btn-icon" />
+            </a>
+            <a href="#section-contact" className="btn-secondary">
+              Kontakt
             </a>
           </div>
         </div>
@@ -465,6 +470,9 @@ const Landing = () => {
           <p className="form-note">Brezplačen preizkus 7 dni. Brez obveznosti.</p>
         </div>
       </section>
+
+      {/* SEO Content - How it works, Integrations, Comparison, FAQ */}
+      <SEOContent />
 
       {/* Footer */}
       <footer className="footer">
