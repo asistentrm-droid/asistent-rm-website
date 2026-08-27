@@ -158,7 +158,7 @@ const Landing = () => {
             Vaša 24/7 AI Tajnica
           </h1>
           <p className="hero-subtitle">
-            Avtomatizirajte telefonske klice, naročanje strank in urnike v tekoči slovenščini.
+            Nikoli več ne zamudite klica. Sprejemamo vse klice 24/7 v tekoči slovenščini.
           </p>
           <div className="hero-cta">
             <a href="#demo" className="btn-primary">

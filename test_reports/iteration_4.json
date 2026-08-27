@@ -1,0 +1,17 @@
+{
+  "summary": "Hero section bug fix verified on desktop (1920x1080) and mobile (390x844). Title 'Vaša 24/7 AI Tajnica' and shortened subtitle 'Nikoli več ne zamudite klica. Sprejemamo vse klice 24/7 v tekoči slovenščini.' are both clearly visible, readable, and properly sized. No overflow or clipping.",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "Desktop hero title visible at 72px, black (#000), 875px width in 1920px viewport",
+    "Desktop hero subtitle visible at 24px, dark gray (#525252), fits on one line",
+    "Mobile hero title visible at 32px, black, fits within 390px viewport (326px wide)",
+    "Mobile hero subtitle visible at 16px, wraps cleanly, dark gray with good contrast",
+    "Exact text content matches expected values on both viewports",
+    "No hidden/cut-off text, opacity=1, proper display"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "N/A", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}
