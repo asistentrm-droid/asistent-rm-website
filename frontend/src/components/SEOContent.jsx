@@ -87,10 +87,10 @@ const SEOContent = () => {
       {/* Primerjava sekcija */}
       <section className="seo-section">
         <div className="seo-container">
-          <h2 className="seo-title">Zakaj izbrati AI asistenta namesto klasičnega klicnega centra?</h2>
+          <h2 className="seo-title">AI Tajnica vs. Klasična Tajnica</h2>
           <div className="comparison-table">
             <div className="comparison-column">
-              <h3 className="comparison-header comparison-header-old">Klasični klicni center</h3>
+              <h3 className="comparison-header comparison-header-old">Klasična tajnica</h3>
               <ul className="comparison-list">
                 <li className="comparison-item comparison-negative">❌ Delovni čas 9-17h</li>
                 <li className="comparison-item comparison-negative">❌ Strošek: 1.500-3.000€/mesec</li>
@@ -115,7 +115,7 @@ const SEOContent = () => {
           <div className="seo-cta-box">
             <Users size={40} />
             <h3>Privarčujte do 90% stroškov za sprejem klicev</h3>
-            <p>AI tajnica stane manj kot 3€ na dan, medtem ko klasično osebje stane preko 50€ na dan.</p>
+            <p>AI tajnica stane manj kot 3€ na dan, medtem ko klasična tajnica stane preko 50€ na dan.</p>
             <a href="#section-contact" className="btn-primary">Pridobite ponudbo</a>
           </div>
         </div>
