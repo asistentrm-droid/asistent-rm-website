@@ -153,8 +153,26 @@ const Landing = () => {
 
       {/* Hero Section */}
       <section className="hero-section" id="section-hero">
+        {/* Animated Background Elements */}
+        <div className="hero-bg-animation">
+          <div className="gradient-orb gradient-orb-1"></div>
+          <div className="gradient-orb gradient-orb-2"></div>
+          <div className="gradient-orb gradient-orb-3"></div>
+        </div>
+        
+        {/* Floating Particles */}
+        <div className="particles-container">
+          {[...Array(20)].map((_, i) => (
+            <div key={i} className="particle" style={{
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 20}s`,
+              animationDuration: `${15 + Math.random() * 10}s`
+            }}></div>
+          ))}
+        </div>
+        
         <div className="hero-content fade-in-up">
-          <h1 className="hero-title">
+          <h1 className="hero-title hero-title-glow">
             Vaša 24/7 AI Tajnica
           </h1>
           <p className="hero-subtitle">
