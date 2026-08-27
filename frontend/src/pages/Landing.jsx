@@ -170,7 +170,7 @@ const Landing = () => {
                 left: `${Math.random() * 100}%`,
                 animationDelay: `${Math.random() * 20}s`,
                 animationDuration: `${20 + Math.random() * 15}s`,
-                width: `${30 + Math.random() * 20}px`
+                width: `${40 + Math.random() * 30}px`
               }}
             >
               <img 
