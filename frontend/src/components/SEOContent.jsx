@@ -7,19 +7,19 @@ const SEOContent = () => {
   const faqs = [
     {
       question: "Kaj je AI tajnica?",
-      answer: "AI tajnica je napredna programska rešitev, ki s pomočjo umetne inteligence sprejema telefonske klice vaših strank 24/7. Deluje kot pravi telefonski asistent – govori tekoče slovenščino, odgovarja na vprašanja, rezervira termine v vašem koledarju in vas obvešča o vsakem klicu."
+      answer: "AI tajnica je programska rešitev, ki s pomočjo umetne inteligence sprejema klice 24/7. Govori tekoče slovenščino, odgovarja na vprašanja, rezervira termine in vas obvešča o vsakem klicu."
     },
     {
       question: "Ali AI tajnica tekoče govori slovensko?",
-      answer: "Da, naša AI tajnica govori tekoče slovenščino z naravnim glasom. Razume slovenski jezik, lokalne izraze in zna prilagoditi komunikacijo vašemu področju dela. Stranke pogosto ne opazijo, da se pogovarjajo z AI asistentom."
+      answer: "Da, govori tekoče slovenščino z naravnim glasom. Razume slovenski jezik in lokalne izraze. Stranke pogosto ne opazijo, da se pogovarjajo z AI."
     },
     {
       question: "Kako se AI tajnica povezuje z mojim koledarjem?",
-      answer: "AI tajnica se enostavno integrira z Google Calendar, Outlook in drugimi koledarskimi sistemi. Ko stranka kliče za termin, AI preverja vaše proste termine v realnem času in takoj rezervira ustrezno časovno okno. Prejeli boste avtomatsko obvestilo o vsaki rezervaciji."
+      answer: "Enostavno se integrira z Google Calendar, Outlook in drugimi koledarji. Ko stranka kliče za termin, AI preverja vaše proste termine v realnem času in takoj rezervira. Prejmete avtomatsko obvestilo."
     },
     {
       question: "Za katera podjetja je AI tajnica primerna?",
-      answer: "AI tajnica je idealna za vse storitve, ki temeljijo na terminih: zdravstveni domovi, frizerski saloni, avtomehanične delavnice, pravne pisarne, računovodske servise, nepremičninske agencije in druge storitvene dejavnosti. Primerna je za mala in srednje velika podjetja, ki želijo profesionalen sprejem klicev brez dodatnih stroškov za osebje."
+      answer: "Idealna za vse storitve, ki temeljijo na terminih: zdravstveni domovi, saloni, delavnice, pravne pisarne, računovodstvo, nepremičnine in druge storitvene dejavnosti. Primerna za mala in srednje velika podjetja."
     }
   ];
 
@@ -31,25 +31,25 @@ const SEOContent = () => {
           <h2 className="seo-title">Kako deluje AI telefonska tajnica?</h2>
           <div className="seo-content-grid">
             <div className="seo-text">
-              <p>AI telefonska tajnica deluje na preprost način: ko vaša stranka pokliče, AI asistent dvigne klic, pozdravi v vašem imenu in začne pogovor v tekoči slovenščini. Asistent lahko:</p>
+              <p>Ko stranka pokliče, AI asistent dvigne v nekaj sekundah in začne pogovor v tekoči slovenščini.</p>
               <ul className="seo-list">
-                <li><CheckCircle2 size={18} /> <strong>Odgovarja na pogosta vprašanja</strong> o delovnem času, lokaciji, storitvah in cenah</li>
-                <li><CheckCircle2 size={18} /> <strong>Rezervira termine</strong> v vašem Google Calendar ali Outlook koledarju</li>
-                <li><CheckCircle2 size={18} /> <strong>Beleži sporočila</strong> in vas takoj obvesti po SMS ali e-pošti</li>
-                <li><CheckCircle2 size={18} /> <strong>Preusmerja klice</strong> na vašo mobilno številko, kadar je to potrebno</li>
+                <li><CheckCircle2 size={18} /> <strong>Odgovarja</strong> na vprašanja o delovnem času, storitvah in cenah</li>
+                <li><CheckCircle2 size={18} /> <strong>Rezervira termine</strong> v vašem Google Calendar ali Outlook</li>
+                <li><CheckCircle2 size={18} /> <strong>Obvešča vas</strong> takoj po SMS ali e-pošti o vsakem klicu</li>
+                <li><CheckCircle2 size={18} /> <strong>Beleži</strong> vse pogovore za popoln pregled</li>
               </ul>
-              <p>Vse klice beleži in shranjuje, zato imate popoln pregled nad komunikacijo s strankami. Sistem deluje 24/7 brez počitka ali bolniške odsotnosti.</p>
+              <p>Sistem deluje 24/7 brez počitka ali bolniške odsotnosti.</p>
             </div>
             <div className="seo-visual">
               <div className="seo-card">
                 <Zap size={32} className="seo-icon" />
                 <h3>Takojšen odziv</h3>
-                <p>Vsak klic je sprejet v manj kot 3 sekundah, brez čakalnih vrst.</p>
+                <p>Vsak klic sprejet v manj kot 3 sekundah.</p>
               </div>
               <div className="seo-card">
                 <Calendar size={32} className="seo-icon" />
                 <h3>Avtomatske rezervacije</h3>
-                <p>Termini se samodejno vpisujejo v vaš koledar v realnem času.</p>
+                <p>Termini se samodejno vpisujejo v vaš koledar.</p>
               </div>
             </div>
           </div>
@@ -63,14 +63,12 @@ const SEOContent = () => {
           <div className="seo-content-grid">
             <div className="seo-text">
               <p>AI tajnica se brezhibno povezuje z orodji, ki jih že uporabljate:</p>
-              <h3 className="seo-subtitle">Koledarski sistemi</h3>
-              <p>Integracija z <strong>Google Calendar</strong> in <strong>Microsoft Outlook</strong> omogoča, da AI tajnica v realnem času preveri vaše proste termine in rezervira nove sestanke. Vsaka rezervacija se takoj prikaže v vašem koledarju z vsemi potrebnimi podatki o stranki.</p>
               
-              <h3 className="seo-subtitle">CRM sistemi</h3>
-              <p>Povezava z vašim CRM sistemom (kot so Salesforce, HubSpot ali Pipedrive) omogoča samodejno beleženje klicev, ustvarjanje nalog in posodabljanje kontaktov. AI asistent samodejno doda vse pomembne informacije v ustrezno kartico stranke.</p>
+              <h3 className="seo-subtitle">Koledarji in CRM</h3>
+              <p>Integracija z <strong>Google Calendar</strong>, <strong>Outlook</strong> in CRM sistemi (Salesforce, HubSpot) omogoča samodejno rezervacijo terminov in beleženje klicev. Vsaka komunikacija se zabeleži v pravo stranko.</p>
               
-              <h3 className="seo-subtitle">E-pošta in SMS obvestila</h3>
-              <p>Po vsakem klicu prejmete e-poštno sporočilo ali SMS z zapisom pogovora, podatki o stranki in naslednjimi koraki. Nikoli več ne boste zamudili pomembnega klica.</p>
+              <h3 className="seo-subtitle">Obvestila</h3>
+              <p>Po vsakem klicu prejmete e-pošto ali SMS z zapisom pogovora in podatki o stranki.</p>
             </div>
             <div className="seo-integration-list">
               <div className="integration-badge">Google Calendar</div>
