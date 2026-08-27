@@ -119,7 +119,7 @@ const SEOContent = ({ onOpenContact }) => {
           <h2 className="seo-title">AI tajnica proti človeški tajnici</h2>
           <div className="comparison-table">
             <div className="comparison-column comparison-old">
-              <h3 className="comparison-header comparison-header-old">Klasična tajnica</h3>
+              <h3 className="comparison-header comparison-header-old">Človeška tajnica</h3>
               <ul className="comparison-list">
                 <li className="comparison-item comparison-negative">
                   <X className="comparison-icon" size={20} />
