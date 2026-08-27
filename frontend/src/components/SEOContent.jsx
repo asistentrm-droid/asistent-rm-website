@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, Calendar, Zap, Users, CheckCircle2, ArrowRight, Phone, Clock, TrendingUp } from 'lucide-react';
+import { ChevronDown, Calendar, Zap, Users, CheckCircle2, ArrowRight, Phone, Clock, TrendingUp, X, Check } from 'lucide-react';
 
 const SEOContent = ({ onOpenContact }) => {
   const [activeFAQ, setActiveFAQ] = useState(null);
@@ -116,33 +116,33 @@ const SEOContent = ({ onOpenContact }) => {
       {/* Primerjava sekcija */}
       <section className="seo-section">
         <div className="seo-container">
-          <h2 className="seo-title">AI Tajnica vs. Klasična Tajnica</h2>
+          <h2 className="seo-title">AI tajnica proti človeški tajnici</h2>
           <div className="comparison-table">
             <div className="comparison-column comparison-old">
               <h3 className="comparison-header comparison-header-old">Klasična tajnica</h3>
               <ul className="comparison-list">
                 <li className="comparison-item comparison-negative">
-                  <span className="comparison-icon">❌</span>
+                  <X className="comparison-icon" size={20} />
                   <span>Delovni čas 9-17h</span>
                 </li>
                 <li className="comparison-item comparison-negative">
-                  <span className="comparison-icon">❌</span>
+                  <X className="comparison-icon" size={20} />
                   <span>Strošek: 1.500-3.000€/mesec</span>
                 </li>
                 <li className="comparison-item comparison-negative">
-                  <span className="comparison-icon">❌</span>
+                  <X className="comparison-icon" size={20} />
                   <span>Bolniške in počitnice</span>
                 </li>
                 <li className="comparison-item comparison-negative">
-                  <span className="comparison-icon">❌</span>
+                  <X className="comparison-icon" size={20} />
                   <span>Čakalne vrste</span>
                 </li>
                 <li className="comparison-item comparison-negative">
-                  <span className="comparison-icon">❌</span>
+                  <X className="comparison-icon" size={20} />
                   <span>Človeška napaka pri beleženju</span>
                 </li>
                 <li className="comparison-item comparison-negative">
-                  <span className="comparison-icon">❌</span>
+                  <X className="comparison-icon" size={20} />
                   <span>Potrebno usposabljanje</span>
                 </li>
               </ul>
@@ -151,27 +151,27 @@ const SEOContent = ({ onOpenContact }) => {
               <h3 className="comparison-header comparison-header-new">AI Tajnica</h3>
               <ul className="comparison-list">
                 <li className="comparison-item comparison-positive">
-                  <span className="comparison-icon">✅</span>
+                  <Check className="comparison-icon" size={20} />
                   <span>Dosegljiva 24/7/365</span>
                 </li>
                 <li className="comparison-item comparison-positive">
-                  <span className="comparison-icon">✅</span>
+                  <Check className="comparison-icon" size={20} />
                   <span>Od 99€/mesec</span>
                 </li>
                 <li className="comparison-item comparison-positive">
-                  <span className="comparison-icon">✅</span>
+                  <Check className="comparison-icon" size={20} />
                   <span>Brez odsotnosti</span>
                 </li>
                 <li className="comparison-item comparison-positive">
-                  <span className="comparison-icon">✅</span>
+                  <Check className="comparison-icon" size={20} />
                   <span>Takojšen odziv na vsak klic</span>
                 </li>
                 <li className="comparison-item comparison-positive">
-                  <span className="comparison-icon">✅</span>
+                  <Check className="comparison-icon" size={20} />
                   <span>100% natančno beleženje</span>
                 </li>
                 <li className="comparison-item comparison-positive">
-                  <span className="comparison-icon">✅</span>
+                  <Check className="comparison-icon" size={20} />
                   <span>Takojšnja nastavitev</span>
                 </li>
               </ul>
