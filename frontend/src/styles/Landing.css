@@ -1139,9 +1139,10 @@ body {
 
 .use-cases-grid-v2 {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1fr) !important;
   gap: var(--spacing-md);
   margin-top: var(--spacing-xl);
+  width: 100%;
 }
 
 .use-case-card-v2 {
@@ -1534,13 +1535,12 @@ body {
   .nav-links {
     gap: 20px;
   }
-}
-
-
-  /* Use Cases Grid Tablet */
+  
+  /* Use Cases Grid Desktop-Tablet (stay 3 columns) */
   .use-cases-grid-v2 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
+}
 
 @media (max-width: 768px) {
   .nav-content {
