@@ -118,7 +118,7 @@ const Landing = () => {
         <div className="nav-content">
           <a href="#hero" className="nav-logo" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
             <img 
-              src="https://customer-assets.emergentagent.com/job_ai-secretary-22/artifacts/taeyavvy_Rm-logo.png" 
+              src="https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/odsnkb1u_Rm-logo-removebg-preview.png" 
               alt="Asistent RM Logo" 
               className="logo-image"
             />
@@ -174,7 +174,7 @@ const Landing = () => {
               }}
             >
               <img 
-                src="https://customer-assets.emergentagent.com/job_ai-secretary-22/artifacts/taeyavvy_Rm-logo.png"
+                src="https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/odsnkb1u_Rm-logo-removebg-preview.png"
                 alt=""
                 className="particle-logo-img"
               />
@@ -518,7 +518,7 @@ const Landing = () => {
           <div className="footer-top">
             <div className="footer-section">
               <img 
-                src="https://customer-assets.emergentagent.com/job_ai-secretary-22/artifacts/taeyavvy_Rm-logo.png" 
+                src="https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/odsnkb1u_Rm-logo-removebg-preview.png" 
                 alt="Asistent RM" 
                 className="footer-logo-image"
               />
