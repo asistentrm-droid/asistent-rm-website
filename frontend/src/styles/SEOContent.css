@@ -424,25 +424,99 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .seo-section {
+    padding: 48px 20px;
+  }
+  
   .seo-title {
-    font-size: 32px;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .seo-intro-text {
+    font-size: 16px;
+    margin-bottom: 32px;
   }
   
   .seo-steps-grid {
     grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
+    gap: 24px;
+  }
+  
+  .seo-step-card {
+    padding: 24px 20px;
+  }
+  
+  .step-title {
+    font-size: 18px;
+  }
+  
+  .step-desc {
+    font-size: 14px;
   }
   
   .step-arrow {
-    transform: rotate(90deg);
+    display: none;
+  }
+  
+  .step-arrow-hidden {
+    display: none;
+  }
+  
+  .seo-features-list {
+    padding: 24px 20px;
+  }
+  
+  .feature-item {
+    font-size: 15px;
+  }
+  
+  .integration-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-bottom: 32px;
+  }
+  
+  .integration-card {
+    padding: 24px 20px;
+  }
+  
+  .integration-icon-wrapper {
+    width: 64px;
+    height: 64px;
+  }
+  
+  .integration-card-title {
+    font-size: 20px;
+  }
+  
+  .integration-card-desc {
+    font-size: 15px;
   }
   
   .comparison-table {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .comparison-column {
+    padding: 24px 20px;
+  }
+  
+  .comparison-header {
+    font-size: 20px;
+  }
+  
+  .comparison-item {
+    font-size: 15px;
+  }
+  
+  .final-cta-banner {
+    padding: 40px 24px;
   }
   
   .final-cta-title {
-    font-size: 28px;
+    font-size: 24px;
   }
   
   .final-cta-subtitle {
@@ -451,7 +525,11 @@
   
   .final-cta-features {
     flex-direction: column;
-    gap: var(--spacing-sm);
+    gap: 8px;
+  }
+  
+  .cta-feature {
+    font-size: 15px;
   }
   
   .btn-final-cta {
@@ -461,5 +539,9 @@
   
   .faq-question h3 {
     font-size: 16px;
+  }
+  
+  .faq-answer p {
+    font-size: 15px;
   }
 }
