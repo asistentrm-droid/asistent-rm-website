@@ -145,7 +145,7 @@ const SEOContent = ({ onOpenContact }) => {
                 </li>
                 <li className="comparison-item comparison-negative">
                   <span className="comparison-icon">❌</span>
-                  <span>Čakalne vrste v konicah</span>
+                  <span>Čakalne vrste</span>
                 </li>
                 <li className="comparison-item comparison-negative">
                   <span className="comparison-icon">❌</span>
