@@ -172,10 +172,12 @@ const Landing = () => {
         </div>
         
         <div className="hero-content fade-in-up">
-          <h1 className="hero-title hero-title-glow">
-            Vaša 24/7 AI Tajnica
+          <h1 className="hero-title hero-title-animated">
+            <span className="hero-word hero-word-1">Vaša</span>{' '}
+            <span className="hero-word hero-word-2">24/7</span>{' '}
+            <span className="hero-word hero-word-3">AI Tajnica</span>
           </h1>
-          <p className="hero-subtitle">
+          <p className="hero-subtitle hero-subtitle-reveal">
             Avtomatizirajte telefonske klice, naročanje strank in urnike v tekoči slovenščini.
           </p>
           <div className="hero-cta">
