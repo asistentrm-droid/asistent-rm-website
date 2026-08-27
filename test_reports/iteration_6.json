@@ -1,0 +1,16 @@
+{
+  "summary": "Verified hero title bug fix: all three words 'Vaša', '24/7', 'AI Tajnica' visible with correct styling on desktop (1920px) and mobile (390px). Glow reduced to 15px drop-shadow applied only on 'AI Tajnica'. Screenshots confirm proper contrast and readability.",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "hero-word-1 'Vaša': color rgb(0,0,0), webkitTextFillColor rgb(0,0,0), opacity 1, filter none, visible (166x79 desktop, 70x35 mobile)",
+    "hero-word-2 '24/7': color rgb(0,0,0), webkitTextFillColor rgb(0,0,0), opacity 1, filter none, visible (155x79 desktop)",
+    "hero-word-3 'AI Tajnica': gradient + transparent fill, drop-shadow 15px (reduced from 40-60px), opacity 1, visible",
+    "Gradient applied ONLY on hero-word-3 (backgroundImage 'none' on word 1 and 2)",
+    "Screenshots confirm all three words render clearly on desktop and mobile"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "N/A", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true
+}
