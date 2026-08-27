@@ -154,7 +154,7 @@ const Landing = () => {
       <section className="hero-section" id="section-hero">
         <div className="hero-content fade-in-up">
           <h1 className="hero-title">
-            AI Telefonska Tajnica za Slovenijo – Sprejema Klice 24/7
+            AI Telefonska Tajnica Slovenija 24/7
           </h1>
           <p className="hero-subtitle">
             Asistent RM je prva AI telefonska tajnica za slovenski trg, ki sprejema klice vaših strank 24 ur na dan, 7 dni v tednu. Govori tekoče slovenščino, rezervira termine v vašem koledarju, odgovarja na pogosta vprašanja in obvešča vas o vsakem klicu. Brez zamujenih priložnosti, brez dodatnih stroškov za osebje.
