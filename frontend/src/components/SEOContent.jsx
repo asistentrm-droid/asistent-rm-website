@@ -84,7 +84,7 @@ const SEOContent = ({ onOpenContact }) => {
       {/* Integracija sekcija */}
       <section className="seo-section seo-section-gray">
         <div className="seo-container">
-          <h2 className="seo-title">Integracije CRM in Koledar</h2>
+          <h2 className="seo-title">Integracija koledarja</h2>
           <p className="seo-intro-text">AI tajnica se brezhibno povezuje z orodji, ki jih že uporabljate</p>
           
           <div className="integration-grid">
@@ -94,9 +94,8 @@ const SEOContent = ({ onOpenContact }) => {
               </div>
               <h3 className="integration-card-title">Koledarji in CRM</h3>
               <p className="integration-card-desc">
-                Integracija z <strong>Google Calendar</strong>, <strong>Outlook</strong> in CRM sistemi 
-                (<strong>Salesforce</strong>, <strong>HubSpot</strong>) omogoča samodejno rezervacijo terminov 
-                in beleženje klicev. Vsaka komunikacija se zabeleži v pravo stranko.
+                Integracija z <strong>Google Calendar</strong> in <strong>Outlook</strong> omogoča 
+                samodejno rezervacijo terminov in beleženje klicev.
               </p>
             </div>
 
@@ -110,15 +109,6 @@ const SEOContent = ({ onOpenContact }) => {
                 pogovora in podatki o stranki. Ostanite vedno obveščeni.
               </p>
             </div>
-          </div>
-          
-          <div className="seo-integration-list">
-            <div className="integration-badge">Google Calendar</div>
-            <div className="integration-badge">Microsoft Outlook</div>
-            <div className="integration-badge">Salesforce CRM</div>
-            <div className="integration-badge">HubSpot</div>
-            <div className="integration-badge">Gmail</div>
-            <div className="integration-badge">Zapier</div>
           </div>
         </div>
       </section>
