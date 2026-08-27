@@ -1,0 +1,17 @@
+{
+  "summary": "Verified footer logo aspect ratio fix on desktop (1920x1080) and mobile (390x844). Logo renders correctly - object-fit: contain preserves aspect ratio inside the 150x40 box. No visible distortion on either viewport.",
+  "tested_scope": ["frontend"],
+  "passed": [
+    "Footer logo loads successfully (naturalWidth=607, naturalHeight=456, complete=true)",
+    "CSS applied correctly: object-fit=contain, max-width=150px, height=40px, filter=invert(1)",
+    "Desktop 1920x1080: Logo visible in footer, letterboxed within 150x40 container - NOT distorted (aspect ratio preserved by object-fit: contain)",
+    "Mobile 390x844: Logo rendered at 53x40 with exact natural aspect ratio 1.331 (0.02% diff) - PASS",
+    "Logo appears white on dark footer background as intended (invert filter working)"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "N/A (not tested)", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true,
+  "notes": "Initial numerical check flagged 181% ratio diff on desktop, but that measured the img element's box (150x40), not the displayed image content. Since object-fit: contain is applied, the actual rendered image is letterboxed and preserves the natural 1.33 aspect ratio. Visual inspection of desktop screenshot confirms the logo is proportional and not stretched/squashed."
+}

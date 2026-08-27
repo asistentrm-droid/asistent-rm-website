@@ -1549,9 +1549,11 @@ body {
 .footer-logo-image {
   height: 40px;
   width: auto;
+  max-width: 150px;
   filter: invert(1);
   display: block;
   margin-bottom: var(--spacing-xs);
+  object-fit: contain;
 }
 
 .footer-tagline {
