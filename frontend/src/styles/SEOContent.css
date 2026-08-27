@@ -122,6 +122,63 @@
   color: #10b981;
 }
 
+/* Integration Grid - New Aesthetic Design */
+.seo-intro-text {
+  font-size: 18px;
+  color: var(--color-gray-600);
+  text-align: center;
+  margin-bottom: var(--spacing-xxl);
+  font-weight: 400;
+}
+
+.integration-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-xxl);
+}
+
+.integration-card {
+  background: var(--color-white);
+  border: 2px solid #e5e7eb;
+  border-radius: 24px;
+  padding: var(--spacing-xl);
+  text-align: center;
+  transition: var(--transition-smooth);
+}
+
+.integration-card:hover {
+  border-color: var(--color-black);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+.integration-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  background: var(--color-black);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-md);
+  color: var(--color-white);
+}
+
+.integration-card-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-black);
+  margin-bottom: var(--spacing-sm);
+}
+
+.integration-card-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-gray-700);
+  margin: 0;
+}
+
 /* Integration Section - Keep for future use */
 .seo-subtitle {
   font-size: 24px;

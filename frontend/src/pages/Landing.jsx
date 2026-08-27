@@ -8,6 +8,7 @@ import SEOContent from '../components/SEOContent';
 const Landing = () => {
   const [isVisible, setIsVisible] = useState({});
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [contactModalOpen, setContactModalOpen] = useState(false);
   const [callsPerDay, setCallsPerDay] = useState(20);
   const [missedPercentage, setMissedPercentage] = useState(30);
   const [customerValue, setCustomerValue] = useState(50);
@@ -126,7 +127,7 @@ const Landing = () => {
           {/* Desktop Navigation */}
           <div className="nav-links desktop-nav">
             <a href="#section-calculator" className="nav-link">Kalkulator</a>
-            <a href="#section-contact" className="nav-link">Kontakt</a>
+            <a href="#" className="nav-link" onClick={(e) => { e.preventDefault(); setContactModalOpen(true); }}>Kontakt</a>
             <a href="#demo" className="nav-link-cta">Preizkusi Demo</a>
           </div>
 
@@ -144,7 +145,7 @@ const Landing = () => {
         {mobileMenuOpen && (
           <div className="mobile-menu">
             <a href="#section-calculator" className="mobile-nav-link" onClick={closeMobileMenu}>Kalkulator</a>
-            <a href="#section-contact" className="mobile-nav-link" onClick={closeMobileMenu}>Kontakt</a>
+            <a href="#" className="mobile-nav-link" onClick={(e) => { e.preventDefault(); closeMobileMenu(); setContactModalOpen(true); }}>Kontakt</a>
             <a href="#demo" className="mobile-nav-link-cta" onClick={closeMobileMenu}>Preizkusi Demo</a>
           </div>
         )}
@@ -164,9 +165,9 @@ const Landing = () => {
               Poglej demo
               <ArrowRight className="btn-icon" />
             </a>
-            <a href="#section-contact" className="btn-secondary">
+            <button className="btn-secondary" onClick={() => setContactModalOpen(true)}>
               Kontakt
-            </a>
+            </button>
           </div>
         </div>
       </section>
@@ -429,50 +430,57 @@ const Landing = () => {
       {/* Use Cases Section */}
       <UseCases />
 
-      {/* Final CTA Section */}
-      <section className="final-cta-section" id="section-contact">
-        <div className={`final-cta-content ${isVisible['section-contact'] ? 'visible' : ''}`}>
-          <h2 className="final-cta-title">
-            Nikoli več ne zamudite klica.
-          </h2>
-          <form onSubmit={handleFormSubmit} className="contact-form">
-            <input 
-              type="text" 
-              name="name"
-              placeholder="Ime in priimek" 
-              className="form-input"
-              required
-            />
-            <input 
-              type="email" 
-              name="email"
-              placeholder="Email" 
-              className="form-input"
-              required
-            />
-            <input 
-              type="tel" 
-              name="phone"
-              placeholder="Telefonska številka" 
-              className="form-input"
-              required
-            />
-            <input 
-              type="text" 
-              name="company"
-              placeholder="Podjetje" 
-              className="form-input"
-            />
-            <button type="submit" className="btn-primary-large">
-              Začni test
-            </button>
-          </form>
-          <p className="form-note">Brezplačen preizkus 7 dni. Brez obveznosti.</p>
-        </div>
-      </section>
-
       {/* SEO Content - How it works, Integrations, Comparison, FAQ */}
-      <SEOContent />
+      <SEOContent onOpenContact={() => setContactModalOpen(true)} />
+
+      {/* Contact Modal */}
+      {contactModalOpen && (
+        <div className="modal-overlay" onClick={() => setContactModalOpen(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setContactModalOpen(false)}>
+              <X size={24} />
+            </button>
+            <div className="modal-header">
+              <h2 className="modal-title">Začnite brezplačno</h2>
+              <p className="modal-subtitle">Izpolnite obrazec in začnite 7-dnevni brezplačni preizkus</p>
+            </div>
+            <form onSubmit={handleFormSubmit} className="modal-form">
+              <input 
+                type="text" 
+                name="name"
+                placeholder="Ime in priimek" 
+                className="modal-input"
+                required
+              />
+              <input 
+                type="email" 
+                name="email"
+                placeholder="Email" 
+                className="modal-input"
+                required
+              />
+              <input 
+                type="tel" 
+                name="phone"
+                placeholder="Telefonska številka" 
+                className="modal-input"
+                required
+              />
+              <input 
+                type="text" 
+                name="company"
+                placeholder="Podjetje" 
+                className="modal-input"
+              />
+              <button type="submit" className="btn-modal-submit">
+                Začni brezplačni preizkus
+                <ArrowRight size={20} />
+              </button>
+              <p className="modal-note">✓ Brezplačen preizkus 7 dni • ✓ Brez obveznosti • ✓ Nastavitev v enem dnevu</p>
+            </form>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="footer">

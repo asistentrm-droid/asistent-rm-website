@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, Calendar, Zap, Users, CheckCircle2, ArrowRight, Phone, Clock, TrendingUp } from 'lucide-react';
 
-const SEOContent = () => {
+const SEOContent = ({ onOpenContact }) => {
   const [activeFAQ, setActiveFAQ] = useState(null);
 
   const faqs = [
@@ -85,24 +85,40 @@ const SEOContent = () => {
       <section className="seo-section seo-section-gray">
         <div className="seo-container">
           <h2 className="seo-title">Integracije CRM in Koledar</h2>
-          <div className="seo-content-grid">
-            <div className="seo-text">
-              <p>AI tajnica se brezhibno povezuje z orodji, ki jih že uporabljate:</p>
-              
-              <h3 className="seo-subtitle">Koledarji in CRM</h3>
-              <p>Integracija z <strong>Google Calendar</strong>, <strong>Outlook</strong> in CRM sistemi (Salesforce, HubSpot) omogoča samodejno rezervacijo terminov in beleženje klicev. Vsaka komunikacija se zabeleži v pravo stranko.</p>
-              
-              <h3 className="seo-subtitle">Obvestila</h3>
-              <p>Po vsakem klicu prejmete e-pošto ali SMS z zapisom pogovora in podatki o stranki.</p>
+          <p className="seo-intro-text">AI tajnica se brezhibno povezuje z orodji, ki jih že uporabljate</p>
+          
+          <div className="integration-grid">
+            <div className="integration-card">
+              <div className="integration-icon-wrapper">
+                <Calendar size={40} />
+              </div>
+              <h3 className="integration-card-title">Koledarji in CRM</h3>
+              <p className="integration-card-desc">
+                Integracija z <strong>Google Calendar</strong>, <strong>Outlook</strong> in CRM sistemi 
+                (<strong>Salesforce</strong>, <strong>HubSpot</strong>) omogoča samodejno rezervacijo terminov 
+                in beleženje klicev. Vsaka komunikacija se zabeleži v pravo stranko.
+              </p>
             </div>
-            <div className="seo-integration-list">
-              <div className="integration-badge">Google Calendar</div>
-              <div className="integration-badge">Microsoft Outlook</div>
-              <div className="integration-badge">Salesforce CRM</div>
-              <div className="integration-badge">HubSpot</div>
-              <div className="integration-badge">Gmail</div>
-              <div className="integration-badge">Zapier</div>
+
+            <div className="integration-card">
+              <div className="integration-icon-wrapper">
+                <Zap size={40} />
+              </div>
+              <h3 className="integration-card-title">Obvestila</h3>
+              <p className="integration-card-desc">
+                Po vsakem klicu prejmete <strong>e-pošto</strong> ali <strong>SMS</strong> z zapisom 
+                pogovora in podatki o stranki. Ostanite vedno obveščeni.
+              </p>
             </div>
+          </div>
+          
+          <div className="seo-integration-list">
+            <div className="integration-badge">Google Calendar</div>
+            <div className="integration-badge">Microsoft Outlook</div>
+            <div className="integration-badge">Salesforce CRM</div>
+            <div className="integration-badge">HubSpot</div>
+            <div className="integration-badge">Gmail</div>
+            <div className="integration-badge">Zapier</div>
           </div>
         </div>
       </section>
@@ -211,9 +227,9 @@ const SEOContent = () => {
               <div className="final-cta-features">
                 <span className="cta-feature">✓ Brezplačen preizkus 7 dni</span>
                 <span className="cta-feature">✓ Brez obveznosti</span>
-                <span className="cta-feature">✓ Nastavitev v 5 minutah</span>
+                <span className="cta-feature">✓ Nastavitev v enem dnevu</span>
               </div>
-              <a href="#section-contact" className="btn-final-cta">
+              <a href="#section-contact" className="btn-final-cta" onClick={(e) => { e.preventDefault(); onOpenContact(); }}>
                 Začni brezplačno
                 <ArrowRight size={20} />
               </a>
