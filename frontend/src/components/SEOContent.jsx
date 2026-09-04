@@ -92,7 +92,7 @@ const SEOContent = ({ onOpenContact }) => {
               <div className="integration-icon-wrapper">
                 <Calendar size={40} />
               </div>
-              <h3 className="integration-card-title">Koledarji in CRM</h3>
+              <h3 className="integration-card-title">Koledarji</h3>
               <p className="integration-card-desc">
                 Integracija z <strong>Google Calendar</strong> in <strong>Outlook</strong> omogoča 
                 samodejno rezervacijo terminov in beleženje klicev.
