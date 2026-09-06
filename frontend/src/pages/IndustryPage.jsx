@@ -10,6 +10,8 @@ const IndustryPage = () => {
   const [industry, setIndustry] = useState(null);
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [showTranscript, setShowTranscript] = useState(false);
+  const audioRef = React.useRef(null);
 
   useEffect(() => {
     const industryData = getIndustryById(industryId);
@@ -18,6 +20,14 @@ const IndustryPage = () => {
     // Scroll to top
     window.scrollTo(0, 0);
   }, [industryId]);
+
+  const handlePlayAudio = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+      setIsPlaying(true);
+      setShowTranscript(true);
+    }
+  };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -81,9 +91,9 @@ const IndustryPage = () => {
             </div>
             <h1 className="industry-h1">{industry.h1}</h1>
             <p className="industry-subtitle">{industry.subtitle_hero}</p>
-            <button className="btn-primary-large" onClick={() => setContactModalOpen(true)}>
-              Preizkusi brezplačno
-              <ArrowRight size={20} />
+            <button className="btn-hero-cta" onClick={() => setContactModalOpen(true)}>
+              <span className="btn-hero-cta-text">Preizkusi brezplačno</span>
+              <ArrowRight size={20} className="btn-hero-cta-arrow" />
             </button>
           </div>
         </section>
@@ -93,35 +103,44 @@ const IndustryPage = () => {
           <div className="industry-container">
             <h2 className="industry-section-title">Poslušaj, kako AI obravnava tvoje stranke</h2>
             
-            {/* Audio Player */}
-            <div className="audio-player-container">
-              <div className="audio-player-wrapper">
-                <div className="audio-icon-wrapper">
-                  <Play size={28} className="audio-icon" />
+            {/* Audio Player - Apple Style */}
+            <div className="audio-player-container-new">
+              {!isPlaying ? (
+                <div className="audio-big-play-wrapper" onClick={handlePlayAudio}>
+                  <div className="audio-big-play-button">
+                    <Play size={64} className="audio-big-play-icon" />
+                  </div>
+                  <p className="audio-play-hint">Klikni za predvajanje demo klica</p>
                 </div>
-                <audio 
-                  controls 
-                  className="audio-element"
-                  preload="metadata"
-                >
-                  <source src={industry.audioDemo} type="audio/mpeg" />
-                  Vaš brskalnik ne podpira audio predvajanja.
-                </audio>
-              </div>
+              ) : (
+                <div className="audio-player-active">
+                  <audio 
+                    ref={audioRef}
+                    controls 
+                    className="audio-element-new"
+                    preload="metadata"
+                    onEnded={() => setIsPlaying(false)}
+                  >
+                    <source src={industry.audioDemo} type="audio/mpeg" />
+                    Vaš brskalnik ne podpira audio predvajanja.
+                  </audio>
+                </div>
+              )}
             </div>
 
             {/* Transcript - KRITIČNO ZA SEO */}
-            <div className="audio-transcript">
-              <div className="transcript-header">
-                <FileText size={24} />
-                <h3>Transkript pogovora</h3>
+            {showTranscript && (
+              <div className="audio-transcript audio-transcript-animated">
+                <div className="transcript-header">
+                  <FileText size={24} />
+                </div>
+                <div className="transcript-content">
+                  {industry.transcript.split('\n\n').map((paragraph, idx) => (
+                    <p key={idx} className="transcript-paragraph">{paragraph}</p>
+                  ))}
+                </div>
               </div>
-              <div className="transcript-content">
-                {industry.transcript.split('\n\n').map((paragraph, idx) => (
-                  <p key={idx} className="transcript-paragraph">{paragraph}</p>
-                ))}
-              </div>
-            </div>
+            )}
           </div>
         </section>
 
