@@ -110,7 +110,7 @@ const IndustryPage = () => {
                   <div className="audio-big-play-button">
                     <Play size={64} className="audio-big-play-icon" />
                   </div>
-                  <p className="audio-play-hint">Klikni za predvajanje demo klica</p>
+                  <p className="audio-play-hint">Klikni za predvajanje demo scenarija</p>
                 </div>
               ) : (
                 <div className="audio-player-active">
