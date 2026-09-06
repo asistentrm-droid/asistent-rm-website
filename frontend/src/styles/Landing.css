@@ -1373,17 +1373,20 @@ body {
   text-align: left;
   transition: var(--transition-smooth);
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: block;
 }
 
 .use-case-card-v2:hover {
-  border-color: var(--color-gray-400);
-  background: var(--color-white);
-}
-
-.use-case-card-v2.active {
   border-color: var(--color-black);
   background: var(--color-white);
+  transform: translateY(-4px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.use-case-card-v2:hover .chevron-icon {
+  transform: translateX(4px);
 }
 
 .use-case-header {

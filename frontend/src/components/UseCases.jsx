@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Scissors, Wrench, Heart, Home, Building2, Truck, UtensilsCrossed, Scale, Dumbbell, PawPrint, Calculator, Phone, Briefcase, ShoppingBag, Plane, ChevronDown, ArrowRight } from 'lucide-react';
+import { Scissors, Wrench, Heart, Home, Building2, Truck, UtensilsCrossed, Scale, Dumbbell, PawPrint, Calculator, Phone, Briefcase, ShoppingBag, Plane, ArrowRight } from 'lucide-react';
 
 const UseCases = () => {
-  const [activeCard, setActiveCard] = useState(null);
 
   const cases = [
     {
+      id: 'zdravstveni-domovi',
       icon: Heart,
       title: "Zdravstveni domovi & Klinike",
       shortDesc: "Rezervacija pregledov",
@@ -14,6 +14,7 @@ const UseCases = () => {
       example: "\"Potrebujem termin za pregled\" → AI ponudi proste termine in rezervira."
     },
     {
+      id: 'banke-finance',
       icon: Building2,
       title: "Banke & Finančne institucije",
       shortDesc: "Dogovarjanje sestankov",
@@ -21,6 +22,7 @@ const UseCases = () => {
       example: "\"Zanima me posojilo za stanovanje\" → AI dogovori sestanek s svetovalcem."
     },
     {
+      id: 'logistika-dostava',
       icon: Truck,
       title: "Logistika & Dostava",
       shortDesc: "Koordinacija dostav",
@@ -28,6 +30,7 @@ const UseCases = () => {
       example: "\"Kdaj bo prispel paket?\" → AI preveri status in sporoči natančen čas dostave."
     },
     {
+      id: 'restavracije-gostinstvo',
       icon: UtensilsCrossed,
       title: "Restavracije & Gostinstvo",
       shortDesc: "Rezervacije miz",
@@ -35,6 +38,7 @@ const UseCases = () => {
       example: "\"Rezervacija za 6 oseb v petek zvečer\" → AI preveri razpoložljivost in potrdi."
     },
     {
+      id: 'avtomobilske-delavnice',
       icon: Wrench,
       title: "Avtomobilske delavnice",
       shortDesc: "Servisi in popravila",
@@ -42,6 +46,7 @@ const UseCases = () => {
       example: "\"Motor dela čudno\" → AI zabeleži problem, dogovori ogled in pošlje potrditev."
     },
     {
+      id: 'nepremicninske-agencije',
       icon: Home,
       title: "Nepremičninske agencije",
       shortDesc: "Dogovarjanje ogledov",
@@ -49,6 +54,7 @@ const UseCases = () => {
       example: "\"Želim ogledati stanovanje\" → AI dogovori termin ogleda in zabeleži želje."
     },
     {
+      id: 'frizerski-kozmeticni-saloni',
       icon: Scissors,
       title: "Frizerski & Kozmetični saloni",
       shortDesc: "Rezervacije tretmajev",
@@ -56,6 +62,7 @@ const UseCases = () => {
       example: "\"Termin za striženje jutri ob 10h\" → AI preveri razpoložljivost in rezervira."
     },
     {
+      id: 'pravne-pisarne-odvetniki',
       icon: Scale,
       title: "Pravne pisarne & Odvetniki",
       shortDesc: "Prva posvetovanja",
@@ -63,6 +70,7 @@ const UseCases = () => {
       example: "\"Potrebujem pravno pomoč\" → AI dogovori sestanek in zabeleži področje prava."
     },
     {
+      id: 'gradbena-podjetja',
       icon: Briefcase,
       title: "Gradbena podjetja",
       shortDesc: "Ponudbe in ogledi",
@@ -70,6 +78,7 @@ const UseCases = () => {
       example: "\"Potrebujem ponudbo za prenovo\" → AI dogovori ogled in zabeleži zahteve."
     },
     {
+      id: 'it-support-tech',
       icon: Phone,
       title: "IT Support & Tech podjetja",
       shortDesc: "Tehnična podpora",
@@ -77,6 +86,7 @@ const UseCases = () => {
       example: "\"Računalnik se ne vključi\" → AI zbere podatke in ustvari support ticket."
     },
     {
+      id: 'fitnes-centri',
       icon: Dumbbell,
       title: "Fitnes centri & Telovadnice",
       shortDesc: "Vadbe in treningi",
@@ -84,6 +94,7 @@ const UseCases = () => {
       example: "\"Želim rezervirati jogo ob 18h\" → AI preveri kapaciteto in potrdi rezervacijo."
     },
     {
+      id: 'veterinarske-ambulante',
       icon: PawPrint,
       title: "Veterinarske ambulante",
       shortDesc: "Pregledi hišnih ljubljenčkov",
@@ -91,6 +102,7 @@ const UseCases = () => {
       example: "\"Moj pes šepa\" → AI oceni nujnost in dogovori najbližji možen termin."
     },
     {
+      id: 'racunovodski-servisi',
       icon: Calculator,
       title: "Računovodski servisi",
       shortDesc: "Svetovanja in oddaje",
@@ -98,6 +110,7 @@ const UseCases = () => {
       example: "\"Pomoč pri davčni napovedi\" → AI dogovori sestanek pred rokom za oddajo."
     },
     {
+      id: 'trgovine-ecommerce',
       icon: ShoppingBag,
       title: "Trgovine & E-commerce",
       shortDesc: "Poizvedbe in vračila",
@@ -105,6 +118,7 @@ const UseCases = () => {
       example: "\"Ali imate na zalogi velikost M?\" → AI preveri in rezervira izdelek za prevzem."
     },
     {
+      id: 'turisticne-agencije',
       icon: Plane,
       title: "Turistične agencije",
       shortDesc: "Rezervacije potovanj",
@@ -122,13 +136,12 @@ const UseCases = () => {
         <div className="use-cases-grid-v2">
           {cases.map((useCase, index) => {
             const IconComponent = useCase.icon;
-            const isActive = activeCard === index;
             
             return (
-              <div 
-                key={index} 
-                className={`use-case-card-v2 ${isActive ? 'active' : ''}`}
-                onClick={() => setActiveCard(isActive ? null : index)}
+              <Link 
+                key={index}
+                to={`/panoge/${useCase.id}`}
+                className="use-case-card-v2"
               >
                 <div className="use-case-header">
                   <div className="use-case-icon-wrapper-v2">
@@ -138,24 +151,9 @@ const UseCases = () => {
                     <h3 className="use-case-title-v2">{useCase.title}</h3>
                     <p className="use-case-short-desc">{useCase.shortDesc}</p>
                   </div>
-                  <ChevronDown className={`chevron-icon ${isActive ? 'rotated' : ''}`} />
+                  <ArrowRight className="chevron-icon" />
                 </div>
-                
-                {isActive && (
-                  <div className="use-case-expanded">
-                    <p className="use-case-full-desc">{useCase.fullDesc}</p>
-                    <div className="use-case-example-v2">
-                      <span className="example-label-v2">Primer uporabe:</span>
-                      <p className="example-text-v2">{useCase.example}</p>
-                    </div>
-                    {useCase.id && (
-                      <Link to={`/panoge/${useCase.id}`} className="use-case-learn-more">
-                        Preberi več <ArrowRight size={16} />
-                      </Link>
-                    )}
-                  </div>
-                )}
-              </div>
+              </Link>
             );
           })}
         </div>
