@@ -22,11 +22,14 @@ const IndustryPage = () => {
   }, [industryId]);
 
   const handlePlayAudio = () => {
-    if (audioRef.current) {
-      audioRef.current.play();
-      setIsPlaying(true);
-      setShowTranscript(true);
-    }
+    setIsPlaying(true);
+    setShowTranscript(true);
+    // Wait for audio element to render, then play
+    setTimeout(() => {
+      if (audioRef.current) {
+        audioRef.current.play();
+      }
+    }, 100);
   };
 
   const handleFormSubmit = async (e) => {
