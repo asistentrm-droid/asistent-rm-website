@@ -5,6 +5,7 @@ import ThankYou from "./pages/ThankYou";
 import Terms from "./pages/Terms";
 import Privacy from "./pages/Privacy";
 import GeneralTerms from "./pages/GeneralTerms";
+import IndustryPage from "./pages/IndustryPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/pogoji" element={<Terms />} />
           <Route path="/zasebnost" element={<Privacy />} />
           <Route path="/splosni-pogoji" element={<GeneralTerms />} />
+          <Route path="/panoge/:industryId" element={<IndustryPage />} />
         </Routes>
       </BrowserRouter>
     </div>

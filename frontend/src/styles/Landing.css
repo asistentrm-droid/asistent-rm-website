@@ -1487,6 +1487,26 @@ body {
   font-style: italic;
 }
 
+.use-case-learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 10px 20px;
+  background: var(--color-black);
+  color: var(--color-white);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.use-case-learn-more:hover {
+  background: var(--color-gray-800);
+  transform: translateX(4px);
+}
+
 /* Enhanced Calculator Results */
 .result-row {
   display: grid;

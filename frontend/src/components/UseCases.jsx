@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Scissors, Wrench, Heart, Home, Building2, Truck, UtensilsCrossed, Scale, Dumbbell, PawPrint, Calculator, Phone, Briefcase, ShoppingBag, Plane, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Scissors, Wrench, Heart, Home, Building2, Truck, UtensilsCrossed, Scale, Dumbbell, PawPrint, Calculator, Phone, Briefcase, ShoppingBag, Plane, ChevronDown, ArrowRight } from 'lucide-react';
 
 const UseCases = () => {
   const [activeCard, setActiveCard] = useState(null);
@@ -147,6 +148,11 @@ const UseCases = () => {
                       <span className="example-label-v2">Primer uporabe:</span>
                       <p className="example-text-v2">{useCase.example}</p>
                     </div>
+                    {useCase.id && (
+                      <Link to={`/panoge/${useCase.id}`} className="use-case-learn-more">
+                        Preberi več <ArrowRight size={16} />
+                      </Link>
+                    )}
                   </div>
                 )}
               </div>
