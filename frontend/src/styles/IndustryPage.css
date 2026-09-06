@@ -282,30 +282,33 @@
   flex-shrink: 0;
 }
 
-/* Animated Waves (Ripple Effect) */
+/* Elegant Animated Waves (Apple Style) */
 .audio-big-play-button::after {
   content: '';
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 2px solid rgba(0, 0, 0, 0.4);
-  animation: ripple 2s infinite;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  animation: elegantRipple 3s ease-out infinite;
   pointer-events: none;
 }
 
-@keyframes ripple {
+@keyframes elegantRipple {
   0% {
     transform: scale(1);
-    opacity: 1;
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.3;
   }
   100% {
-    transform: scale(1.5);
+    transform: scale(2);
     opacity: 0;
   }
 }
 
-/* Multiple wave rings */
+/* Multiple elegant wave rings */
 .audio-big-play-wrapper::before,
 .audio-big-play-wrapper::after {
   content: '';
@@ -313,16 +316,30 @@
   width: 160px;
   height: 160px;
   border-radius: 50%;
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.08);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: ripple 2s infinite;
+  animation: elegantRipple 3s ease-out infinite;
   pointer-events: none;
+  filter: blur(1px);
+}
+
+.audio-big-play-wrapper::before {
+  animation-delay: 0.8s;
+  border-color: rgba(0, 0, 0, 0.12);
 }
 
 .audio-big-play-wrapper::after {
-  animation-delay: 0.6s;
+  animation-delay: 1.6s;
+  border-color: rgba(0, 0, 0, 0.1);
+  filter: blur(2px);
+}
+
+/* Subtle glow effect on hover */
+.audio-big-play-wrapper:hover .audio-big-play-button {
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3),
+              0 0 40px rgba(0, 0, 0, 0.15);
 }
 
 
