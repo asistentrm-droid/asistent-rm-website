@@ -522,7 +522,7 @@ const Landing = () => {
                 alt="Asistent RM" 
                 className="footer-logo-image"
               />
-              <p className="footer-tagline">AI tajnica, ki sprejema klice namesto vas.</p>
+              <p className="footer-tagline">Asistent RM - prihodnost komunikacije</p>
             </div>
             
             <div className="footer-section">
