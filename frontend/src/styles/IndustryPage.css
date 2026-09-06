@@ -89,10 +89,10 @@
   line-height: 1.5;
 }
 
-/* Audio Demo Section */
+/* Audio Demo Section - Apple Style */
 .industry-audio-demo {
-  padding: 80px 40px;
-  background: #fafafa;
+  padding: 120px 40px;
+  background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
 }
 
 .industry-container {
@@ -101,86 +101,140 @@
 }
 
 .industry-section-title {
-  font-size: 42px;
+  font-size: 48px;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 64px;
   color: var(--color-black);
-  letter-spacing: -0.5px;
+  letter-spacing: -1px;
+  line-height: 1.1;
 }
 
-/* Audio Player */
+/* Audio Player - Apple Style */
 .audio-player-container {
   background: var(--color-white);
-  border-radius: 24px;
-  padding: 60px 40px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  margin-bottom: 40px;
+  border-radius: 32px;
+  padding: 80px 60px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.04), 
+              0 1px 3px rgba(0, 0, 0, 0.02);
+  margin-bottom: 48px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.audio-player-placeholder {
-  text-align: center;
+.audio-player-container:hover {
+  box-shadow: 0 12px 56px rgba(0, 0, 0, 0.08),
+              0 2px 8px rgba(0, 0, 0, 0.04);
+  transform: translateY(-4px);
 }
 
-.audio-play-icon {
-  width: 80px;
-  height: 80px;
-  color: var(--color-black);
-  background: #f3f4f6;
+.audio-player-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.audio-icon-wrapper {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  background: var(--color-black);
   border-radius: 50%;
-  padding: 20px;
-  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.audio-placeholder-text {
-  font-size: 20px;
-  font-weight: 600;
-  color: var(--color-gray-700);
-  margin-bottom: 12px;
+.audio-icon-wrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
 }
 
-.audio-note {
-  font-size: 14px;
-  color: var(--color-gray-500);
-  font-family: monospace;
+.audio-icon {
+  color: var(--color-white);
 }
 
-/* Transcript */
+.audio-element {
+  flex: 1;
+  width: 100%;
+  height: 56px;
+  border-radius: 12px;
+  outline: none;
+  background: #f5f5f7;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.audio-element::-webkit-media-controls-panel {
+  background: #f5f5f7;
+  border-radius: 12px;
+}
+
+.audio-element:hover {
+  background: #ebebed;
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* Transcript - Apple Style */
 .audio-transcript {
   background: var(--color-white);
-  border-radius: 24px;
-  padding: 40px;
-  border: 2px solid #e5e7eb;
+  border-radius: 28px;
+  padding: 48px 52px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
 }
 
 .transcript-header {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: 14px;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.transcript-header svg {
+  color: var(--color-gray-600);
 }
 
 .transcript-header h3 {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: 600;
   color: var(--color-black);
   margin: 0;
+  letter-spacing: -0.5px;
 }
 
 .transcript-content {
-  font-size: 16px;
-  line-height: 1.8;
+  font-size: 17px;
+  line-height: 1.7;
   color: var(--color-gray-700);
+  font-weight: 400;
+}
+
+.transcript-paragraph {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: var(--color-gray-800);
+}
+
+.transcript-paragraph:last-child {
+  margin-bottom: 0;
 }
 
 .transcript-note {
-  margin-top: 24px;
-  padding: 20px;
-  background: #fffbeb;
-  border-left: 4px solid #f59e0b;
-  border-radius: 8px;
-  font-size: 14px;
-  color: #92400e;
+  margin-top: 32px;
+  padding: 24px 28px;
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border-left: 3px solid #f59e0b;
+  border-radius: 16px;
+  font-size: 15px;
+  color: #78350f;
+  line-height: 1.6;
 }
 
 /* Problem & Solution */
@@ -307,6 +361,35 @@
   
   .industry-section-title {
     font-size: 32px;
+    margin-bottom: 40px;
+  }
+  
+  .audio-player-container {
+    padding: 48px 24px;
+    border-radius: 24px;
+  }
+  
+  .audio-player-wrapper {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .audio-icon-wrapper {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .audio-element {
+    height: 48px;
+  }
+  
+  .audio-transcript {
+    padding: 32px 24px;
+    border-radius: 20px;
+  }
+  
+  .transcript-header h3 {
+    font-size: 22px;
   }
   
   .industry-benefits {
@@ -320,5 +403,9 @@
   
   .industry-nav {
     padding: 16px 20px;
+  }
+  
+  .industry-audio-demo {
+    padding: 80px 24px;
   }
 }

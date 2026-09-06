@@ -9,8 +9,8 @@ export const industries = [
     subtitle_hero: 'AI tajnica, ki namesto vas prevzame sprejemanje klicev – 24/7, v tekoči slovenščini.',
     problemTitle: 'Konec zgrešenih klicev med operacijami in pregledi.',
     problemDesc: 'Zdravstveni delavci ne morete biti vedno na voljo za telefon. Naša AI tajnica sprejme vsak klic, zabeleži pacienta in rezervira termin – tudi ko ste sredi posega.',
-    audioDemo: '/audio/zdravstvo-demo.mp3', // placeholder
-    transcript: 'Transkript pogovora bo dodan kasneje...'
+    audioDemo: 'https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/gbpc1fja_Zdravstveni%20dom.mp3',
+    transcript: 'Zdravstveni dom tukaj. Pozdravljeni Prosim za vaše ime in priimek ter kaj potrebujete?\n\nDober dan, sem Marko Novak. Rad bi se naročil na zdravniški pregled\n\nGospod Novak, vaš termin za pregled sem uspešno zabeležila. Hvala za rezervacijo in lep dan!'
   },
   {
     id: 'banke-finance',
@@ -22,8 +22,8 @@ export const industries = [
     subtitle_hero: 'AI tajnica, ki namesto vas prevzame sprejemanje klicev – 24/7, v tekoči slovenščini.',
     problemTitle: 'Konec zgrešenih klicev med sestanki s strankami.',
     problemDesc: 'Med pomembnimi finančnimi pogovori ne morete dvigati telefona. AI tajnica sprejme vse povpraševanja in dogovori sestanek – profesionalno in diskretno.',
-    audioDemo: '/audio/banke-demo.mp3',
-    transcript: 'Transkript pogovora bo dodan kasneje...'
+    audioDemo: 'https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/uxh53gev_Banka.mp3',
+    transcript: 'Banka, pozdravljeni! Prosim za vaše ime in priimek ter katero storitev potrebujete?\n\nDober dan, sem Marko Novak. Rad bi se naročil na bančno svetovanje.\n\nGospod Novak, vaš termin za svetovanje sem uspešno zabeležila. Hvala za rezervacijo in lep dan!'
   },
   {
     id: 'logistika-dostava',
@@ -35,8 +35,8 @@ export const industries = [
     subtitle_hero: 'AI tajnica, ki namesto vas prevzame sprejemanje klicev – 24/7, v tekoči slovenščini.',
     problemTitle: 'Konec zgrešenih klicev med vožnjo.',
     problemDesc: 'Vozniki in dispečerji so na terenu. AI tajnica sprejme klice strank, koordinira dostave in obvešča ekipo – varna in učinkovita komunikacija.',
-    audioDemo: '/audio/logistika-demo.mp3',
-    transcript: 'Transkript pogovora bo dodan kasneje...'
+    audioDemo: 'https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/nxu6tlx0_Logistika.mp3',
+    transcript: 'Logistični center, pozdravljeni! Za informacije o pošiljkah izberite 1, za pogovor z dispečerjem pa izberite 2.\n\nDober dan, Marko Novak tukaj, izbiram opcijo 2 za dispečerja.\n\nGospod Novak, vaš klic takoj preusmerjam k našemu dispečerju. Prosim, ostanite na liniji!'
   },
   {
     id: 'restavracije-gostinstvo',
@@ -48,8 +48,8 @@ export const industries = [
     subtitle_hero: 'AI tajnica, ki namesto vas prevzame sprejemanje klicev – 24/7, v tekoči slovenščini.',
     problemTitle: 'Konec zgrešenih rezervacij med konico.',
     problemDesc: 'Med največjo gneč ne morete sprejemati klicev. AI tajnica rezervira mize, zabeleži posebne želje in potrdi rezervacije – brez zamude.',
-    audioDemo: '/audio/restavracije-demo.mp3',
-    transcript: 'Transkript pogovora bo dodan kasneje...'
+    audioDemo: 'https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/ovp9vz8p_Gostilna.mp3',
+    transcript: 'Gostilna pri Hrastu, pozdravljeni. Za splošne informacije izberite 1, za rezervacije in dogodke pa izberite 2.\n\nDober dan, Marko Novak tukaj, izbiram opcijo 2 za rezervacijo.\n\nGospod Novak, vaš klic takoj preusmerjam k vodji restavracije. Prosim, ostanite na liniji!'
   },
   {
     id: 'avtomobilske-delavnice',
@@ -61,8 +61,8 @@ export const industries = [
     subtitle_hero: 'AI tajnica, ki namesto vas prevzame sprejemanje klicev – 24/7, v tekoči slovenščini.',
     problemTitle: 'Konec zgrešenih klicev pod avtom.',
     problemDesc: 'Med popravilom ne morete dvigovati telefona. AI tajnica sprejme naročila za servis, dogovori termin in zabeleži težavo – brez prekinjanja dela.',
-    audioDemo: '/audio/avtomobilske-demo.mp3',
-    transcript: 'Transkript pogovora bo dodan kasneje...'
+    audioDemo: 'https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/shq0arfu_Avtoservis.mp3',
+    transcript: 'Avtoservis, pozdravljeni! Prosim za vaše ime in priimek ter katero storitev potrebujete?\n\nDober dan, sem Marko Novak. Rad bi se naročil na redni servis vozila.\n\nGospod Novak, vaš termin za servis sem uspešno zabeležila. Hvala za rezervacijo in lep dan!'
   },
   {
     id: 'nepremicninske-agencije',
@@ -74,8 +74,8 @@ export const industries = [
     subtitle_hero: 'AI tajnica, ki namesto vas prevzame sprejemanje klicev – 24/7, v tekoči slovenščini.',
     problemTitle: 'Konec zgrešenih klicev med ogledi.',
     problemDesc: 'Med predstavitvijo nepremičnine ne morete odgovarjati na telefon. AI tajnica dogovori nove oglede in zbere informacije – profesionalno in zanesljivo.',
-    audioDemo: '/audio/nepremicnine-demo.mp3',
-    transcript: 'Transkript pogovora bo dodan kasneje...'
+    audioDemo: 'https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/3yhu2iax_Nepremicnine.mp3',
+    transcript: 'Nepremičninska agencija, pozdravljeni! Prosim za vaše ime in priimek ter katero storitev potrebujete?\n\nDober dan, sem Marko Novak. Rad bi se naročil na ogled nepremičnine.'
   },
   {
     id: 'frizerski-kozmeticni-saloni',
@@ -87,8 +87,8 @@ export const industries = [
     subtitle_hero: 'AI tajnica, ki namesto vas prevzame sprejemanje klicev – 24/7, v tekoči slovenščini.',
     problemTitle: 'Konec zgrešenih klicev med strižanjem.',
     problemDesc: 'S škarjami v roki ne morete dvigovati telefona. AI tajnica rezervira termine, zabeleži želje strank in potrdi rezervacije – medtem ko vi delate.',
-    audioDemo: '/audio/frizerski-demo.mp3',
-    transcript: 'Transkript pogovora bo dodan kasneje...'
+    audioDemo: 'https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/7izykhef_FRizerski.mp3',
+    transcript: 'Frizerski studio, pozdravljeni! Prosim za vaše ime in priimek ter katero storitev želite rezervirati?\n\nDober dan, Marko Novak tukaj, rad bi se naročil na moško striženje.\n\nGospod Novak, vaš termin za moško striženje sem uspešno zabeležila. Hvala za rezervacijo in lep dan!'
   },
   {
     id: 'pravne-pisarne-odvetniki',
@@ -100,8 +100,8 @@ export const industries = [
     subtitle_hero: 'AI tajnica, ki namesto vas prevzame sprejemanje klicev – 24/7, v tekoči slovenščini.',
     problemTitle: 'Konec zgrešenih klicev med obravnavami.',
     problemDesc: 'Med sodnimi obravnavami in sestanki s strankami morate biti nedostopni. AI tajnica sprejme vse klice, zbere osnovne informacije in dogovori posvetovanje.',
-    audioDemo: '/audio/pravne-demo.mp3',
-    transcript: 'Transkript pogovora bo dodan kasneje...'
+    audioDemo: 'https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/atxbdw9j_Odvetniska%20pisarna.mp3',
+    transcript: 'Odvetniška pisarna, pozdravljeni! Prosim za vaše ime in priimek ter katero storitev potrebujete?\n\nDober dan, sem Marko Novak. Rad bi se naročil na pravno svetovanje.'
   },
   {
     id: 'gradbena-podjetja',
@@ -113,8 +113,8 @@ export const industries = [
     subtitle_hero: 'AI tajnica, ki namesto vas prevzame sprejemanje klicev – 24/7, v tekoči slovenščini.',
     problemTitle: 'Konec zgrešenih klicev na gradbišču.',
     problemDesc: 'Na gradbišču je preglasno in roke imate umazane. AI tajnica sprejme povpraševanja za ponudbe, dogovori oglede in zabeleži zahteve.',
-    audioDemo: '/audio/gradbeništvo-demo.mp3',
-    transcript: 'Transkript pogovora bo dodan kasneje...'
+    audioDemo: 'https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/ytuf351x_gradbeno%20podjetje.mp3',
+    transcript: 'Gradbeno podjetje, pozdravljeni! Prosim za vaše ime in priimek ter katero storitev potrebujete?\n\nDober dan, sem Marko Novak. Rad bi se naročil na ogled objekta za ponudbo.\n\nGospod Novak, vašo zahtevo za ogled objekta sem uspešno zabeležila. Hvala za klic in lep dan!'
   },
   {
     id: 'it-support-tech',
@@ -126,8 +126,8 @@ export const industries = [
     subtitle_hero: 'AI tajnica, ki namesto vas prevzame sprejemanje klicev – 24/7, v tekoči slovenščini.',
     problemTitle: 'Konec zgrešenih klicev med reševanjem incidentov.',
     problemDesc: 'Ko rešujete kritične težave, ne morete prekinjati dela. AI tajnica zabeleži zahtevke, oceni prioriteto in ustvari ticket – efektivna podpora.',
-    audioDemo: '/audio/it-support-demo.mp3',
-    transcript: 'Transkript pogovora bo dodan kasneje...'
+    audioDemo: 'https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/1opj014u_IT.mp3',
+    transcript: 'IT podpora, pozdravljeni! Prosim za vaše ime in priimek ter katero storitev potrebujete?\n\nDober dan, sem Marko Novak. Potrebujem tehnično podporo za računalnik.\n\nGospod Novak, vašo zahtevo za tehnično podporo sem uspešno zabeležila. Hvala za klic in lep dan!'
   },
   {
     id: 'fitnes-centri',
@@ -139,8 +139,8 @@ export const industries = [
     subtitle_hero: 'AI tajnica, ki namesto vas prevzame sprejemanje klicev – 24/7, v tekoči slovenščini.',
     problemTitle: 'Konec zgrešenih klicev med treningom.',
     problemDesc: 'Med vadbami in treningi s strankami ne morete dvigovati telefona. AI tajnica rezervira termine, odgovarja na vprašanja in obvešča o prostih mestih.',
-    audioDemo: '/audio/fitnes-demo.mp3',
-    transcript: 'Transkript pogovora bo dodan kasneje...'
+    audioDemo: 'https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/t1ecs2kt_Fitnes%20center.mp3',
+    transcript: 'Fitnes center, pozdravljeni! Prosim za vaše ime in priimek ter katero storitev potrebujete?\n\nDober dan, sem Marko Novak. Rad bi se naročil na osebni trening.\n\nGospod Novak, vaš termin za trening sem uspešno zabeležila. Hvala za rezervacijo in lep dan!'
   },
   {
     id: 'veterinarske-ambulante',
@@ -152,8 +152,8 @@ export const industries = [
     subtitle_hero: 'AI tajnica, ki namesto vas prevzame sprejemanje klicev – 24/7, v tekoči slovenščini.',
     problemTitle: 'Konec zgrešenih klicev med pregledi.',
     problemDesc: 'Med pregledom hišnih ljubljenčkov potrebujete obe roki. AI tajnica rezervira termine za posege, zbere informacije o simptomih in obvešča o nujnih primerih.',
-    audioDemo: '/audio/veterina-demo.mp3',
-    transcript: 'Transkript pogovora bo dodan kasneje...'
+    audioDemo: 'https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/t9nhkzwr_veterinrska%20klinika.mp3',
+    transcript: 'Veterinarska klinika, pozdravljeni! Za nujne primere in dežurnega veterinarja izberite 1, za redno naročanje pa izberite 2.\n\nDober dan, Marko Novak tukaj, izbiram opcijo 1 za nujni primer.'
   },
   {
     id: 'racunovodski-servisi',
@@ -165,8 +165,8 @@ export const industries = [
     subtitle_hero: 'AI tajnica, ki namesto vas prevzame sprejemanje klicev – 24/7, v tekoči slovenščini.',
     problemTitle: 'Konec zgrešenih klicev v davčni sezoni.',
     problemDesc: 'V času oddaje davčnih napovedi ne morete biti moteni. AI tajnica dogovori termine, zbere osnovna vprašanja in preusmeri nujne zadeve.',
-    audioDemo: '/audio/racunovodstvo-demo.mp3',
-    transcript: 'Transkript pogovora bo dodan kasneje...'
+    audioDemo: 'https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/6t8q5wi3_Racunovodski%20servis.mp3',
+    transcript: 'Računovodski servis, pozdravljeni! Prosim za vaše ime in priimek ter katero storitev potrebujete?\n\nDober dan, sem Marko Novak. Rad bi se naročil na računovodsko svetovanje.\n\nGospod Novak, vaš termin za svetovanje sem uspešno zabeležila. Hvala za rezervacijo in lep dan!'
   },
   {
     id: 'trgovine-ecommerce',
@@ -178,8 +178,8 @@ export const industries = [
     subtitle_hero: 'AI tajnica, ki namesto vas prevzame sprejemanje klicev – 24/7, v tekoči slovenščini.',
     problemTitle: 'Konec zgrešenih klicev med strežbo strank.',
     problemDesc: 'Med strežbo v trgovini ali pakiranjem naročil ne morete odgovarjati na telefon. AI tajnica zbere poizvedbe, odgovarja na vprašanja o izdelkih in pomaga pri vračilih.',
-    audioDemo: '/audio/trgovine-demo.mp3',
-    transcript: 'Transkript pogovora bo dodan kasneje...'
+    audioDemo: 'https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/pqxu7m9l_Trgovina.mp3',
+    transcript: 'Trgovina, pozdravljeni! Prosim za vaše ime in priimek ter katero storitev potrebujete?\n\nDober dan, sem Marko Novak. Rad bi rezerviral prevzem izdelka v trgovini.\n\nGospod Novak, vašo rezervacijo za prevzem izdelka sem uspešno zabeležila. Hvala za klic in lep dan!'
   },
   {
     id: 'turisticne-agencije',
@@ -191,8 +191,8 @@ export const industries = [
     subtitle_hero: 'AI tajnica, ki namesto vas prevzame sprejemanje klicev – 24/7, v tekoči slovenščini.',
     problemTitle: 'Konec zgrešenih klicev med sestanki s strankami.',
     problemDesc: 'Med načrtovanjem potovanj ne morete prekinjati sestankov. AI tajnica sprejme nove povpraševanja, zbere preference strank in dogovori osebne predstavitve.',
-    audioDemo: '/audio/turizem-demo.mp3',
-    transcript: 'Transkript pogovora bo dodan kasneje...'
+    audioDemo: 'https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/jx61l5wx_turisticna%20agencija.mp3',
+    transcript: 'Turistična agencija, pozdravljeni! Za informacije o ponudbi izberite 1, za pogovor z agentom pa izberite 2.\n\nDober dan, Marko Novak tukaj, izbiram opcijo 2 za agenta\n\nGospod Novak, vaš klic takoj preusmerjam k našemu potovalnemu agentu. Prosim, ostanite na liniji!!'
   }
 ];
 

@@ -93,16 +93,20 @@ const IndustryPage = () => {
           <div className="industry-container">
             <h2 className="industry-section-title">Poslušaj, kako AI obravnava tvoje stranke</h2>
             
-            {/* Audio Player Placeholder */}
+            {/* Audio Player */}
             <div className="audio-player-container">
-              <div className="audio-player-placeholder">
-                <Play size={48} className="audio-play-icon" />
-                <p className="audio-placeholder-text">
-                  Zvočni demo bo dodan kmalu
-                </p>
-                <p className="audio-note">
-                  URL: {industry.audioDemo}
-                </p>
+              <div className="audio-player-wrapper">
+                <div className="audio-icon-wrapper">
+                  <Play size={28} className="audio-icon" />
+                </div>
+                <audio 
+                  controls 
+                  className="audio-element"
+                  preload="metadata"
+                >
+                  <source src={industry.audioDemo} type="audio/mpeg" />
+                  Vaš brskalnik ne podpira audio predvajanja.
+                </audio>
               </div>
             </div>
 
@@ -113,11 +117,9 @@ const IndustryPage = () => {
                 <h3>Transkript pogovora</h3>
               </div>
               <div className="transcript-content">
-                <p>{industry.transcript}</p>
-                <p className="transcript-note">
-                  <strong>Opomba:</strong> Ta transkript bo nadomestite z dejanskim pogovorom. 
-                  Google ne sliši zvoka - transkript omogoča indeksacijo specifičnih ključnih besed!
-                </p>
+                {industry.transcript.split('\n\n').map((paragraph, idx) => (
+                  <p key={idx} className="transcript-paragraph">{paragraph}</p>
+                ))}
               </div>
             </div>
           </div>
