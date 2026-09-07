@@ -541,9 +541,13 @@ const Landing = () => {
                   <Mail size={16} />
                   <span>info@asistentrm.org</span>
                 </a>
-                <a href="tel:+38659790410" className="footer-contact-item">
+                <a href="tel:+38668660690" className="footer-contact-item">
                   <PhoneIcon size={16} />
-                  <span>059 790 410</span>
+                  <span>068 660 690</span>
+                </a>
+                <a href="tel:+38641438869" className="footer-contact-item">
+                  <PhoneIcon size={16} />
+                  <span>041 438 869</span>
                 </a>
               </div>
             </div>
