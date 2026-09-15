@@ -6,20 +6,20 @@ const SEOContent = ({ onOpenContact }) => {
 
   const faqs = [
     {
-      question: "Kaj je AI tajnica?",
-      answer: "AI tajnica je programska rešitev, ki s pomočjo umetne inteligence sprejema klice 24/7. Govori tekoče slovenščino, odgovarja na vprašanja, rezervira termine in vas obvešča o vsakem klicu."
+      question: "Kaj je AI receptorka?",
+      answer: "AI receptorka je programska rešitev, ki s pomočjo umetne inteligence opravlja delo recepcije 24/7. Govori tekoče slovenščino, sprejema klice, odgovarja na vprašanja, rezervira termine in vas obvešča o vsakem klicu. Popolna zamenjava za klasično receptorko."
     },
     {
-      question: "Ali AI tajnica tekoče govori slovensko?",
-      answer: "Da, govori tekoče slovenščino z naravnim glasom. Razume slovenski jezik in lokalne izraze. Stranke pogosto ne opazijo, da se pogovarjajo z AI."
+      question: "Ali AI receptorka tekoče govori slovensko?",
+      answer: "Da, govori tekoče slovenščino z naravnim glasom. Razume slovenski jezik in lokalne izraze. Stranke pogosto ne opazijo, da se pogovarjajo z AI reception asistentom."
     },
     {
-      question: "Kako se AI tajnica povezuje z mojim koledarjem?",
-      answer: "Enostavno se integrira z Google Calendar, Outlook in drugimi koledarji. Ko stranka kliče za termin, AI preverja vaše proste termine v realnem času in takoj rezervira. Prejmete avtomatsko obvestilo."
+      question: "Kako se AI receptorka povezuje z mojim koledarjem?",
+      answer: "Enostavno se integrira z Google Calendar, Outlook in drugimi koledarji. Ko stranka kliče za termin, AI receptorka preverja vaše proste termine v realnem času in takoj rezervira. Prejmete avtomatsko obvestilo."
     },
     {
-      question: "Za katera podjetja je AI tajnica primerna?",
-      answer: "Idealna za vse storitve, ki temeljijo na terminih: zdravstveni domovi, saloni, delavnice, pravne pisarne, računovodstvo, nepremičnine in druge storitvene dejavnosti. Primerna za mala in srednje velika podjetja."
+      question: "Za katera podjetja je AI receptorka primerna?",
+      answer: "Idealna za vse storitve, ki potrebujejo reception: hoteli, zdravstveni domovi, pisarne, saloni, delavnice, pravne pisarne, računovodstvo, nepremičnine in druge storitvene dejavnosti. Primerna za mala in srednje velika podjetja."
     }
   ];
 
@@ -28,7 +28,7 @@ const SEOContent = ({ onOpenContact }) => {
       {/* Kako deluje sekcija */}
       <section className="seo-section">
         <div className="seo-container">
-          <h2 className="seo-title">Kako deluje AI tajnica?</h2>
+          <h2 className="seo-title">Kako deluje AI receptorka?</h2>
           
           <div className="seo-steps-grid">
             <div className="seo-step-card">

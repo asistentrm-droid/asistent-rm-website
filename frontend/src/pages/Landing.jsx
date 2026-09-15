@@ -186,10 +186,10 @@ const Landing = () => {
           <h1 className="hero-title hero-title-animated">
             <span className="hero-word hero-word-1">Vaša</span>{' '}
             <span className="hero-word hero-word-2">24/7</span>{' '}
-            <span className="hero-word hero-word-3">AI Tajnica</span>
+            <span className="hero-word hero-word-3">AI Receptorka</span>
           </h1>
           <p className="hero-subtitle hero-subtitle-reveal">
-            Avtomatizirajte telefonske klice, naročanje strank in urnike v tekoči slovenščini.
+            AI reception asistent sprejema klice, naroča stranke in upravlja termine - v tekoči slovenščini. Virtualna receptorka brez osebja.
           </p>
           <div className="hero-cta">
             <a href="#demo" className="btn-primary">
@@ -207,7 +207,7 @@ const Landing = () => {
       <section className="demo-section" id="demo">
         <div className={`demo-content ${isVisible['demo'] ? 'visible' : ''}`}>
           <div className="demo-badge">🎙️ POSKUSI V ŽIVO</div>
-          <h2 className="demo-title-main">Govori z AI tajnico. Zdaj.</h2>
+          <h2 className="demo-title-main">Govori z AI receptorko. Zdaj.</h2>
           <p className="demo-subtitle">Pokliči in prepričaj se kako AI obravnava tvoje stranke</p>
           
           {/* Beta Disclaimer */}
