@@ -1162,11 +1162,6 @@ select:focus {
   line-height: 1.6;
   margin: 0;
 }
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.7);
-  margin: 0;
-}
 
 .demo-box-v2 {
   background: rgba(255, 255, 255, 0.05);
