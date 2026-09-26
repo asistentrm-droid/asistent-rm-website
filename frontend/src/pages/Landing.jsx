@@ -189,7 +189,7 @@ const Landing = () => {
             <span className="hero-word hero-word-3">AI Receptorka</span>
           </h1>
           <p className="hero-subtitle hero-subtitle-reveal">
-            Sprejema klice, preusmeria klice, naroča stranke in upravlja termine - v tekoči slovenščini.
+            Sprejema klice, preusmerja klice, naroča stranke in upravlja termine - v tekoči slovenščini.
             <span className="seo-only">Povezuje se z vašim koledarjem.</span>
           </p>
           <div className="hero-cta">
