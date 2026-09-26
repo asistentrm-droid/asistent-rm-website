@@ -18,7 +18,7 @@ const CookieConsent = () => {
 
   const loadGoogleAnalytics = () => {
     // Google Analytics 4 tracking code
-    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // TODO: Replace with your actual GA4 ID
+    const GA_MEASUREMENT_ID = 'G-3546687QWX';
     
     // Load gtag.js
     const script1 = document.createElement('script');
@@ -36,7 +36,7 @@ const CookieConsent = () => {
       'cookie_flags': 'SameSite=None;Secure'
     });
 
-    console.log('✅ Google Analytics loaded');
+    console.log('✅ Google Analytics G-3546687QWX loaded');
   };
 
   const handleAccept = () => {
