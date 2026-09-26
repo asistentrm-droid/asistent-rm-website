@@ -11,7 +11,7 @@ const SEOContent = ({ onOpenContact }) => {
     },
     {
       question: "Ali AI receptorka tekoče govori slovensko?",
-      answer: "Da, govori tekoče slovenščino z naravnim glasom. Razume slovenski jezik in lokalne izraze. Stranke pogosto ne opazijo, da se pogovarjajo z AI reception asistentom."
+      answer: "Da, govori tekoče slovenščino z naravnim glasom. Razume slovenski jezik in lokalne izraze. Stranke pogosto ne opazijo, da se pogovarjajo z AI asistentom."
     },
     {
       question: "Kako se AI receptorka povezuje z mojim koledarjem?",
@@ -19,7 +19,7 @@ const SEOContent = ({ onOpenContact }) => {
     },
     {
       question: "Za katera podjetja je AI receptorka primerna?",
-      answer: "Idealna za vse storitve, ki potrebujejo reception: hoteli, zdravstveni domovi, pisarne, saloni, delavnice, pravne pisarne, računovodstvo, nepremičnine in druge storitvene dejavnosti. Primerna za mala in srednje velika podjetja."
+      answer: "Idealna za vse storitve: hoteli, zdravstveni domovi, pisarne, saloni, delavnice, pravne pisarne, računovodstvo, nepremičnine in druge storitvene dejavnosti. Primerna za mala in srednje velika podjetja."
     }
   ];
 
