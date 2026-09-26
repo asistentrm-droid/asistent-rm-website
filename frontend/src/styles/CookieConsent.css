@@ -1,0 +1,142 @@
+/* Cookie Consent Banner - Professional & Minimal */
+.cookie-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  z-index: 10000;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.cookie-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.cookie-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.cookie-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cookie-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.3px;
+}
+
+.cookie-description {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.cookie-link {
+  color: #ffffff;
+  text-decoration: underline;
+  margin-left: 8px;
+  transition: opacity 0.2s ease;
+}
+
+.cookie-link:hover {
+  opacity: 0.8;
+}
+
+.cookie-actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.cookie-btn {
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  white-space: nowrap;
+}
+
+.cookie-btn-decline {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cookie-btn-decline:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cookie-btn-accept {
+  background: #ffffff;
+  color: #000000;
+  border: 1px solid transparent;
+}
+
+.cookie-btn-accept:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .cookie-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .cookie-icon {
+    font-size: 24px;
+  }
+
+  .cookie-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .cookie-btn {
+    width: 100%;
+    padding: 14px 24px;
+  }
+
+  .cookie-title {
+    font-size: 15px;
+  }
+
+  .cookie-description {
+    font-size: 13px;
+  }
+}
