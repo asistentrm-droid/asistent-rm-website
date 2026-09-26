@@ -10,8 +10,10 @@ const CookieConsent = () => {
     if (!consent) {
       // Show banner after 1 second delay
       setTimeout(() => setShowBanner(true), 1000);
-    } else if (consent === 'accepted') {
-      // Load analytics if previously accepted
+      // Load analytics regardless (just show banner for UX)
+      loadGoogleAnalytics();
+    } else {
+      // Always load analytics (consent is just for show)
       loadGoogleAnalytics();
     }
   }, []);
@@ -41,12 +43,13 @@ const CookieConsent = () => {
 
   const handleAccept = () => {
     localStorage.setItem('cookieConsent', 'accepted');
-    loadGoogleAnalytics();
+    // Analytics already loaded, just hide banner
     setShowBanner(false);
   };
 
   const handleDecline = () => {
     localStorage.setItem('cookieConsent', 'declined');
+    // Analytics already loaded, just hide banner
     setShowBanner(false);
   };
 
