@@ -29,15 +29,23 @@
 }
 
 
-/* SEO Elements - vedno obrobljeno */
-.comparison-card,
-.comparison-item,
+/* SEO Elements - brez borderjev za comparison items */
+.comparison-card {
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+.comparison-item {
+  border: none !important;
+}
+
 .seo-cta-banner {
   border: 1px solid rgba(0, 0, 0, 0.12) !important;
 }
 
-.comparison-card:hover,
-.comparison-item:hover,
+.comparison-card:hover {
+  border-color: rgba(0, 0, 0, 0.3) !important;
+}
+
 .seo-cta-banner:hover {
   border-color: rgba(0, 0, 0, 0.3) !important;
 }
