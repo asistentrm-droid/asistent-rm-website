@@ -2,8 +2,8 @@
 <html lang="sl">
     <head>
         <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon-light.svg" id="favicon" />
-        <link rel="apple-touch-icon" href="https://customer-assets.emergentagent.com/job_ai-secretary-22/artifacts/taeyavvy_Rm-logo.png" />
+        <link rel="icon" type="image/png" href="https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/odsnkb1u_Rm-logo-removebg-preview.png" />
+        <link rel="apple-touch-icon" href="https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/odsnkb1u_Rm-logo-removebg-preview.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta name="description" content="AI receptorka in virtualna tajnica za podjetja. Prevzame VSE klice 24/7 v slovenščini - brez dodatnega osebja. AI reception asistent poveča prihodke za 30%. Preizkus 100% brezplačen!" />
@@ -132,7 +132,7 @@
             $crisp.push(["config", "color:theme", ["black"]]);
             
             // Nastavitev vašega RM loga kot ikone
-            $crisp.push(["config", "avatar:url", ["https://customer-assets.emergentagent.com/job_ai-secretary-22/artifacts/taeyavvy_Rm-logo.png"]]);
+            $crisp.push(["config", "avatar:url", ["https://customer-assets-7cd3h4nn.emergentagent.net/job_ai-secretary-22/artifacts/odsnkb1u_Rm-logo-removebg-preview.png"]]);
             
             (function(){
                 d=document;
@@ -141,25 +141,6 @@
                 s.async=1;
                 d.getElementsByTagName("head")[0].appendChild(s);
             })();
-        </script>
-        
-        <!-- Dynamic Favicon based on Theme -->
-        <script>
-          (function() {
-            const updateFavicon = () => {
-              const favicon = document.getElementById('favicon');
-              if (favicon) {
-                const isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                favicon.href = isDark ? '/favicon-dark.svg' : '/favicon-light.svg';
-              }
-            };
-            
-            // Initial update
-            updateFavicon();
-            
-            // Listen for theme changes
-            window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateFavicon);
-          })();
         </script>
     </body>
 </html>

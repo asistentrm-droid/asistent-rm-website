@@ -189,7 +189,7 @@ const Landing = () => {
             <span className="hero-word hero-word-3">AI Receptorka</span>
           </h1>
           <p className="hero-subtitle hero-subtitle-reveal">
-            Sprejema klice, naroča stranke in upravlja termine - v tekoči slovenščini. Virtualna receptorka brez osebja.
+            Sprejema klice, naroča stranke in upravlja termine - v tekoči slovenščini. Povezuje se z vašim koledarjem.
           </p>
           <div className="hero-cta">
             <a href="#demo" className="btn-primary">
@@ -242,7 +242,7 @@ const Landing = () => {
               </div>
               <div className="demo-step">
                 <span className="step-num">2</span>
-                <span className="step-text">Govori z AI kot s stranko</span>
+                <span className="step-text">Govori z AI</span>
               </div>
               <div className="demo-step">
                 <span className="step-num">3</span>
@@ -445,7 +445,7 @@ const Landing = () => {
           </div>
 
           <div className="calculator-cta">
-            <a href="#demo" className="btn-primary-large">
+            <a href="#demo" className="btn-primary-large" style={{background: '#000', color: '#fff'}}>
               Preizkusi Demo
             </a>
           </div>
@@ -532,17 +532,13 @@ const Landing = () => {
             <div className="footer-section">
               <h4 className="footer-heading">Kontakt</h4>
               <div className="footer-contact">
-                <a href="mailto:info@asistentrm.org" className="footer-contact-item">
+                <a href="mailto:info@asistentrm.com" className="footer-contact-item">
                   <Mail size={16} />
-                  <span>info@asistentrm.org</span>
+                  <span>info@asistentrm.com</span>
                 </a>
-                <a href="tel:+38668660690" className="footer-contact-item">
+                <a href="tel:+38659790410" className="footer-contact-item">
                   <PhoneIcon size={16} />
-                  <span>068 660 690</span>
-                </a>
-                <a href="tel:+38641438869" className="footer-contact-item">
-                  <PhoneIcon size={16} />
-                  <span>041 438 869</span>
+                  <span>059 790 410</span>
                 </a>
               </div>
             </div>
@@ -564,7 +560,7 @@ const Landing = () => {
           </div>
           
           <div className="footer-bottom">
-            <div className="footer-copy">© 2025 Asistent RM. Vse pravice pridržane.</div>
+            <div className="footer-copy">© {new Date().getFullYear()} Asistent RM. Vse pravice pridržane.</div>
           </div>
         </div>
       </footer>

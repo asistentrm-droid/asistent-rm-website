@@ -156,7 +156,6 @@ const SEOContent = ({ onOpenContact }) => {
                 </li>
                 <li className="comparison-item comparison-positive">
                   <Check className="comparison-icon" size={20} />
-                  <span>Od 99€/mesec</span>
                 </li>
                 <li className="comparison-item comparison-positive">
                   <Check className="comparison-icon" size={20} />
