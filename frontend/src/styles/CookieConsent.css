@@ -34,7 +34,6 @@
 .cookie-icon {
   font-size: 32px;
   flex-shrink: 0;
-  filter: grayscale(1) brightness(3);
 }
 
 .cookie-text {
