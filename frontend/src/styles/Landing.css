@@ -1125,8 +1125,8 @@ select:focus {
 
 /* Beta Disclaimer */
 .beta-disclaimer {
-  background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 20px;
   padding: var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
@@ -1141,6 +1141,7 @@ select:focus {
   font-size: 32px;
   flex-shrink: 0;
   line-height: 1;
+  filter: grayscale(0);
 }
 
 .beta-text {
@@ -1151,14 +1152,14 @@ select:focus {
   display: block;
   font-size: 16px;
   font-weight: 600;
-  color: var(--color-black);
+  color: var(--color-white);
   margin-bottom: 8px;
   letter-spacing: 0.5px;
 }
 
 .beta-text p {
   font-size: 14px;
-  color: var(--color-gray-700);
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
   margin: 0;
 }
