@@ -48,6 +48,62 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: var(--color-white);
   color: var(--color-black);
+
+/* Global Border Style - vedno obrobljeno */
+button:not(.hamburger-btn),
+.btn-primary,
+.btn-secondary,
+.btn-primary-large,
+.btn-hero-cta,
+.use-case-card,
+.demo-step,
+.problem-card,
+.solution-card,
+.seo-step-card,
+.calculator-card,
+.pricing-card,
+.faq-item,
+.feature-card,
+.integration-logo,
+input,
+textarea,
+select,
+.nav-link-cta {
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  transition: all 0.3s ease;
+}
+
+/* Hover - močnejši obroček */
+button:not(.hamburger-btn):hover,
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-primary-large:hover,
+.btn-hero-cta:hover,
+.use-case-card:hover,
+.demo-step:hover,
+.problem-card:hover,
+.solution-card:hover,
+.seo-step-card:hover,
+.calculator-card:hover,
+.pricing-card:hover,
+.faq-item:hover,
+.feature-card:hover,
+.integration-logo:hover,
+input:hover,
+textarea:hover,
+select:hover,
+.nav-link-cta:hover {
+  border-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Focus state */
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: rgba(0, 0, 0, 0.4) !important;
+  outline: none;
+}
+
   line-height: 1.6;
   overflow-x: hidden;
 }

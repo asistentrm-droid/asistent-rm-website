@@ -29,6 +29,22 @@
   width: auto;
 }
 
+/* Industry Page Elements - vedno obrobljeno */
+.btn-hero-cta,
+.audio-player-container-new,
+.audio-transcript,
+.industry-benefit-card {
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+.btn-hero-cta:hover,
+.audio-player-container-new:hover,
+.audio-transcript:hover,
+.industry-benefit-card:hover {
+  border-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+
 .industry-nav-links {
   display: flex;
   gap: 20px;

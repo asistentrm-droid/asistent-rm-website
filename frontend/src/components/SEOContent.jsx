@@ -156,9 +156,6 @@ const SEOContent = ({ onOpenContact }) => {
                 </li>
                 <li className="comparison-item comparison-positive">
                   <Check className="comparison-icon" size={20} />
-                </li>
-                <li className="comparison-item comparison-positive">
-                  <Check className="comparison-icon" size={20} />
                   <span>Brez odsotnosti</span>
                 </li>
                 <li className="comparison-item comparison-positive">

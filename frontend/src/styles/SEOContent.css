@@ -28,6 +28,20 @@
   line-height: 1.2;
 }
 
+
+/* SEO Elements - vedno obrobljeno */
+.comparison-card,
+.comparison-item,
+.seo-cta-banner {
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+.comparison-card:hover,
+.comparison-item:hover,
+.seo-cta-banner:hover {
+  border-color: rgba(0, 0, 0, 0.3) !important;
+}
+
 /* Steps Grid - New Design */
 .seo-steps-grid {
   display: grid;
