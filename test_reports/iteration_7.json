@@ -1,0 +1,38 @@
+{
+  "summary": "First-pass smoke test. Frontend loads with Slovenian content, chat widget bubble opens with Asistent RM branding, admin setup (8-step quiz) and admin chats pages render. Sitemap.xml and robots.txt both accessible (200). CRITICAL: /api/chat/send returns streaming error instead of AI reply due to unawaited async coroutine in backend. Admin company-data GET returns empty object (expected) and /api/admin/chats returns sessions list.",
+  "tested_scope": ["frontend", "backend", "integration"],
+  "passed": [
+    "GET /api/ returns Hello World (200)",
+    "GET /sitemap.xml returns 200 with industry URLs (zdravstvo, etc.)",
+    "GET /robots.txt returns 200 with AI crawlers (GPTBot, ChatGPT-User, Google-Extended) allowed",
+    "GET /api/admin/company-data returns {} (200) on empty DB",
+    "GET /api/admin/chats returns {sessions:[...]} (200)",
+    "Homepage loads with title 'Asistent RM | AI Receptorka za Podjetja' and hero 'Vaša 24/7 AI Receptorka'",
+    "Chat bubble (black circle, MessageCircle icon) visible bottom-right after cookie dismissal",
+    "Clicking bubble opens widget with 'Asistent RM' + 'AI Asistent' header and Slovenian greeting",
+    "User message 'Pozdravljen' is persisted (shows up on /admin/chats as session with 1 message)",
+    "/admin/setup page renders quiz step 1/8 'Osnovne informacije o podjetju' with textarea and Naprej button",
+    "/admin/chats renders list with 2 Pogovori and conversation detail panel"
+  ],
+  "failed": [
+    {
+      "area": "backend /api/chat/send (Gemini integration)",
+      "issue": "Streaming response returns error 'data: [ERROR] cannot encode object: <coroutine object LlmChat.send_message at 0x...>, of type: <class 'coroutine'>'. In /app/backend/routes/chat.py line ~88, code uses `await asyncio.to_thread(chat.send_message, user_msg)` but LlmChat.send_message is an async coroutine, so to_thread returns the coroutine object instead of its awaited value. Fix: replace with `response_text = await chat.send_message(user_msg)` (no to_thread). UI confirms: user bubble shown, assistant bubble appears empty (blank placeholder).",
+      "evidence": "curl POST /api/chat/send -d '{\"session_id\":\"test\",\"message\":\"Pozdravljen\"}' -> 'data: [ERROR] cannot encode object: <coroutine object LlmChat.send_message...>'. Screenshot chat_after_send shows empty assistant bubble.",
+      "priority": "HIGH"
+    },
+    {
+      "area": "frontend cookie consent / chat widget UX",
+      "issue": "CookieConsent banner (class 'cookie-consent-banner') intercepts pointer events on the chat bubble until user clicks Sprejmi/Zavrni. On first visit the chat button is not clickable. Consider z-index ordering or placing cookie banner above but not covering the chat bubble region.",
+      "evidence": "Playwright click on chat bubble times out: 'div.cookie-consent-banner intercepts pointer events'. After clicking Sprejmi, bubble becomes clickable.",
+      "priority": "MEDIUM"
+    }
+  ],
+  "action_items": [
+    "Fix /app/backend/routes/chat.py: use `response_text = await chat.send_message(user_msg)` instead of `await asyncio.to_thread(chat.send_message, user_msg)` because emergentintegrations LlmChat.send_message is async.",
+    "Adjust cookie consent banner so it does not cover/intercept the chat widget bubble on first load (raise chat bubble z-index above banner, or restrict banner width so bubble region is free)."
+  ],
+  "success_rate": {"backend": "80%", "frontend": "90%"},
+  "retest_needed": true,
+  "full_testing_deferred": true
+}

@@ -84,8 +84,8 @@ async def send_message(request: ChatMessageRequest):
         # Get response (non-streaming for simplicity with current SDK)
         async def generate():
             try:
-                # Call LLM
-                response_text = await asyncio.to_thread(chat.send_message, user_msg)
+                # Call LLM - direct await since it's already async
+                response_text = await chat.send_message(user_msg)
                 
                 # Save assistant response
                 assistant_message = {
