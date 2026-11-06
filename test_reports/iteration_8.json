@@ -1,0 +1,19 @@
+{
+  "summary": "Retest of iteration_7 fixes. Both reported bugs are RESOLVED. (1) /api/chat/send now returns real streaming Gemini response in Slovenian (no coroutine error). (2) Cookie consent banner no longer blocks the chat bubble on first page load (pointer-events: none on banner, auto on children). Verified end-to-end: chat bubble is clickable immediately, user message sent, assistant reply fully rendered in widget, persisted to MongoDB and visible on /admin/chats. Admin company-data POST/GET round-trip works.",
+  "tested_scope": ["frontend", "backend", "integration"],
+  "passed": [
+    "POST /api/chat/send streams real Gemini reply (SSE chunks + [DONE])",
+    "Chat bubble clickable on first load while cookie banner visible (fix verified)",
+    "Chat widget renders full assistant response end-to-end (streamed word-by-word)",
+    "GET /api/chat/history/{session_id} returns both user + assistant messages",
+    "GET /api/admin/chats returns sessions with preview, timestamps, counts",
+    "POST /api/admin/company-data returns {success:true} and GET returns saved payload",
+    "Homepage loads with 'Vaša 24/7 AI Receptorka' hero and Slovenian content"
+  ],
+  "failed": [],
+  "action_items": [],
+  "success_rate": {"backend": "100%", "frontend": "100%"},
+  "retest_needed": false,
+  "full_testing_deferred": true,
+  "notes": "Did not re-verify all 15 /panoge/* pages or every nav smooth-scroll link in this latency-sensitive pass; defer to full testing agent. Test artifacts (TEST_retest_1 chat session + TEST_basic company_data) were cleaned up from MongoDB after verification."
+}
