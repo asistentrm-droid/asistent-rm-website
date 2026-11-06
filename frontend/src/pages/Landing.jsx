@@ -4,6 +4,7 @@ import '../styles/Landing.css';
 import '../styles/SEOContent.css';
 import UseCases from '../components/UseCases';
 import SEOContent from '../components/SEOContent';
+import { initAllAnimations } from '../utils/animations';
 
 const Landing = () => {
   const [isVisible, setIsVisible] = useState({});
@@ -16,6 +17,9 @@ const Landing = () => {
   const [animatedTime, setAnimatedTime] = useState(0);
 
   useEffect(() => {
+    // Initialize animations
+    const cleanup = initAllAnimations();
+    
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -33,7 +37,10 @@ const Landing = () => {
       observer.observe(section);
     });
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      if (cleanup) cleanup();
+    };
   }, []);
 
   const calculateLoss = () => {

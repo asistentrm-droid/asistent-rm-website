@@ -10,6 +10,8 @@ from typing import List
 import uuid
 from datetime import datetime, timezone
 
+# Import routes
+from routes import chat, admin
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -18,6 +20,10 @@ load_dotenv(ROOT_DIR / '.env')
 mongo_url = os.environ['MONGO_URL']
 client = AsyncIOMotorClient(mongo_url)
 db = client[os.environ['DB_NAME']]
+
+# Inject db into route modules
+chat.set_db(db)
+admin.set_db(db)
 
 # Create the main app without a prefix
 app = FastAPI()
@@ -68,6 +74,10 @@ async def get_status_checks():
 
 # Include the router in the main app
 app.include_router(api_router)
+
+# Include chat and admin routes
+app.include_router(chat.router, prefix="/api")
+app.include_router(admin.router, prefix="/api")
 
 app.add_middleware(
     CORSMiddleware,

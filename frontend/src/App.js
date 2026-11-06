@@ -7,6 +7,9 @@ import Privacy from "./pages/Privacy";
 import GeneralTerms from "./pages/GeneralTerms";
 import IndustryPage from "./pages/IndustryPage";
 import CookieConsent from "./components/CookieConsent";
+import ChatWidget from "./components/ChatWidget";
+import AdminSetup from "./pages/AdminSetup";
+import AdminChats from "./pages/AdminChats";
 
 function App() {
   return (
@@ -19,8 +22,11 @@ function App() {
           <Route path="/zasebnost" element={<Privacy />} />
           <Route path="/splosni-pogoji" element={<GeneralTerms />} />
           <Route path="/panoge/:industryId" element={<IndustryPage />} />
+          <Route path="/admin/setup" element={<AdminSetup />} />
+          <Route path="/admin/chats" element={<AdminChats />} />
         </Routes>
         <CookieConsent />
+        <ChatWidget />
       </BrowserRouter>
     </div>
   );
