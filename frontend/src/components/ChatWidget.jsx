@@ -26,7 +26,11 @@ const ChatWidget = () => {
   }, [messages, isLoading]);
 
   useEffect(() => {
-    if (isOpen && inputRef.current) inputRef.current.focus();
+    if (!isOpen) return undefined;
+    if (inputRef.current) inputRef.current.focus();
+    const onKey = (e) => { if (e.key === 'Escape') setIsOpen(false); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
   }, [isOpen]);
 
   const updateLast = (updater) =>

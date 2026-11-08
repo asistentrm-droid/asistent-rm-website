@@ -35,7 +35,7 @@ const Dropdown = ({ group, pathname }) => {
       >
         {group.label} <ChevronDown size={16} aria-hidden="true" className="sh-dd-chev" />
       </button>
-      <div className="sh-dd-panel" role="menu">
+      <div className="sh-dd-panel" role="menu" onClick={() => setOpen(false)}>
         {group.items.map((item) => (
           <Link key={item.to} to={item.to} className="sh-dd-item" role="menuitem">
             <strong>{item.text}</strong>
@@ -93,7 +93,7 @@ const SiteHeader = () => {
         </div>
 
         {open && (
-          <nav className="sh-mobile" id="sh-mobile" aria-label="Mobilni meni">
+          <nav className="sh-mobile" id="sh-mobile" aria-label="Mobilni meni" onClick={(e) => { if (e.target.closest('a')) setOpen(false); }}>
             {navGroups.map((g) => (g.items ? (
               <div className="sh-mobile-group" key={g.label}>
                 <p className="sh-mobile-label">{g.label}</p>

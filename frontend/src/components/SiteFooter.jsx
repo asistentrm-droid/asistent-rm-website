@@ -8,7 +8,7 @@ const SiteFooter = () => (
     <div className="footer-content">
       <div className="footer-top">
         <div className="footer-section">
-          <img src="/logo-white.png" alt="Asistent RM" className="footer-logo-image" width="96" height="72" />
+          <Link to="/" aria-label="Asistent RM — domov"><img src="/logo-white.png" alt="Asistent RM" className="footer-logo-image" width="96" height="72" /></Link>
           <p className="footer-tagline">AI receptorka za slovenska podjetja.</p>
         </div>
 

@@ -264,3 +264,8 @@
   .sh-mobile-group { display: flex; flex-direction: column; }
   .sh-mobile-sub { display: block; }
 }
+
+/* Sidra ne smejo pristati pod lepljivo glavo */
+[id] { scroll-margin-top: 96px; }
+/* iOS: polja s pisavo pod 16 px ob tipkanju povečajo zaslon */
+.chat-input, .modal-input, select.modal-input, textarea.modal-input { font-size: 16px !important; }
