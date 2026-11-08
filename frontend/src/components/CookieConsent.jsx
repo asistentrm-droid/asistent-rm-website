@@ -1,69 +1,70 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/CookieConsent.css';
 
+const GA_MEASUREMENT_ID = 'G-3546687QWX';
+const CONSENT_KEY = 'cookieConsent';
+
+const readConsent = () => {
+  try { return localStorage.getItem(CONSENT_KEY); } catch { return null; }
+};
+const saveConsent = (value) => {
+  try { localStorage.setItem(CONSENT_KEY, value); } catch { /* ignore */ }
+};
+
+// Google Analytics se naloži šele, ko obiskovalec piškotke sprejme.
+const loadGoogleAnalytics = () => {
+  if (window.__gaLoaded) return;
+  window.__gaLoaded = true;
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+  document.head.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+};
+
 const CookieConsent = () => {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    // Check if user has already made a choice
-    const consent = localStorage.getItem('cookieConsent');
-    if (!consent) {
-      // Show banner after 1 second delay
-      setTimeout(() => setShowBanner(true), 1000);
-      // Load analytics regardless (just show banner for UX)
+    const consent = readConsent();
+    if (consent === 'accepted') {
       loadGoogleAnalytics();
-    } else {
-      // Always load analytics (consent is just for show)
-      loadGoogleAnalytics();
+      return undefined;
     }
+    if (consent === 'declined') return undefined;
+    const t = setTimeout(() => setShowBanner(true), 1000);
+    return () => clearTimeout(t);
   }, []);
 
-  const loadGoogleAnalytics = () => {
-    // Google Analytics 4 tracking code
-    const GA_MEASUREMENT_ID = 'G-3546687QWX';
-    
-    // Load gtag.js
-    const script1 = document.createElement('script');
-    script1.async = true;
-    script1.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
-    document.head.appendChild(script1);
-
-    // Initialize GA4
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){window.dataLayer.push(arguments);}
-    window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', GA_MEASUREMENT_ID, {
-      'anonymize_ip': true,
-      'cookie_flags': 'SameSite=None;Secure'
-    });
-
-    console.log('✅ Google Analytics G-3546687QWX loaded');
-  };
-
   const handleAccept = () => {
-    localStorage.setItem('cookieConsent', 'accepted');
-    // Analytics already loaded, just hide banner
+    saveConsent('accepted');
+    loadGoogleAnalytics();
     setShowBanner(false);
   };
 
   const handleDecline = () => {
-    localStorage.setItem('cookieConsent', 'declined');
-    // Analytics already loaded, just hide banner
+    saveConsent('declined');
     setShowBanner(false);
   };
 
   if (!showBanner) return null;
 
   return (
-    <div className="cookie-consent-banner">
+    <div className="cookie-consent-banner" role="region" aria-label="Soglasje za piškotke">
       <div className="cookie-content">
-        <div className="cookie-icon">🍪</div>
+        <div className="cookie-icon" aria-hidden="true">🍪</div>
         <div className="cookie-text">
           <p className="cookie-title">Piškotki</p>
           <p className="cookie-description">
-            Uporabljamo piškotke za analitiko obiska in izboljšanje uporabniške izkušnje. 
-            <a href="/privacy" className="cookie-link">Politika zasebnosti</a>
+            Z vašim soglasjem uporabljamo analitične piškotke (Google Analytics), da vidimo, kako se stran uporablja.
+            Brez soglasja jih ne naložimo.{' '}
+            <a href="/zasebnost" className="cookie-link">Politika zasebnosti</a>
           </p>
         </div>
         <div className="cookie-actions">

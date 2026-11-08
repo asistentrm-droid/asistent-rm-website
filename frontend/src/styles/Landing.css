@@ -50,16 +50,6 @@ body {
   color: var(--color-black);
 }
 
-/* SEO Only Text - Hidden from users, visible to Google */
-.seo-only {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
 /* Modern Interactions - Animations */
 .fade-in-element {
   opacity: 0;
@@ -356,64 +346,6 @@ select:focus {
   }
   66% {
     transform: translate(-20px, 20px) scale(0.9);
-  }
-}
-
-/* Floating Particles */
-.particles-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.particle {
-  position: absolute;
-  animation: particleFloat linear infinite;
-}
-
-/* Logo particles */
-.particle-logo {
-  opacity: 0;
-}
-
-.particle-logo-img {
-  width: 100%;
-  height: auto;
-  opacity: 0.25;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.15));
-  animation: logoRotate linear infinite;
-}
-
-@keyframes particleFloat {
-  0% {
-    transform: translateY(100vh) translateX(0) rotate(0deg);
-    opacity: 0;
-  }
-  5% {
-    opacity: 1;
-  }
-  95% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100vh) translateX(50px) rotate(360deg);
-    opacity: 0;
-  }
-}
-
-@keyframes logoRotate {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-  50% {
-    transform: rotate(180deg) scale(1.1);
-  }
-  100% {
-    transform: rotate(360deg) scale(1);
   }
 }
 

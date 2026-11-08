@@ -1,0 +1,340 @@
+/* Prenova 2026: zaupanje, cenik, podjetje. Ohranja črno-bel slog strani. */
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 2000;
+  background: var(--color-black);
+  color: var(--color-white);
+  padding: 10px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.skip-link:focus { top: 12px; }
+
+:focus-visible {
+  outline: 2px solid var(--color-black);
+  outline-offset: 3px;
+}
+
+/* Nav */
+.nav-logo { gap: 10px; text-decoration: none; }
+.nav-brand { font-size: 17px; font-weight: 700; letter-spacing: -0.3px; }
+.nav-link-cta { display: inline-flex; align-items: center; gap: 8px; }
+
+/* Hero — ostro, brez zamegljenih učinkov */
+.hero-section { padding-top: 140px; }
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-gray-600);
+  border: 1px solid var(--color-gray-300);
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin-bottom: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.7);
+}
+.hero-word-3 {
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  color: var(--color-black);
+  filter: none;
+  animation: wordReveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards 0.6s;
+}
+.hero-subtitle { max-width: 720px; margin-left: auto; margin-right: auto; margin-bottom: var(--spacing-lg); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; }
+
+.hero-trust {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-lg) 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 28px;
+  font-size: 15px;
+  color: var(--color-gray-700);
+}
+.hero-trust li { display: inline-flex; align-items: center; gap: 8px; }
+.hero-trust svg { color: var(--color-black); }
+
+.sample-call {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: var(--spacing-md);
+  padding: 10px 20px 10px 10px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 999px;
+  background: var(--color-white);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+  text-align: left;
+}
+.sample-call-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-black);
+  color: var(--color-white);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.sample-call-btn:hover { transform: scale(1.06); }
+.sample-call-text { display: flex; flex-direction: column; line-height: 1.3; }
+.sample-call-text strong { font-size: 15px; }
+.sample-call-text span { font-size: 13px; color: var(--color-gray-500); }
+
+/* Demo */
+.demo-honest-note {
+  max-width: 640px;
+  margin: var(--spacing-lg) auto 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-gray-400);
+  text-align: center;
+}
+
+/* Skupni razdelki */
+.section-inner { max-width: 1200px; margin: 0 auto; padding: 0 var(--spacing-lg); }
+.section-eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-gray-500);
+  text-align: center;
+  margin: 0 0 12px;
+}
+.section-title {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  line-height: 1.1;
+  text-align: center;
+  margin: 0 0 var(--spacing-sm);
+}
+.section-lead {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--color-gray-600);
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto var(--spacing-xl);
+}
+.section-title-left, .section-lead-left { text-align: left; margin-left: 0; }
+
+/* Kalkulator — priporočilo */
+.calc-recommend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: 16px;
+  background: var(--color-black);
+  color: var(--color-white);
+  text-align: left;
+}
+.calc-recommend > div { display: flex; flex-direction: column; gap: 4px; }
+.calc-recommend strong { font-size: 22px; font-weight: 700; }
+.calc-recommend-label { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--color-gray-400); }
+.calc-recommend-sub { font-size: 14px; color: var(--color-gray-400); }
+.calc-net { text-align: right; }
+.calc-disclaimer { font-size: 13px; color: var(--color-gray-500); margin: 12px 0 0; text-align: center; }
+
+/* Cenik */
+.pricing-section { padding: var(--spacing-xxl) 0; background: var(--color-white); }
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+  align-items: stretch;
+}
+.pricing-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 36px 32px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 24px;
+  background: var(--color-gray-50);
+}
+.pricing-card-popular {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.18);
+}
+.pricing-badge {
+  position: absolute;
+  top: -13px;
+  left: 32px;
+  background: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-black);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+.pricing-name { font-size: 15px; font-weight: 700; letter-spacing: 2px; margin: 0 0 12px; }
+.pricing-price { margin: 0; display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
+.pricing-amount { font-size: 56px; font-weight: 800; letter-spacing: -2px; line-height: 1; }
+.pricing-period { font-size: 15px; opacity: 0.65; }
+.pricing-minutes { margin: 16px 0 24px; font-weight: 600; font-size: 16px; }
+.pricing-minutes span { font-weight: 400; opacity: 0.6; margin-left: 6px; }
+.pricing-features {
+  list-style: none;
+  padding: 24px 0 0;
+  margin: 0 0 28px;
+  border-top: 1px solid currentColor;
+  border-top-color: rgba(127, 127, 127, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.pricing-features li { display: flex; gap: 10px; font-size: 15px; line-height: 1.45; }
+.pricing-features svg { flex-shrink: 0; margin-top: 1px; }
+.pricing-cta {
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 12px;
+  border: 2px solid var(--color-black);
+  background: transparent;
+  color: var(--color-black);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+.pricing-cta:hover { background: var(--color-black); color: var(--color-white); }
+.pricing-cta-primary { background: var(--color-white); border-color: var(--color-white); color: var(--color-black); }
+.pricing-cta-primary:hover { background: var(--color-gray-200); border-color: var(--color-gray-200); color: var(--color-black); }
+
+.pricing-extras {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+.pricing-extra {
+  padding: 24px 28px;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 20px;
+}
+.pricing-extra h3 { font-size: 17px; margin: 0 0 8px; }
+.pricing-extra p { font-size: 15px; line-height: 1.6; color: var(--color-gray-600); margin: 0; }
+.pricing-footnote {
+  margin: var(--spacing-lg) 0 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--color-gray-500);
+}
+.pricing-footnote a { color: var(--color-black); }
+
+/* FAQ — gumb namesto klikljivega diva (dostopnost) */
+.faq-question-heading { margin: 0; }
+button.faq-question {
+  width: 100%;
+  background: none;
+  border: 0;
+  text-align: left;
+  font: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-black);
+  cursor: pointer;
+  gap: var(--spacing-md);
+}
+.faq-answer[hidden] { display: none; }
+
+/* Kdo smo */
+.company-section { padding: var(--spacing-xxl) 0; background: var(--color-gray-50); border-top: 1px solid var(--color-gray-200); }
+.company-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: center;
+}
+.company-inner .section-eyebrow { text-align: left; }
+.company-inner .section-lead { margin-bottom: 0; }
+.company-card {
+  margin: 0;
+  padding: 12px 28px;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 20px;
+}
+.company-card > div {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--color-gray-100);
+}
+.company-card > div:last-child { border-bottom: 0; }
+.company-card dt { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--color-gray-500); }
+.company-card dd { margin: 0; font-size: 15px; font-weight: 500; }
+.company-card a { color: var(--color-black); }
+
+/* Noga */
+.footer-company {
+  font-style: normal;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--color-gray-400);
+}
+
+/* Obrazec */
+select.modal-input { appearance: auto; background: var(--color-white); }
+.modal-error { color: #b00020; font-size: 14px; margin: 0; }
+.modal-error a, .modal-note a { color: inherit; }
+.btn-modal-submit[disabled] { opacity: 0.6; cursor: wait; }
+
+@media (max-width: 1024px) {
+  .pricing-grid { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+  .pricing-extras { grid-template-columns: 1fr; }
+  .company-inner { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav-brand { display: none; }
+  .hero-section { padding-top: 110px; }
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta a { justify-content: center; }
+  .hero-trust { flex-direction: column; align-items: center; gap: 8px; }
+  .section-inner { padding: 0 20px; }
+  .section-title { font-size: 34px; letter-spacing: -1px; }
+  .section-lead { font-size: 17px; }
+  .pricing-section, .company-section { padding: var(--spacing-xl) 0; }
+  .pricing-amount { font-size: 48px; }
+  .calc-recommend { padding: 20px; }
+  .calc-net { text-align: left; }
+  .company-card { padding: 4px 18px; }
+  .company-card > div { grid-template-columns: 1fr; gap: 2px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  .hero-word, .hero-subtitle-reveal { opacity: 1 !important; transform: none !important; }
+}
+
+.value-number { white-space: nowrap; }
+.calculator-cta .btn-primary-large { background: var(--color-black); color: var(--color-white); }
+
+@media (max-width: 480px) {
+  .demo-phone-v2 { font-size: 30px; white-space: nowrap; letter-spacing: -0.5px; }
+  .hero-cta .btn-primary { font-size: 15px; padding: 16px 18px; white-space: nowrap; }
+}

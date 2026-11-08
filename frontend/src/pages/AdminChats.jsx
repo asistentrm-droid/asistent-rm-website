@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ArrowLeft, MessageCircle, Clock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Admin.css';
+import { adminFetch } from '../lib/api';
 
 const AdminChats = () => {
   const navigate = useNavigate();
@@ -10,7 +11,6 @@ const AdminChats = () => {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
   useEffect(() => {
     loadSessions();
@@ -18,7 +18,7 @@ const AdminChats = () => {
 
   const loadSessions = async () => {
     try {
-      const response = await fetch(`${BACKEND_URL}/api/admin/chats`);
+      const response = await adminFetch(`/api/admin/chats`);
       const data = await response.json();
       setSessions(data.sessions || []);
       setLoading(false);
@@ -30,7 +30,7 @@ const AdminChats = () => {
 
   const loadSession = async (sessionId) => {
     try {
-      const response = await fetch(`${BACKEND_URL}/api/admin/chats/${sessionId}`);
+      const response = await adminFetch(`/api/admin/chats/${sessionId}`);
       const data = await response.json();
       setMessages(data.messages || []);
       setSelectedSession(sessionId);

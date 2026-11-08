@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Check, ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import '../styles/Admin.css';
+import { adminFetch } from '../lib/api';
 
 const AdminSetup = () => {
   const navigate = useNavigate();
@@ -18,11 +19,10 @@ const AdminSetup = () => {
     other_info: ''
   });
 
-  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
 
   useEffect(() => {
     // Load existing data
-    fetch(`${BACKEND_URL}/api/admin/company-data`)
+    adminFetch(`/api/admin/company-data`)
       .then(res => res.json())
       .then(data => {
         if (data && Object.keys(data).length > 0) {
@@ -30,7 +30,7 @@ const AdminSetup = () => {
         }
       })
       .catch(err => console.error('Error loading data:', err));
-  }, [BACKEND_URL]);
+  }, []);
 
   const questions = [
     {
@@ -91,7 +91,7 @@ const AdminSetup = () => {
 
   const handleSave = async () => {
     try {
-      const response = await fetch(`${BACKEND_URL}/api/admin/company-data`, {
+      const response = await adminFetch(`/api/admin/company-data`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

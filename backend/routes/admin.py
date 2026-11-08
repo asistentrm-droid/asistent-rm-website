@@ -1,10 +1,22 @@
-from fastapi import APIRouter, HTTPException
+import hmac
+import os
+
+from fastapi import APIRouter, Depends, Header, HTTPException
 from pydantic import BaseModel
 from typing import Optional, List, Dict, Any
 from datetime import datetime, timezone
 import uuid
 
-router = APIRouter(prefix="/admin", tags=["admin"])
+def require_admin(x_admin_token: Optional[str] = Header(default=None)):
+    """Admin poti so zaščitene z žetonom iz spremenljivke okolja ADMIN_TOKEN."""
+    expected = os.environ.get("ADMIN_TOKEN", "")
+    if not expected:
+        raise HTTPException(status_code=503, detail="ADMIN_TOKEN ni nastavljen na strežniku.")
+    if not x_admin_token or not hmac.compare_digest(x_admin_token, expected):
+        raise HTTPException(status_code=401, detail="Napačen admin žeton.")
+
+
+router = APIRouter(prefix="/admin", tags=["admin"], dependencies=[Depends(require_admin)])
 
 # MongoDB connection (will be injected from main app)
 db = None
@@ -65,6 +77,7 @@ async def get_all_chats():
     try:
         # Aggregate chat sessions
         pipeline = [
+            {"$sort": {"timestamp": 1}},
             {
                 "$group": {
                     "_id": "$session_id",
