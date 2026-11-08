@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { company, plans } from '../data/site';
 
@@ -9,6 +9,12 @@ const ContactForm = ({ defaultPlan = '', source = 'spletna-stran', endpoint = DE
   const [status, setStatus] = useState('idle'); // idle | sending | error
   const [errorText, setErrorText] = useState('');
   const [mailto, setMailto] = useState('');
+  const errorRef = useRef(null);
+
+  // Ob napaki zapelji do sporočila, da ga obiskovalec zagotovo vidi.
+  useEffect(() => {
+    if (status === 'error' && errorRef.current) errorRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, [status]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -80,7 +86,7 @@ const ContactForm = ({ defaultPlan = '', source = 'spletna-stran', endpoint = DE
         {status !== 'sending' && <ArrowRight size={20} />}
       </button>
       {status === 'error' && (
-        <div className="modal-error" role="alert">
+        <div className="modal-error" role="alert" ref={errorRef}>
           <p>Sporočila ni bilo mogoče poslati ({errorText}).</p>
           <a href={mailto || `mailto:${company.email}`} className="modal-error-btn">Pošlji po e-pošti</a>
         </div>
