@@ -1,16 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
 import '../styles/Legal.css';
+import PageMeta from '../components/layout/PageMeta';
 
 const Terms = () => {
   return (
     <div className="legal-container">
+      <PageMeta path="/pogoji" />
       <div className="legal-content">
-        <Link to="/" className="back-link">
-          <ArrowLeft size={20} />
-          <span>Nazaj na domov</span>
-        </Link>
         
         <h1 className="legal-title">Pogoji uporabe</h1>
         <p className="legal-updated">Zadnja posodobitev: Januar 2025</p>
@@ -80,7 +77,7 @@ const Terms = () => {
           <h2>10. Kontakt</h2>
           <p>Za vprašanja o teh pogojih nas kontaktirajte:</p>
           <p>
-            Email: <a href="mailto:info@asistentrm.org" className="legal-link">info@asistentrm.org</a><br/>
+            Email: <a href="mailto:info@asistentrm.com" className="legal-link">info@asistentrm.com</a><br/>
             Telefon: 068 660 690 ali 041 438 869
           </p>
         </section>

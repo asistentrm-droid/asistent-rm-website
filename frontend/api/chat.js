@@ -41,7 +41,7 @@ async function askClaude(anthropic, history, message) {
 
   const response = await anthropic.beta.messages.create({
     model: MODEL,
-    max_tokens: 1024,
+    max_tokens: 400,
     system: [{ type: 'text', text: SYSTEM_PROMPT, cache_control: { type: 'ephemeral' } }],
     output_config: { effort: 'low' },
     betas: ['server-side-fallback-2026-07-01'],
@@ -59,9 +59,20 @@ async function askClaude(anthropic, history, message) {
 }
 
 module.exports = async function handler(req, res) {
+  // Preverjanje v brskalniku: odprite /api/chat in poglejte, ali je AI vključen.
+  if (req.method === 'GET') {
+    return res.status(200).json({
+      status: 'ok',
+      ai: Boolean(process.env.ANTHROPIC_API_KEY),
+      model: MODEL,
+      note: process.env.ANTHROPIC_API_KEY
+        ? 'AI je vključen.'
+        : 'ANTHROPIC_API_KEY ni nastavljen — chatbot uporablja rezervne odgovore.',
+    });
+  }
   if (req.method !== 'POST') {
-    res.setHeader('Allow', 'POST');
-    return res.status(405).json({ error: 'Dovoljen je samo POST.' });
+    res.setHeader('Allow', 'GET, POST');
+    return res.status(405).json({ error: 'Dovoljena sta GET in POST.' });
   }
 
   let body = req.body;

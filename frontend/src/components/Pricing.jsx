@@ -1,15 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Check } from 'lucide-react';
 import { plans, pricingTerms, company } from '../data/site';
 
-const Pricing = ({ onChoose }) => (
-  <section className="pricing-section" id="cenik" aria-labelledby="cenik-naslov">
+const Pricing = ({ onChoose, showHeader = true }) => (
+  <section className="pricing-section" id="paketi" aria-label="Paketi">
     <div className="section-inner">
-      <p className="section-eyebrow">Cenik 2026</p>
-      <h2 className="section-title" id="cenik-naslov">Pregledne cene. Brez presenečenj.</h2>
-      <p className="section-lead">
-        Izberite paket glede na število minut pogovorov. Paket lahko kadar koli zamenjate.
-      </p>
+      {showHeader && (
+        <>
+          <p className="section-eyebrow">Cenik 2026</p>
+          <h2 className="section-title" id="cenik-naslov">Pregledne cene. Brez presenečenj.</h2>
+          <p className="section-lead">
+            Izberite paket glede na število minut pogovorov. Paket lahko kadar koli zamenjate.
+          </p>
+        </>
+      )}
 
       <div className="pricing-grid">
         {plans.map((plan) => (
@@ -54,7 +59,7 @@ const Pricing = ({ onChoose }) => (
         {pricingTerms.enterprise}{' '}
         <a href={`mailto:${company.email}?subject=Enterprise%20paket`}>{company.email}</a>
         <br />
-        {pricingTerms.vat} Za storitev veljajo <a href="/splosni-pogoji">Splošni pogoji uporabe</a>.
+        {pricingTerms.vat} Za storitev veljajo <Link to="/splosni-pogoji">Splošni pogoji uporabe</Link>.
       </p>
     </div>
   </section>

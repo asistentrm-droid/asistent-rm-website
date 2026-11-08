@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Youtube, Facebook, Instagram, Mail, Phone } from 'lucide-react';
 import { company } from '../data/site';
 
@@ -17,21 +18,23 @@ const SiteFooter = () => (
         </div>
 
         <div className="footer-section">
-          <h4 className="footer-heading">Stran</h4>
+          <h4 className="footer-heading">Asistent RM</h4>
           <div className="footer-links-column">
-            <a href="/#kako-deluje" className="footer-link">Kako deluje</a>
-            <a href="/#cenik" className="footer-link">Cenik</a>
-            <a href="/#section-calculator" className="footer-link">Kalkulator</a>
-            <a href="/#vprasanja" className="footer-link">Pogosta vprašanja</a>
+            <Link to="/kako-deluje" className="footer-link">Kako deluje</Link>
+            <Link to="/panoge" className="footer-link">Panoge</Link>
+            <Link to="/cenik" className="footer-link">Cenik</Link>
+            <Link to="/pogosta-vprasanja" className="footer-link">Pogosta vprašanja</Link>
+            <Link to="/o-nas" className="footer-link">O nas</Link>
+            <Link to="/kontakt" className="footer-link">Kontakt</Link>
           </div>
         </div>
 
         <div className="footer-section">
           <h4 className="footer-heading">Pravno</h4>
           <div className="footer-links-column">
-            <a href="/splosni-pogoji" className="footer-link">Splošni pogoji</a>
-            <a href="/pogoji" className="footer-link">Pogoji uporabe</a>
-            <a href="/zasebnost" className="footer-link">Zasebnost</a>
+            <Link to="/splosni-pogoji" className="footer-link">Splošni pogoji</Link>
+            <Link to="/pogoji" className="footer-link">Pogoji uporabe</Link>
+            <Link to="/zasebnost" className="footer-link">Zasebnost</Link>
           </div>
         </div>
 

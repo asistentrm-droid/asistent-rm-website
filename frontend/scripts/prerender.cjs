@@ -49,16 +49,13 @@ global.window = global.window || { location: { href: '' }, addEventListener: noo
 
 const React = require('react');
 const { renderToStaticMarkup } = require('react-dom/server');
-const { StaticRouter, Routes, Route } = require('react-router');
+const { StaticRouter } = require('react-router');
 const { Helmet } = require('react-helmet');
 
 const { SITE_URL, company, plans, pricingTerms, faqs, shortDescription, tagline, howItWorks } = require(path.join(SRC, 'data/site.js'));
+const { pages } = require(path.join(SRC, 'data/pages.js'));
 const { industries } = require(path.join(SRC, 'data/industries.js'));
-const Landing = require(path.join(SRC, 'pages/Landing.jsx')).default;
-const IndustryPage = require(path.join(SRC, 'pages/IndustryPage.jsx')).default;
-const Terms = require(path.join(SRC, 'pages/Terms.jsx')).default;
-const Privacy = require(path.join(SRC, 'pages/Privacy.jsx')).default;
-const GeneralTerms = require(path.join(SRC, 'pages/GeneralTerms.jsx')).default;
+const AppRoutes = require(path.join(SRC, 'AppRoutes.jsx')).default;
 
 const h = React.createElement;
 const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -118,11 +115,27 @@ const faqPage = {
 const jsonLd = (graph) => `<script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c')}</script>`;
 
 // --- Poti ---------------------------------------------------------------------------------------
-const DEFAULT_TITLE = 'Asistent RM | AI receptorka za slovenska podjetja';
-const DEFAULT_DESC = 'AI receptorka, ki 24/7 v slovenščini sprejema klice, odgovarja strankam in vpisuje termine v vaš koledar. Paketi od 99 €/mesec. Brezplačen demo klic: 059 790 410.';
+const crumb = (items) => ({
+  '@type': 'BreadcrumbList',
+  itemListElement: [{ name: 'Domov', url: '/' }, ...items].map((it, i) => ({ '@type': 'ListItem', position: i + 1, name: it.name, item: `${SITE_URL}${it.url}` })),
+});
+
+const extraGraph = {
+  '/': [service, faqPage],
+  '/cenik': [service, crumb([{ name: 'Cenik', url: '/cenik' }])],
+  '/pogosta-vprasanja': [faqPage, crumb([{ name: 'Pogosta vprašanja', url: '/pogosta-vprasanja' }])],
+};
 
 const routes = [
-  { url: '/', title: DEFAULT_TITLE, description: DEFAULT_DESC, priority: '1.0', graph: [organization, service, faqPage] },
+  ...Object.entries(pages)
+    .filter(([, m]) => !m.noindex)
+    .map(([url, m]) => ({
+      url,
+      title: m.title,
+      description: m.description,
+      priority: m.priority || '0.5',
+      graph: [organization, ...(extraGraph[url] || (url === '/' ? [] : [crumb([{ name: m.nav || m.title.split(' | ')[0], url }])]))],
+    })),
   ...industries.map((ind) => ({
     url: `/panoge/${ind.id}`,
     title: `${ind.metaTitle} | Asistent RM`,
@@ -131,28 +144,12 @@ const routes = [
     graph: [
       organization,
       { ...service, '@id': `${SITE_URL}/panoge/${ind.id}#storitev`, name: `AI receptorka za: ${ind.name}`, description: ind.problemDesc },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Domov', item: `${SITE_URL}/` },
-          { '@type': 'ListItem', position: 2, name: ind.name, item: `${SITE_URL}/panoge/${ind.id}` },
-        ],
-      },
+      crumb([{ name: 'Panoge', url: '/panoge' }, { name: ind.name, url: `/panoge/${ind.id}` }]),
     ],
   })),
-  { url: '/splosni-pogoji', title: 'Splošni pogoji | Asistent RM', description: 'Splošni pogoji uporabe storitve Asistent RM.', priority: '0.3', graph: [organization] },
-  { url: '/pogoji', title: 'Pogoji uporabe | Asistent RM', description: 'Pogoji uporabe spletne strani Asistent RM.', priority: '0.3', graph: [organization] },
-  { url: '/zasebnost', title: 'Politika zasebnosti | Asistent RM', description: 'Kako Asistent RM obdeluje in varuje osebne podatke.', priority: '0.3', graph: [organization] },
 ];
 
-const app = (url) =>
-  h(StaticRouter, { location: url },
-    h(Routes, null,
-      h(Route, { path: '/', element: h(Landing) }),
-      h(Route, { path: '/panoge/:industryId', element: h(IndustryPage) }),
-      h(Route, { path: '/pogoji', element: h(Terms) }),
-      h(Route, { path: '/zasebnost', element: h(Privacy) }),
-      h(Route, { path: '/splosni-pogoji', element: h(GeneralTerms) })));
+const app = (url) => h(StaticRouter, { location: url }, h(AppRoutes));
 
 const template = fs.readFileSync(path.join(BUILD, 'index.html'), 'utf8');
 fs.writeFileSync(path.join(BUILD, 'spa-shell.html'), template); // čista lupina za ostale poti
@@ -210,8 +207,12 @@ ${tagline} Asistent RM razvija in upravlja ${company.legalName}, ${company.stree
 
 ## Ključne informacije
 - [Celoten opis, cenik in pogosta vprašanja](${SITE_URL}/llms-full.txt): vse informacije v eni datoteki
-- [Glavna stran](${SITE_URL}/): kako deluje, kalkulator, cenik, pogosta vprašanja
-- [Cenik](${SITE_URL}/#cenik): BASIC 99 €, PRO 169 €, BUSINESS 279 € na mesec + DDV; vzpostavitev ${pricingTerms.setupFee} €
+- [Domov](${SITE_URL}/): kratek pregled storitve
+- [Kako deluje](${SITE_URL}/kako-deluje): koraki klica, funkcije, uvedba, primerjava z zaposleno receptorko
+- [Cenik](${SITE_URL}/cenik): BASIC 99 €, PRO 169 €, BUSINESS 279 € na mesec + DDV; vzpostavitev ${pricingTerms.setupFee} €; kalkulator
+- [Panoge](${SITE_URL}/panoge): 15 panog s primeri klicev
+- [Pogosta vprašanja](${SITE_URL}/pogosta-vprasanja)
+- [O nas](${SITE_URL}/o-nas) in [Kontakt](${SITE_URL}/kontakt)
 - Kontakt: ${company.email} · demo linija ${company.demoPhone}
 
 ## Panoge

@@ -2,7 +2,7 @@
 // Iz te datoteke berejo: glavna stran, podstrani panog in skripta
 // scripts/prerender.mjs, ki ustvari statični HTML, llms.txt in llms-full.txt
 // za iskalnike in AI orodja. Ko spremenite ceno ali podatek, ga spremenite tukaj.
-// (Chatbot ima svojo kopijo v backend/knowledge.py — ob spremembi cenika posodobite tudi njo.)
+// (Chatbot ima svojo kopijo v api/_knowledge.js — ob spremembi cenika posodobite tudi njo.)
 
 export const SITE_URL = 'https://asistentrm.com';
 

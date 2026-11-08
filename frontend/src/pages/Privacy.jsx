@@ -1,16 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
 import '../styles/Legal.css';
+import PageMeta from '../components/layout/PageMeta';
 
 const Privacy = () => {
   return (
     <div className="legal-container">
+      <PageMeta path="/zasebnost" />
       <div className="legal-content">
-        <Link to="/" className="back-link">
-          <ArrowLeft size={20} />
-          <span>Nazaj na domov</span>
-        </Link>
         
         <h1 className="legal-title">Pravilnik o zasebnosti</h1>
         <p className="legal-updated">Zadnja posodobitev: Januar 2025</p>
@@ -114,7 +110,7 @@ const Privacy = () => {
             <li><strong>Pravica do ugovora:</strong> Ugovarjajte obdelavi podatkov</li>
             <li><strong>Pravica do umika privolitve:</strong> Kadarkoli umaknite privolitev</li>
           </ul>
-          <p>Za uveljavljanje pravic nas kontaktirajte na <a href="mailto:info@asistentrm.org" className="legal-link">info@asistentrm.org</a></p>
+          <p>Za uveljavljanje pravic nas kontaktirajte na <a href="mailto:info@asistentrm.com" className="legal-link">info@asistentrm.com</a></p>
         </section>
         
         <section className="legal-section">
@@ -149,7 +145,7 @@ const Privacy = () => {
           <p>Za vprašanja o tem pravilniku ali svojih osebnih podatkih nas kontaktirajte:</p>
           <p>
             <strong>Asistent RM</strong><br/>
-            Email: <a href="mailto:info@asistentrm.org" className="legal-link">info@asistentrm.org</a><br/>
+            Email: <a href="mailto:info@asistentrm.com" className="legal-link">info@asistentrm.com</a><br/>
             Telefon: 068 660 690 ali 041 438 869
           </p>
         </section>

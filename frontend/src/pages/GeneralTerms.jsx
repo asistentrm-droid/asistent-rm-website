@@ -1,16 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
 import '../styles/Legal.css';
+import PageMeta from '../components/layout/PageMeta';
 
 const GeneralTerms = () => {
   return (
     <div className="legal-container">
+      <PageMeta path="/splosni-pogoji" />
       <div className="legal-content">
-        <Link to="/" className="back-link">
-          <ArrowLeft size={20} />
-          <span>Nazaj na domov</span>
-        </Link>
         
         <h1 className="legal-title">Splošni pogoji uporabe storitve Asistent RM</h1>
         <p className="legal-updated">Veljajo od: 1. 7. 2026</p>
@@ -98,7 +95,7 @@ const GeneralTerms = () => {
           <h2>9. Razpoložljivost in podpora</h2>
           <p><strong>9.1</strong> Ponudnik si prizadeva za nemoteno delovanje storitve 24 ur na dan, vse dni v letu, ter za mesečno razpoložljivost najmanj 99%, pri čemer se v ta odstotek ne štejejo napovedana vzdrževalna dela in izpadi na strani tretjih ponudnikov.</p>
           <p><strong>9.2</strong> Napovedana vzdrževalna dela ponudnik praviloma izvaja izven običajnega delovnega časa in o njih naročnika predhodno obvesti.</p>
-          <p><strong>9.3</strong> Podpora je naročniku na voljo po e-pošti na info@asistentrm.org vsak delovni dan med 9. in 17. uro. Ponudnik se na sporočila praviloma odzove v enem delovnem dnevu.</p>
+          <p><strong>9.3</strong> Podpora je naročniku na voljo po e-pošti na info@asistentrm.com vsak delovni dan med 9. in 17. uro. Ponudnik se na sporočila praviloma odzove v enem delovnem dnevu.</p>
         </section>
         
         <section className="legal-section">
@@ -149,7 +146,7 @@ const GeneralTerms = () => {
             Kopališko nabrežje 4<br/>
             6000 Koper<br/>
             <br/>
-            Email: <a href="mailto:info@asistentrm.org" className="legal-link">info@asistentrm.org</a><br/>
+            Email: <a href="mailto:info@asistentrm.com" className="legal-link">info@asistentrm.com</a><br/>
             Telefon: 068 660 690 ali 041 438 869<br/>
             ID za DDV: SI15855520<br/>
             Matična številka: 3648265000
