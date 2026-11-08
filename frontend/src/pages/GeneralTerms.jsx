@@ -13,7 +13,7 @@ const GeneralTerms = () => {
         <p className="legal-updated">Veljajo od: 1. 7. 2026</p>
         
         <section className="legal-section">
-          <p>Ti splošni pogoji so objavljeni na asistentrm.org in so sestavni del vsake ponudbe, predračuna in naročniškega razmerja za storitev Asistent RM.</p>
+          <p>Ti splošni pogoji so objavljeni na asistentrm.com in so sestavni del vsake ponudbe, predračuna in naročniškega razmerja za storitev Asistent RM.</p>
         </section>
         
         <section className="legal-section">
@@ -28,10 +28,10 @@ const GeneralTerms = () => {
           <h2>2. Pomen izrazov</h2>
           <p><strong>2.1</strong> <strong>Storitev</strong> pomeni AI telefonsko tajnico Asistent RM, ki sprejema telefonske klice naročnika, se z njimi pogovarja, posreduje informacije, rezervira ali prestavlja termine in o klicih obvešča naročnika.</p>
           <p><strong>2.2</strong> <strong>Vzpostavitev</strong> pomeni enkratno pripravo rešitve po meri naročnika: analizo klicev, izdelavo scenarija pogovora, nastavitev glasu in jezika, povezavo s telefonsko številko in koledarjem, testiranje in predajo v uporabo.</p>
-          <p><strong>2.3</strong> <strong>Paket</strong> pomeni mesečni naročniški paket z določenim obsegom vključenih minut (Basic in Pro).</p>
+          <p><strong>2.3</strong> <strong>Paket</strong> pomeni mesečni naročniški paket z določenim obsegom vključenih minut (Basic, Pro ali Business) ali paket Enterprise, dogovorjen v ponudbi.</p>
           <p><strong>2.4</strong> <strong>Vključene minute</strong> so minute pogovorov, ki so zajete v mesečni ceni paketa.</p>
           <p><strong>2.5</strong> <strong>Dodatna minuta</strong> je vsaka začeta minuta pogovora nad obsegom vključenih minut v posameznem obračunskem obdobju.</p>
-          <p><strong>2.6</strong> <strong>Cenik</strong> je veljavni cenik storitve Asistent RM, objavljen na asistentrm.org.</p>
+          <p><strong>2.6</strong> <strong>Cenik</strong> je veljavni cenik storitve Asistent RM, objavljen na asistentrm.com.</p>
           <p><strong>2.7</strong> <strong>Obračunsko obdobje</strong> je koledarski mesec, razen če je v ponudbi dogovorjeno drugače.</p>
         </section>
         
@@ -56,7 +56,7 @@ const GeneralTerms = () => {
         
         <section className="legal-section">
           <h2>5. Paketi in obseg storitve</h2>
-          <p><strong>5.1</strong> Paket Basic vključuje 200 minut pogovorov na obračunsko obdobje, paket Pro pa 450 minut pogovorov na obračunsko obdobje.</p>
+          <p><strong>5.1</strong> Paket Basic vključuje 120 minut pogovorov, paket Pro 400 minut pogovorov in paket Business 800 minut pogovorov na obračunsko obdobje. Obseg in pogoji paketa Enterprise se določijo v ponudbi. Funkcionalnosti posameznega paketa so navedene v veljavnem ceniku.</p>
           <p><strong>5.2</strong> Trajanje pogovora se meri od trenutka, ko asistent sprejme klic, do konca klica, in se obračunava po začeti minuti.</p>
           <p><strong>5.3</strong> Neporabljene vključene minute se ne prenašajo v naslednje obračunsko obdobje in se ne izplačujejo.</p>
           <p><strong>5.4</strong> Naročnik lahko paket kadar koli zamenja. Sprememba paketa začne veljati s prvim dnem naslednjega obračunskega obdobja.</p>
@@ -75,7 +75,7 @@ const GeneralTerms = () => {
         <section className="legal-section">
           <h2>7. Spremembe cenika in teh pogojev</h2>
           <p><strong>7.1</strong> Ponudnik lahko spremeni cenik in te splošne pogoje, zlasti zaradi sprememb stroškov tehnološke infrastrukture in storitev tretjih ponudnikov, sprememb obsega storitve ali sprememb predpisov.</p>
-          <p><strong>7.2</strong> O spremembi cenika ali teh pogojev ponudnik naročnika obvesti po e-pošti na zadnji sporočeni naslov in z objavo na asistentrm.org, najmanj 30 dni pred uveljavitvijo spremembe.</p>
+          <p><strong>7.2</strong> O spremembi cenika ali teh pogojev ponudnik naročnika obvesti po e-pošti na zadnji sporočeni naslov in z objavo na asistentrm.com, najmanj 30 dni pred uveljavitvijo spremembe.</p>
           <p><strong>7.3</strong> Spremenjene cene se uporabljajo od prvega obračunskega obdobja, ki se začne po uveljavitvi spremembe. Že izdani in plačani računi se ne spreminjajo.</p>
           <p><strong>7.4</strong> Če naročnik s spremembo ne soglaša, lahko naročniško razmerje odpove brez odpovednega roka in brez stroškov odpovedi, in sicer najpozneje do dneva uveljavitve spremembe. Če naročnik storitev po tem dnevu uporablja naprej, se šteje, da s spremembo soglaša.</p>
           <p><strong>7.5</strong> Sprememba davčne stopnje ali drugih obveznih dajatev se v cene prenese takoj ob njeni uveljavitvi in ne šteje za spremembo cenika po tem členu.</p>
@@ -95,7 +95,7 @@ const GeneralTerms = () => {
           <h2>9. Razpoložljivost in podpora</h2>
           <p><strong>9.1</strong> Ponudnik si prizadeva za nemoteno delovanje storitve 24 ur na dan, vse dni v letu, ter za mesečno razpoložljivost najmanj 99%, pri čemer se v ta odstotek ne štejejo napovedana vzdrževalna dela in izpadi na strani tretjih ponudnikov.</p>
           <p><strong>9.2</strong> Napovedana vzdrževalna dela ponudnik praviloma izvaja izven običajnega delovnega časa in o njih naročnika predhodno obvesti.</p>
-          <p><strong>9.3</strong> Podpora je naročniku na voljo po e-pošti na info@asistentrm.com vsak delovni dan med 9. in 17. uro. Ponudnik se na sporočila praviloma odzove v enem delovnem dnevu.</p>
+          <p><strong>9.3</strong> Podpora je naročniku na voljo po e-pošti na info@asistentrm.com vsak delovni dan med 9. in 17. uro. Ponudnik se na sporočila praviloma odzove v enem delovnem dnevu. Naročniki paketa Pro imajo prednostno podporo, naročnikom paketa Business pa je podpora na voljo 24 ur na dan, vse dni v letu, skladno z veljavnim cenikom.</p>
         </section>
         
         <section className="legal-section">
@@ -111,7 +111,7 @@ const GeneralTerms = () => {
           <p><strong>11.1</strong> Pri izvajanju storitve ponudnik osebne podatke klicateljev obdeluje kot pogodbeni obdelovalec po navodilih naročnika, ki je upravljavec teh podatkov. Stranki za ta namen skleneta pogodbo o obdelavi osebnih podatkov skladno z veljavno zakonodajo.</p>
           <p><strong>11.2</strong> Za delovanje storitve se lahko klici snemajo in prepisujejo v besedilo. Naročnik zagotovi ustrezno pravno podlago in poskrbi, da so klicatelji na začetku klica obveščeni, da se pogovarjajo z digitalnim asistentom in da se klic snema.</p>
           <p><strong>11.3</strong> Posnetki in prepisi klicev se hranijo največ 12 mesecev, razen če se stranki pisno dogovorita drugače ali če daljšo hrambo zahteva zakon.</p>
-          <p><strong>11.4</strong> Podrobnejše informacije o obdelavi osebnih podatkov so na voljo v <Link to="/zasebnost" className="legal-link">politiki zasebnosti</Link>, objavljeni na asistentrm.org.</p>
+          <p><strong>11.4</strong> Podrobnejše informacije o obdelavi osebnih podatkov so na voljo v <Link to="/zasebnost" className="legal-link">politiki zasebnosti</Link>, objavljeni na asistentrm.com.</p>
         </section>
         
         <section className="legal-section">

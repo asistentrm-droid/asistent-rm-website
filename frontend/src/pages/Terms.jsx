@@ -10,16 +10,16 @@ const Terms = () => {
       <div className="legal-content">
         
         <h1 className="legal-title">Pogoji uporabe</h1>
-        <p className="legal-updated">Zadnja posodobitev: Januar 2025</p>
+        <p className="legal-updated">Zadnja posodobitev: november 2026</p>
         
         <section className="legal-section">
           <h2>1. Sprejem pogojev</h2>
-          <p>Z dostopom in uporabo spletne strani Asistent RM se strinjate s temi pogoji uporabe. Če se ne strinjate s katerim koli delom teh pogojev, ne smete uporabljati naših storitev.</p>
+          <p>Spletno stran asistentrm.com upravlja Plan Plus, medijske rešitve, d.o.o., Kopališko nabrežje 4, 6000 Koper. Z dostopom in uporabo spletne strani Asistent RM se strinjate s temi pogoji uporabe. Če se ne strinjate s katerim koli delom teh pogojev, ne smete uporabljati naših storitev.</p>
         </section>
         
         <section className="legal-section">
           <h2>2. Opis storitev</h2>
-          <p>Asistent RM ponuja AI virtualno telefonsko tajnico, ki avtomatizira sprejem telefonskih klicev, rezervacijo terminov in komunikacijo s strankami. Storitev deluje 24/7 in se integrira z vašim poslovnim koledarjem.</p>
+          <p>Asistent RM ponuja AI virtualno telefonsko tajnico, ki avtomatizira sprejem telefonskih klicev, rezervacijo terminov in komunikacijo s strankami. Storitev deluje 24/7 in se integrira z vašim poslovnim koledarjem. Za naročnike storitve veljajo <Link to="/splosni-pogoji" className="legal-link">Splošni pogoji uporabe storitve Asistent RM</Link> in veljavni <Link to="/cenik" className="legal-link">cenik</Link>.</p>
         </section>
         
         <section className="legal-section">
@@ -39,7 +39,7 @@ const Terms = () => {
         
         <section className="legal-section">
           <h2>4. Zasebnost in varnost podatkov</h2>
-          <p>Vaša zasebnost je nam pomembna. Podrobnosti o tem, kako zbiramo, uporabljamo in varujemo vaše osebne podatke, najdete v našem <Link to="/zasebnost" className="legal-link">Pravilniku o zasebnosti</Link>.</p>
+          <p>Vaša zasebnost je nam pomembna. Podrobnosti o tem, kako zbiramo, uporabljamo in varujemo vaše osebne podatke, najdete v naši <Link to="/zasebnost" className="legal-link">Politiki zasebnosti</Link>.</p>
         </section>
         
         <section className="legal-section">
@@ -77,6 +77,8 @@ const Terms = () => {
           <h2>10. Kontakt</h2>
           <p>Za vprašanja o teh pogojih nas kontaktirajte:</p>
           <p>
+            <strong>Plan Plus, medijske rešitve, d.o.o.</strong><br/>
+            Kopališko nabrežje 4, 6000 Koper<br/>
             Email: <a href="mailto:info@asistentrm.com" className="legal-link">info@asistentrm.com</a><br/>
             Telefon: 068 660 690 ali 041 438 869
           </p>

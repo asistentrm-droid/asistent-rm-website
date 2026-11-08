@@ -8,12 +8,13 @@ const Privacy = () => {
       <PageMeta path="/zasebnost" />
       <div className="legal-content">
         
-        <h1 className="legal-title">Pravilnik o zasebnosti</h1>
-        <p className="legal-updated">Zadnja posodobitev: Januar 2025</p>
+        <h1 className="legal-title">Politika zasebnosti</h1>
+        <p className="legal-updated">Zadnja posodobitev: november 2026</p>
         
         <section className="legal-section">
           <h2>1. Uvod</h2>
-          <p>Asistent RM ("mi", "nas", "naš") spoštuje vašo zasebnost in se zavezuje k zaščiti vaših osebnih podatkov. Ta pravilnik opisuje, kako zbiramo, uporabljamo, razkrivamo in varujemo informacije, ki jih zberemo prek naše spletne strani in storitev.</p>
+          <p>Upravljavec osebnih podatkov, zbranih prek spletne strani asistentrm.com, je Plan Plus, medijske rešitve, d.o.o., Kopališko nabrežje 4, 6000 Koper, ID za DDV: SI15855520, matična številka: 3648265000 (v nadaljevanju: Asistent RM).</p>
+          <p>Asistent RM ("mi", "nas", "naš") spoštuje vašo zasebnost in se zavezuje k zaščiti vaših osebnih podatkov. Ta politika opisuje, kako zbiramo, uporabljamo, razkrivamo in varujemo informacije, ki jih zberemo prek naše spletne strani in storitev.</p>
         </section>
         
         <section className="legal-section">
@@ -24,6 +25,7 @@ const Privacy = () => {
             <li><strong>Kontaktni podatki:</strong> Ime, priimek, email naslov, telefonska številka</li>
             <li><strong>Poslovni podatki:</strong> Ime podjetja, davčna številka (če je potrebno)</li>
             <li><strong>Komunikacijski zapisi:</strong> Vsebina sporočil preko kontaktnega obrazca ali emaila</li>
+            <li><strong>Spletni klepet:</strong> Vsebina sporočil, ki jih vpišete v okno za klepet na spletni strani. Prosimo, da v klepet ne vpisujete osebnih podatkov.</li>
           </ul>
           
           <h3>2.2 Samodejno zbrani podatki</h3>
@@ -61,7 +63,7 @@ const Privacy = () => {
           <h2>5. Deljenje podatkov</h2>
           <p>Vaših osebnih podatkov ne prodajamo, ne izdajamo ali ne oddajamo tretjim osebam, razen v naslednjih primerih:</p>
           <ul>
-            <li><strong>Ponudniki storitev:</strong> Zaupanja vredni partnerji, ki nam pomagajo pri delovanju (hosting, email)</li>
+            <li><strong>Ponudniki storitev (obdelovalci):</strong> Zaupanja vredni partnerji, ki nam pomagajo pri delovanju: gostovanje spletne strani (Vercel), sprejem sporočil iz kontaktnega obrazca (Formspree), priprava odgovorov v spletnem klepetu (ponudnik jezikovnega modela, npr. OpenAI ali Anthropic), analitika obiska (Google Analytics, samo z vašim soglasjem) in e-pošta</li>
             <li><strong>Pravne zahteve:</strong> Ko to zahteva zakon ali sodni postopek</li>
             <li><strong>Vaša privolitev:</strong> Ko izrecno dovolite deljenje</li>
           </ul>
@@ -85,17 +87,16 @@ const Privacy = () => {
         
         <section className="legal-section">
           <h2>8. Piškotki</h2>
-          <p>Naša spletna stran uporablja piškotke za izboljšanje uporabniške izkušnje:</p>
+          <p>Naša spletna stran uporablja piškotke in podobne tehnologije (lokalna shramba brskalnika):</p>
           
           <h3>8.1 Vrste piškotkov</h3>
           <ul>
-            <li><strong>Nujni piškotki:</strong> Potrebni za delovanje strani</li>
-            <li><strong>Analitični piškotki:</strong> Pomagajo razumeti, kako obiskovalci uporabljajo stran</li>
-            <li><strong>Funkcijski piškotki:</strong> Omogočajo dodatne funkcionalnosti</li>
+            <li><strong>Nujni:</strong> Potrebni za delovanje strani, npr. zapis vaše izbire glede piškotkov</li>
+            <li><strong>Analitični piškotki (Google Analytics):</strong> Pomagajo razumeti, kako obiskovalci uporabljajo stran. Naložijo se samo, če jih sprejmete v pasici za piškotke.</li>
           </ul>
           
           <h3>8.2 Upravljanje piškotkov</h3>
-          <p>Piškotke lahko upravljate v nastavitvah svojega brskalnika. Upoštevajte, da onemogočenje nekaterih piškotkov lahko vpliva na funkcionalnost strani.</p>
+          <p>Soglasje za analitične piškotke lahko kadar koli umaknete tako, da v nastavitvah brskalnika izbrišete podatke te strani; ob naslednjem obisku vas bomo znova vprašali. Piškotke lahko upravljate tudi v nastavitvah svojega brskalnika. Upoštevajte, da onemogočenje nekaterih piškotkov lahko vpliva na funkcionalnost strani.</p>
         </section>
         
         <section className="legal-section">
@@ -120,12 +121,12 @@ const Privacy = () => {
         
         <section className="legal-section">
           <h2>11. Mednarodna prenošnja podatkov</h2>
-          <p>Vaši podatki se lahko prenašajo in hranijo na strežnikih znotraj Evropskega gospodarskega prostora (EGP). Če pride do prenosa zunaj EGP, zagotavljamo ustrezne varnostne ukrepe.</p>
+          <p>Vaši podatki se lahko prenašajo in hranijo na strežnikih znotraj Evropskega gospodarskega prostora (EGP). Nekateri naši obdelovalci (npr. ponudniki gostovanja, analitike in jezikovnih modelov) imajo sedež ali strežnike tudi zunaj EGP, zlasti v ZDA. Pri takih prenosih zagotavljamo ustrezne zaščitne ukrepe v skladu z GDPR.</p>
         </section>
         
         <section className="legal-section">
-          <h2>12. Spremembe pravilnika</h2>
-          <p>Ta pravilnik lahko občasno posodobimo. O pomembnih spremembah vas bomo obvestili preko emaila ali obvestila na spletni strani. Datum zadnje posodobitve je naveden na vrhu tega dokumenta.</p>
+          <h2>12. Spremembe politike</h2>
+          <p>To politiko lahko občasno posodobimo. O pomembnih spremembah vas bomo obvestili preko emaila ali obvestila na spletni strani. Datum zadnje posodobitve je naveden na vrhu tega dokumenta.</p>
         </section>
         
         <section className="legal-section">
@@ -142,9 +143,10 @@ const Privacy = () => {
         
         <section className="legal-section">
           <h2>14. Kontakt</h2>
-          <p>Za vprašanja o tem pravilniku ali svojih osebnih podatkih nas kontaktirajte:</p>
+          <p>Za vprašanja o tej politiki ali svojih osebnih podatkih nas kontaktirajte:</p>
           <p>
-            <strong>Asistent RM</strong><br/>
+            <strong>Plan Plus, medijske rešitve, d.o.o.</strong><br/>
+            Kopališko nabrežje 4, 6000 Koper<br/>
             Email: <a href="mailto:info@asistentrm.com" className="legal-link">info@asistentrm.com</a><br/>
             Telefon: 068 660 690 ali 041 438 869
           </p>
