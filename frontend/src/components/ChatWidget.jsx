@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
-import { API_BASE } from '../lib/api';
 import { company } from '../data/site';
 import '../styles/ChatWidget.css';
 
-const SESSION_KEY = 'asistentrm_chat_session';
+// Vercel funkcija (frontend/api/chat.js) na isti domeni; po želji jo preusmerite z REACT_APP_CHAT_URL.
+const CHAT_ENDPOINT = process.env.REACT_APP_CHAT_URL || '/api/chat';
 const SUGGESTIONS = ['Koliko stane?', 'Kako poteka vzpostavitev?', 'Ali res govori slovensko?'];
 const WELCOME = {
   role: 'assistant',
@@ -13,30 +13,13 @@ const WELCOME = {
 const ERROR_TEXT =
   `Oprostite, trenutno ne morem odgovoriti. Pišite nam na ${company.email} ali pokličite demo linijo ${company.demoPhone}.`;
 
-const newSessionId = () => `session_${Date.now()}_${Math.random().toString(36).slice(2, 11)}`;
-
-const getSessionId = () => {
-  try {
-    const existing = sessionStorage.getItem(SESSION_KEY);
-    if (existing) return existing;
-    const id = newSessionId();
-    sessionStorage.setItem(SESSION_KEY, id);
-    return id;
-  } catch {
-    return newSessionId();
-  }
-};
-
 const ChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([WELCOME]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const sessionIdRef = useRef(null);
   const listRef = useRef(null);
   const inputRef = useRef(null);
-
-  if (sessionIdRef.current === null) sessionIdRef.current = getSessionId();
 
   useEffect(() => {
     if (listRef.current) listRef.current.scrollTop = listRef.current.scrollHeight;
@@ -57,57 +40,35 @@ const ChatWidget = () => {
     setInput('');
     setIsLoading(true);
 
-    let started = false;
-    let answer = '';
+    // Zgodovina (brez pozdrava in sporočil o napaki) za kontekst pogovora.
+    const history = messages
+      .filter((m, i) => i > 0 && !m.error && m.content)
+      .map((m) => ({ role: m.role, content: m.content }));
+
     try {
-      const response = await fetch(`${API_BASE}/api/chat/send`, {
+      const response = await fetch(CHAT_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text.slice(0, 2000), session_id: sessionIdRef.current }),
+        body: JSON.stringify({ message: text.slice(0, 2000), history }),
       });
-      if (!response.ok || !response.body) throw new Error(`HTTP ${response.status}`);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      const data = await response.json();
+      const answer = typeof data.answer === 'string' ? data.answer.trim() : '';
+      if (!answer) throw new Error('Prazen odgovor');
 
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder();
-      let buffer = '';
-      let done = false;
-
-      while (!done) {
-        const { value, done: streamDone } = await reader.read();
-        if (streamDone) break;
-        buffer += decoder.decode(value, { stream: true });
-
-        // SSE dogodki so ločeni s prazno vrstico; zadnji (nepopoln) del ostane v bufferju.
-        const events = buffer.split('\n\n');
-        buffer = events.pop();
-        for (const evt of events) {
-          const line = evt.split('\n').find((l) => l.startsWith('data: '));
-          if (!line) continue;
-          let payload;
-          try { payload = JSON.parse(line.slice(6)); } catch { continue; }
-          if (payload.done) { done = true; break; }
-          if (typeof payload.t === 'string') {
-            answer += payload.t;
-            if (!started) {
-              started = true;
-              setMessages((prev) => [...prev, { role: 'assistant', content: answer, streaming: true }]);
-            } else {
-              const current = answer;
-              updateLast((m) => ({ ...m, content: current }));
-            }
-          }
-        }
+      // Postopen izpis po besedah.
+      setMessages((prev) => [...prev, { role: 'assistant', content: '', streaming: true }]);
+      const words = answer.split(' ');
+      for (let i = 1; i <= words.length; i += 1) {
+        const partial = words.slice(0, i).join(' ');
+        updateLast((m) => ({ ...m, content: partial }));
+        // eslint-disable-next-line no-await-in-loop
+        await new Promise((r) => setTimeout(r, 18));
       }
-
-      if (!answer.trim()) throw new Error('Prazen odgovor');
-      updateLast((m) => ({ ...m, streaming: false }));
+      updateLast((m) => ({ ...m, content: answer, streaming: false }));
     } catch (error) {
       console.error('Chat error:', error);
-      if (started) {
-        updateLast((m) => ({ ...m, streaming: false, content: m.content || ERROR_TEXT }));
-      } else {
-        setMessages((prev) => [...prev, { role: 'assistant', content: ERROR_TEXT, error: true }]);
-      }
+      setMessages((prev) => [...prev, { role: 'assistant', content: ERROR_TEXT, error: true }]);
     } finally {
       setIsLoading(false);
     }
@@ -195,7 +156,7 @@ const ChatWidget = () => {
               <Send size={20} />
             </button>
           </div>
-          <p className="chat-disclaimer">Odgovore pripravlja umetna inteligenca. Pogovor shranimo za izboljšanje storitve.</p>
+          <p className="chat-disclaimer">Odgovore pripravlja umetna inteligenca. Ne vpisujte osebnih podatkov.</p>
         </div>
       )}
     </>
