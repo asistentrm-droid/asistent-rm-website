@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Youtube, Facebook, Instagram } from 'lucide-react';
+import { Mail, Phone, Youtube, Facebook, Instagram } from 'lucide-react';
 import PageMeta from '../components/layout/PageMeta';
 import { PageHero, Section } from '../components/layout/Blocks';
 import ContactForm from '../components/ContactForm';
@@ -37,13 +37,6 @@ const Contact = () => (
               <h3>E-mail</h3>
               <a href={`mailto:${company.email}`}>{company.email}</a>
               <p>Za ponudbe, Enterprise pakete in vprašanja.</p>
-            </div>
-          </div>
-          <div className="contact-info-item">
-            <span className="card-icon"><MapPin size={22} aria-hidden="true" /></span>
-            <div>
-              <h3>Naslov</h3>
-              <address>{company.legalName}<br />{company.street}, {company.postalCode} {company.city}</address>
             </div>
           </div>
           <div className="contact-social">

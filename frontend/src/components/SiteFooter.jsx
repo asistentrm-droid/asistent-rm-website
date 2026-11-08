@@ -8,13 +8,8 @@ const SiteFooter = () => (
     <div className="footer-content">
       <div className="footer-top">
         <div className="footer-section">
-          <img src="/logo-white.png" alt="Asistent RM" className="footer-logo-image" width="96" height="72" loading="lazy" />
+          <img src="/logo-white.png" alt="Asistent RM" className="footer-logo-image" width="96" height="72" />
           <p className="footer-tagline">AI receptorka za slovenska podjetja.</p>
-          <address className="footer-company">
-            {company.legalName}<br />
-            {company.street}, {company.postalCode} {company.city}<br />
-            ID za DDV: {company.vatId} · MŠ: {company.registrationNumber}
-          </address>
         </div>
 
         <div className="footer-section">

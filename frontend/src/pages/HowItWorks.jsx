@@ -2,7 +2,6 @@ import React from 'react';
 import { Check, X, PhoneIncoming, MessageSquareText, CalendarCheck, PhoneForwarded, Mail, ShieldBan, Languages, Users } from 'lucide-react';
 import PageMeta from '../components/layout/PageMeta';
 import { PageHero, Section, CtaBand } from '../components/layout/Blocks';
-import SampleCall from '../components/SampleCall';
 import DemoBlock from '../components/DemoBlock';
 import { pricingTerms } from '../data/site';
 
@@ -41,9 +40,7 @@ const HowItWorks = () => (
       eyebrow="Kako deluje"
       title="Stranka pokliče. Asistent uredi. Vi ste obveščeni."
       lead="Asistent RM se oglasi namesto vas, se s stranko pogovori v slovenščini in vam pošlje povzetek."
-    >
-      <SampleCall />
-    </PageHero>
+    />
 
     <Section title="V treh korakih">
       <ol className="steps">

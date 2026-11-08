@@ -161,11 +161,6 @@ export const faqs = [
       'Za vsa podjetja, ki veliko komunicirajo po telefonu: ambulante in klinike, frizerske in kozmetične salone, avtomehanične delavnice, restavracije, ' +
       'odvetniške in računovodske pisarne, nepremičninske agencije, fitnes centre, veterinarje in druge storitvene dejavnosti.',
   },
-  {
-    question: 'Kdo stoji za Asistentom RM?',
-    answer:
-      'Asistent RM razvija in upravlja slovensko podjetje Plan Plus, medijske rešitve, d.o.o., Kopališko nabrežje 4, 6000 Koper (ID za DDV: SI15855520).',
-  },
 ];
 
 // Pošteni, preverljivi podatki namesto marketinških številk brez vira.

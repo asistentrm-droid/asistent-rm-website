@@ -17,7 +17,7 @@ const About = () => (
       crumbs={[{ label: 'O nas' }]}
       eyebrow="O nas"
       title="Da noben klic ne ostane neodgovorjen."
-      lead={`Asistent RM razvija ${company.legalName}, slovensko podjetje iz Kopra.`}
+      lead="AI receptorka, narejena za slovenska podjetja in njihove stranke."
     />
 
     <Section narrow center={false}>

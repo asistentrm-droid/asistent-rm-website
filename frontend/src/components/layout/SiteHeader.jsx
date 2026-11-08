@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { company } from '../../data/site';
 import { pages, mainNav } from '../../data/pages';
 
@@ -12,16 +12,6 @@ const SiteHeader = () => {
 
   return (
     <header className="sh">
-      <div className="sh-top">
-        <div className="sh-inner sh-top-inner">
-          <span className="sh-top-text">AI receptorka za slovenska podjetja</span>
-          <div className="sh-top-links">
-            <a href={company.demoPhoneHref}><Phone size={14} aria-hidden="true" /> Demo linija {company.demoPhone}</a>
-            <a href={`mailto:${company.email}`}><Mail size={14} aria-hidden="true" /> {company.email}</a>
-          </div>
-        </div>
-      </div>
-
       <div className="sh-main">
         <div className="sh-inner sh-main-inner">
           <Link to="/" className="sh-logo" aria-label="Asistent RM — domov">

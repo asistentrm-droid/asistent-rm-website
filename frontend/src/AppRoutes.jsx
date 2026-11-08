@@ -20,6 +20,7 @@ import './styles/Landing.css';
 import './styles/SEOContent.css';
 import './styles/Trust.css';
 import './styles/site.css';
+import './styles/home.css';
 
 // Poti strani — uporablja jih App (brskalnik) in scripts/prerender.cjs (statični HTML).
 const AppRoutes = () => (

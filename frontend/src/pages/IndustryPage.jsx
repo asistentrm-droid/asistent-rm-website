@@ -43,14 +43,14 @@ const IndustryPage = () => {
         </div>
       </PageHero>
 
-      <Section title="Poslušajte primer klica" narrow>
+      <Section title="Primer pogovora" lead="Demo scenarij za to panogo." narrow>
         <div className="call-sample">
           <audio controls preload="none" className="call-audio">
             <source src={industry.audioDemo} type="audio/mpeg" />
             Vaš brskalnik ne podpira predvajanja zvoka.
           </audio>
           <div className="call-transcript">
-            <h3><FileText size={18} aria-hidden="true" /> Prepis pogovora</h3>
+            <h3><FileText size={18} aria-hidden="true" /> Prepis</h3>
             {industry.transcript.split('\n\n').map((line, i) => (
               <p key={i} className={i % 2 === 0 ? 'turn-ai' : 'turn-caller'}>
                 <span>{i % 2 === 0 ? 'Asistent' : 'Klicatelj'}</span>
