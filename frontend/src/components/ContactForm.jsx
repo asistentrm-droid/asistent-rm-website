@@ -7,19 +7,44 @@ const DEFAULT_ENDPOINT = 'https://formspree.io/f/mkovjydg';
 // Kontaktni obrazec (uporablja ga stran Kontakt in okno ContactModal).
 const ContactForm = ({ defaultPlan = '', source = 'spletna-stran', endpoint = DEFAULT_ENDPOINT, industry = '', idPrefix = 'cf' }) => {
   const [status, setStatus] = useState('idle'); // idle | sending | error
+  const [errorText, setErrorText] = useState('');
+  const [mailto, setMailto] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    data.append('_subject', `Povpraševanje Asistent RM (${source})`);
+
+    // Rezervna pot: e-pošta z že izpolnjenimi podatki, če spletno pošiljanje ne uspe.
+    const lines = ['name', 'email', 'phone', 'company', 'paket', 'panoga', 'message']
+      .map((k) => [k, data.get(k)])
+      .filter(([, v]) => v)
+      .map(([k, v]) => `${k}: ${v}`);
+    setMailto(`mailto:${company.email}?subject=${encodeURIComponent('Povpraševanje Asistent RM')}&body=${encodeURIComponent(lines.join('\n'))}`);
+
     setStatus('sending');
+    setErrorText('');
     try {
       const response = await fetch(endpoint, {
         method: 'POST',
-        body: new FormData(e.target),
+        body: data,
         headers: { Accept: 'application/json' },
       });
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      if (!response.ok) {
+        let detail = `HTTP ${response.status}`;
+        try {
+          const json = await response.json();
+          const msgs = (json.errors || []).map((x) => x.message).filter(Boolean);
+          if (msgs.length) detail = msgs.join(' ');
+          else if (json.error) detail = json.error;
+        } catch { /* ni JSON */ }
+        throw new Error(detail);
+      }
       window.location.href = '/hvala';
     } catch (err) {
+      console.error('Pošiljanje obrazca ni uspelo:', err);
+      setErrorText(err && err.message ? err.message : 'neznana napaka');
       setStatus('error');
     }
   };
@@ -29,6 +54,8 @@ const ContactForm = ({ defaultPlan = '', source = 'spletna-stran', endpoint = DE
   return (
     <form onSubmit={handleSubmit} className="modal-form">
       <input type="hidden" name="vir" value={source} />
+      {/* Past za spam-robote: ljudje tega polja ne vidijo. */}
+      <input type="text" name="_gotcha" tabIndex="-1" autoComplete="off" className="sr-only" aria-hidden="true" />
       {industry && <input type="hidden" name="panoga" value={industry} />}
       <label className="sr-only" htmlFor={id('name')}>Ime in priimek</label>
       <input id={id('name')} type="text" name="name" placeholder="Ime in priimek" className="modal-input" autoComplete="name" required />
@@ -53,9 +80,10 @@ const ContactForm = ({ defaultPlan = '', source = 'spletna-stran', endpoint = DE
         {status !== 'sending' && <ArrowRight size={20} />}
       </button>
       {status === 'error' && (
-        <p className="modal-error" role="alert">
-          Sporočila ni bilo mogoče poslati. Pišite nam na <a href={`mailto:${company.email}`}>{company.email}</a>.
-        </p>
+        <div className="modal-error" role="alert">
+          <p>Sporočila ni bilo mogoče poslati ({errorText}).</p>
+          <a href={mailto || `mailto:${company.email}`} className="modal-error-btn">Pošlji po e-pošti</a>
+        </div>
       )}
       <p className="modal-note">
         Brez obveznosti. Podatke uporabimo samo za odgovor na povpraševanje — <a href="/zasebnost">politika zasebnosti</a>.

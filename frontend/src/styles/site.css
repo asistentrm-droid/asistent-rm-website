@@ -269,3 +269,7 @@
 [id] { scroll-margin-top: 96px; }
 /* iOS: polja s pisavo pod 16 px ob tipkanju povečajo zaslon */
 .chat-input, .modal-input, select.modal-input, textarea.modal-input { font-size: 16px !important; }
+
+.modal-error { display: flex; flex-direction: column; gap: 10px; padding: 14px 16px; border-radius: 12px; background: #fff4f4; border: 1px solid #f3c7c7; color: #8a1c1c; font-size: 14px; }
+.modal-error p { margin: 0; }
+.modal-error-btn { align-self: flex-start; padding: 10px 16px; border-radius: 10px; background: var(--color-black); color: #fff !important; text-decoration: none; font-weight: 600; }

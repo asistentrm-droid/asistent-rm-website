@@ -80,7 +80,6 @@ const IndustryPage = () => {
       <ContactModal
         open={contactOpen}
         onClose={close}
-        endpoint="https://formspree.io/f/mjkvogok"
         source={`panoga/${industry.id}`}
         industry={industry.name}
       />
