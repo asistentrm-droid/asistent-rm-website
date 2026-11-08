@@ -42,10 +42,30 @@ export const pages = {
     nav: 'Vprašanja',
     priority: '0.7',
   },
+  '/enterprise': {
+    title: 'Enterprise | AI receptorka za večja podjetja | Asistent RM',
+    description: 'Asistent RM za večja podjetja: več kot 800 minut na mesec, več lokacij in paket po meri. Pogoji po dogovoru.',
+    nav: 'Enterprise',
+    priority: '0.8',
+  },
   '/splosni-pogoji': { title: 'Splošni pogoji | Asistent RM', description: 'Splošni pogoji uporabe storitve Asistent RM.', priority: '0.3' },
   '/pogoji': { title: 'Pogoji uporabe | Asistent RM', description: 'Pogoji uporabe spletne strani Asistent RM.', priority: '0.3' },
   '/zasebnost': { title: 'Politika zasebnosti | Asistent RM', description: 'Kako Asistent RM obdeluje in varuje osebne podatke.', priority: '0.3' },
   '/hvala': { title: 'Hvala | Asistent RM', description: 'Vaše povpraševanje smo prejeli.', noindex: true },
 };
 
-export const mainNav = ['/kako-deluje', '/panoge', '/cenik', '/o-nas', '/kontakt'];
+// Glavni meni: skupina za mala podjetja + posamezne povezave.
+export const navGroups = [
+  {
+    label: 'Mala podjetja',
+    items: [
+      { to: '/kako-deluje', text: 'Kako deluje', hint: 'Klic, termin, povzetek' },
+      { to: '/panoge', text: 'Panoge', hint: '15 dejavnosti s primeri' },
+      { to: '/cenik', text: 'Cenik', hint: 'Od 99 €/mesec' },
+      { to: '/pogosta-vprasanja', text: 'Pogosta vprašanja', hint: 'Minute, jeziki, uvedba' },
+    ],
+  },
+  { to: '/enterprise', text: 'Enterprise' },
+  { to: '/o-nas', text: 'O nas' },
+  { to: '/kontakt', text: 'Kontakt' },
+];

@@ -224,3 +224,43 @@
 /* Ko je pasica za piškotke odprta, gumb za klepet ne sme prekriti njenih gumbov. */
 .cookie-consent-banner ~ .chat-bubble { bottom: 120px; }
 @media (max-width: 768px) { .cookie-consent-banner ~ .chat-bubble { bottom: 210px; } }
+
+/* ---------- Spustni meni ---------- */
+.sh-dd { position: relative; }
+.sh-dd-btn { display: inline-flex; align-items: center; gap: 4px; background: none; border: 0 !important; cursor: pointer; font: inherit; font-size: 15px; font-weight: 500; }
+.sh-dd-chev { transition: transform 0.2s ease; }
+.sh-dd.is-open .sh-dd-chev { transform: rotate(180deg); }
+.sh-dd-panel {
+  position: absolute; top: calc(100% + 10px); left: 50%; transform: translate(-50%, 6px);
+  width: 300px; padding: 8px; background: #fff; border: 1px solid var(--color-gray-200); border-radius: 18px;
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.25); display: flex; flex-direction: column;
+  opacity: 0; visibility: hidden; transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+}
+.sh-dd-panel::before { content: ''; position: absolute; top: -12px; left: 0; right: 0; height: 12px; }
+.sh-dd.is-open .sh-dd-panel { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+.sh-dd-item { display: flex; flex-direction: column; gap: 2px; padding: 12px 14px; border-radius: 12px; text-decoration: none; color: var(--color-black); }
+.sh-dd-item:hover, .sh-dd-item:focus-visible { background: var(--color-gray-100); }
+.sh-dd-item strong { font-size: 15px; font-weight: 600; }
+.sh-dd-item span { font-size: 13px; color: var(--color-gray-500); }
+.sh-link.sh-dd-btn.is-active::after { right: 32px; }
+
+/* Mobilni meni po skupinah */
+@media (max-width: 960px) {
+  .sh-mobile { max-height: calc(100vh - 62px); overflow-y: auto; }
+  .sh-mobile-group { padding: 8px 0 4px; border-bottom: 1px solid var(--color-gray-100); }
+  .sh-mobile-label { margin: 10px 4px 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-gray-500); }
+  .sh-mobile-sub { border-bottom: 0; padding: 11px 4px 11px 16px; font-size: 17px; }
+}
+.enterprise-form { max-width: 620px; margin: 0 auto; }
+
+/* Večje površine za dotik na telefonu */
+@media (max-width: 768px) {
+  .footer-links-column { gap: 0; }
+  .footer-link { display: inline-flex; align-items: center; min-height: 42px; }
+  .footer-contact-item { min-height: 42px; }
+  .ph-crumbs a { display: inline-flex; align-items: center; min-height: 36px; }
+}
+@media (max-width: 960px) {
+  .sh-mobile-group { display: flex; flex-direction: column; }
+  .sh-mobile-sub { display: block; }
+}

@@ -19,6 +19,7 @@ const SiteFooter = () => (
             <Link to="/panoge" className="footer-link">Panoge</Link>
             <Link to="/cenik" className="footer-link">Cenik</Link>
             <Link to="/pogosta-vprasanja" className="footer-link">Pogosta vprašanja</Link>
+            <Link to="/enterprise" className="footer-link">Enterprise</Link>
             <Link to="/o-nas" className="footer-link">O nas</Link>
             <Link to="/kontakt" className="footer-link">Kontakt</Link>
           </div>

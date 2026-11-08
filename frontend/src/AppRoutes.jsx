@@ -7,6 +7,7 @@ import PricingPage from './pages/PricingPage';
 import IndustriesPage from './pages/IndustriesPage';
 import IndustryPage from './pages/IndustryPage';
 import About from './pages/About';
+import Enterprise from './pages/Enterprise';
 import Contact from './pages/Contact';
 import FaqPage from './pages/FaqPage';
 import ThankYou from './pages/ThankYou';
@@ -31,6 +32,7 @@ const AppRoutes = () => (
       <Route path="/cenik" element={<PricingPage />} />
       <Route path="/panoge" element={<IndustriesPage />} />
       <Route path="/panoge/:industryId" element={<IndustryPage />} />
+      <Route path="/enterprise" element={<Enterprise />} />
       <Route path="/o-nas" element={<About />} />
       <Route path="/kontakt" element={<Contact />} />
       <Route path="/pogosta-vprasanja" element={<FaqPage />} />

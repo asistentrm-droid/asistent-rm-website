@@ -212,6 +212,7 @@ ${tagline} Asistent RM razvija in upravlja ${company.legalName}, ${company.stree
 - [Cenik](${SITE_URL}/cenik): BASIC 99 €, PRO 169 €, BUSINESS 279 € na mesec + DDV; vzpostavitev ${pricingTerms.setupFee} €; kalkulator
 - [Panoge](${SITE_URL}/panoge): 15 panog s primeri klicev
 - [Pogosta vprašanja](${SITE_URL}/pogosta-vprasanja)
+- [Enterprise](${SITE_URL}/enterprise): za večja podjetja — več kot 800 minut ali paket po meri, po dogovoru
 - [O nas](${SITE_URL}/o-nas) in [Kontakt](${SITE_URL}/kontakt)
 - Kontakt: ${company.email} · demo linija ${company.demoPhone}
 
